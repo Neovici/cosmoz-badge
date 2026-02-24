@@ -1,14 +1,6 @@
 import { alertTriangleIcon, arrowUpIcon } from '@neovici/cosmoz-icons/untitled';
-import { type Meta, type StoryObj } from '@storybook/web-components';
 import { html } from 'lit-html';
 import '../src/cosmoz-badge';
-
-type BadgeArgs = {
-	variant?: 'default' | 'error' | 'warning' | 'success' | 'modern';
-	size?: 'sm' | 'md' | 'lg';
-	shape?: 'rounded' | 'square';
-	label?: string;
-};
 
 export default {
 	title: 'Cosmoz Badge',
@@ -44,19 +36,21 @@ export default {
 			description: 'Badge label text',
 		},
 	},
-} satisfies Meta<BadgeArgs>;
-
-type Story = StoryObj<BadgeArgs>;
+};
 
 // Helper to render badge with args
-const renderBadge = (args: BadgeArgs) => html`
-	<cosmoz-badge variant=${args.variant || 'default'} size=${args.size || 'md'}>
+const renderBadge = (args) => html`
+	<cosmoz-badge
+		variant=${args.variant || 'default'}
+		size=${args.size || 'md'}
+		shape=${args.shape || 'rounded'}
+	>
 		${args.label || 'Badge'}
 	</cosmoz-badge>
 `;
 
 // Default story with controls
-export const Default: Story = {
+export const Default = {
 	args: {
 		variant: 'default',
 		size: 'lg',
@@ -67,7 +61,7 @@ export const Default: Story = {
 };
 
 // All Variants
-export const Variants: Story = {
+export const Variants = {
 	render: () => html`
 		<div class="story-row">
 			<cosmoz-badge variant="default">Default</cosmoz-badge>
@@ -86,7 +80,8 @@ export const Variants: Story = {
 	},
 };
 
-export const Shapes: Story = {
+//
+export const Shapes = {
 	render: () => html`
 		<div class="story-row">
 			<cosmoz-badge shape="rounded">Rounded</cosmoz-badge>
@@ -102,17 +97,14 @@ export const Shapes: Story = {
 	},
 };
 
-export const WithIcons: Story = {
-	args: {
-		size: 'lg',
-	},
-	render: (args: BadgeArgs) => html`
+export const WithIcons = {
+	render: () => html`
 		<div class="story-row">
-			<cosmoz-badge variant="warning" size=${args.size}>
+			<cosmoz-badge variant="warning">
 				${alertTriangleIcon({ width: '16', height: '16', slot: 'prefix' })}
 				Warning
 			</cosmoz-badge>
-			<cosmoz-badge variant="error" size=${args.size}>
+			<cosmoz-badge variant="error">
 				Label ${arrowUpIcon({ width: '16', height: '16', slot: 'suffix' })}
 			</cosmoz-badge>
 		</div>

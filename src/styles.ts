@@ -35,8 +35,8 @@ export const styles = css`
 	}
 
 	/* ========================================
-		* STYLE VARIANTS
-		* ======================================== */
+	* STYLE VARIANTS
+	* ======================================== */
 	:host([variant='error']) .badge {
 		background-color: var(--cz-color-bg-error);
 		color: var(--cz-color-text-error);
@@ -83,6 +83,7 @@ export const styles = css`
 		white-space: nowrap;
 		border-width: 1px;
 		border-style: solid;
+
 		/* Default */
 		height: calc(var(--cz-spacing) * 5.5);
 		font-size: var(--cz-text-sm);
@@ -91,8 +92,6 @@ export const styles = css`
 		background-color: var(--cz-color-bg-secondary);
 		color: var(--cz-color-text-secondary);
 		border-color: var(--cz-color-border-primary);
-
-		/* Shape - rounded */
 		border-radius: var(--cz-radius-full);
 	}
 `;
