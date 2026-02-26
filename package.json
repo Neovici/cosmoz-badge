@@ -58,6 +58,8 @@
     "./cosmoz-component": "./dist/component.js"
   },
   "dependencies": {
+    "@neovici/cosmoz-icons": "^1.5.0",
+    "@neovici/cosmoz-tokens": "^3.3.0",
     "@pionjs/pion": "^2.5.2",
     "lit-html": "^3.3.1"
   },

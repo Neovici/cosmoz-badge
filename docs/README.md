@@ -1,97 +1,155 @@
-# cosmoz-component
+# cosmoz-badge
 
-Template for creating Neovici public web components using pionjs and lit-html.
+A customizable badge web component built with [Untitled UI](https://www.untitledui.com/) design tokens.
+
+Part of the [Neovici](https://neovici.se) design system.
 
 ## Installation
 
 ```bash
-npm install
+npm install @neovici/cosmoz-badge
 ```
-
-## Available Scripts
-
-- `npm run lint` - Run ESLint and TypeScript type checking
-- `npm run build` - Build TypeScript to dist/
-- `npm run test` - Run all tests (unit + storybook)
-- `npm run test:unit` - Run unit tests only (fast, jsdom)
-- `npm run test:storybook` - Run storybook interaction tests only (browser)
-- `npm run test:watch` - Run tests in watch mode
-- `npm run storybook:start` - Start Storybook development server
-- `npm run storybook:build` - Build static Storybook
 
 ## Usage
 
-Import the component:
-
 ```javascript
-import '@neovici/cosmoz-component';
+import '@neovici/cosmoz-badge';
 ```
-
-Use in HTML:
 
 ```html
-<cosmoz-component greeting="Hi"></cosmoz-component>
+<!-- Default badge (pill, gray) -->
+<cosmoz-badge>Label</cosmoz-badge>
+
+<!-- Brand color -->
+<cosmoz-badge color="brand">Brand</cosmoz-badge>
+
+<!-- Error color -->
+<cosmoz-badge color="error">Error</cosmoz-badge>
+
+<!-- Color type (square corners) -->
+<cosmoz-badge type="color" color="brand">Color</cosmoz-badge>
+
+<!-- Modern type (shadow, neutral colors) -->
+<cosmoz-badge type="modern">Modern</cosmoz-badge>
 ```
+
+## Attributes
+
+| Attribute | Type    | Default | Description                                                 |
+| --------- | ------- | ------- | ----------------------------------------------------------- |
+| `type`    | string  | `pill`  | Badge type: `pill`, `color`, `modern`                       |
+| `color`   | string  | `gray`  | Badge color: `gray`, `brand`, `error`, `warning`, `success` |
+| `size`    | string  | `md`    | Badge size: `sm`, `md`, `lg`                                |
+| `dot`     | boolean | `false` | Show a colored dot indicator before text                    |
+
+## Type Variants
+
+| Type     | Description                                       |
+| -------- | ------------------------------------------------- |
+| `pill`   | Full border radius (rounded pill shape) — default |
+| `color`  | Small border radius (square corners)              |
+| `modern` | Small border radius, box shadow, neutral bg/text  |
+
+## Color Variants
+
+| Color     | Description                                    |
+| --------- | ---------------------------------------------- |
+| `gray`    | Secondary background, neutral border — default |
+| `brand`   | Brand background, brand text and border        |
+| `error`   | Error background, error text and border        |
+| `warning` | Warning background, warning text/border        |
+| `success` | Success background, success text/border        |
+
+> **Note:** The `modern` type always uses neutral background/text/border regardless of the `color` attribute. The `color` attribute still affects the dot indicator color in modern badges.
+
+## Size Variants
+
+| Size | Font Size    |
+| ---- | ------------ |
+| `sm` | xs           |
+| `md` | sm (default) |
+| `lg` | sm           |
+
+## Dot Indicator
+
+Add the `dot` attribute to show a colored dot before the label. The dot color follows the badge `color` scheme.
+
+```html
+<cosmoz-badge dot color="success">Active</cosmoz-badge>
+<cosmoz-badge dot type="modern" color="brand">Brand</cosmoz-badge>
+```
+
+## Icons
+
+The badge supports `prefix` and `suffix` icon slots:
+
+```html
+<!-- Prefix icon -->
+<cosmoz-badge color="warning">
+	<svg slot="prefix" width="12" height="12">...</svg>
+	Warning
+</cosmoz-badge>
+
+<!-- Suffix icon -->
+<cosmoz-badge color="error">
+	Error
+	<svg slot="suffix" width="12" height="12">...</svg>
+</cosmoz-badge>
+```
+
+## Slots
+
+| Slot     | Description                                |
+| -------- | ------------------------------------------ |
+| default  | Badge text or content                      |
+| `prefix` | Content before text (icons, images, flags) |
+| `suffix` | Content after text (icons)                 |
+
+## CSS Parts
+
+| Part    | Description                 |
+| ------- | --------------------------- |
+| `badge` | The badge container element |
+| `dot`   | The dot indicator element   |
+
+## Styling
+
+The badge exposes CSS parts for external styling:
+
+```css
+cosmoz-badge::part(badge) {
+	/* Custom styles */
+}
+
+cosmoz-badge::part(dot) {
+	/* Custom dot styles */
+}
+```
+
+## Design Tokens
+
+This component uses CSS custom properties from `@neovici/cosmoz-tokens`. The tokens are automatically applied but can be customized at the application level.
+
+## Accessibility
+
+The badge uses `role="status"` on its inner element. When using badges to convey important status information, ensure the content is descriptive enough for screen readers.
 
 ## Development
 
-1. Clone the repository
-2. Run `npm install`
-3. Start development with `npm run storybook:start`
-4. Make changes and verify with tests
+```bash
+# Install dependencies
+npm install
 
-## Testing
+# Start Storybook
+npm run storybook:start
 
-This template uses Vitest with two test projects:
+# Run tests
+npm run test
 
-### Unit Tests (`test:unit`)
-
-Fast tests that run in jsdom. Use for testing:
-
-- Utility functions
-- Pure logic
-- Data transformations
-
-**Note**: Unit tests cannot import Pion/Lit components or use `renderHook` from `@neovici/testing` due to ESM resolution issues in jsdom. For testing hooks and components, use Storybook interaction tests instead.
-
-```typescript
-// test/example.test.ts
-import { describe, expect, it } from 'vitest';
-import { myFunction } from '../src/utils';
-
-describe('myFunction', () => {
-	it('does something', () => {
-		expect(myFunction()).toBe(expected);
-	});
-});
+# Build
+npm run build
 ```
 
-### Storybook Tests (`test:storybook`)
+## License
 
-Browser-based tests using Playwright. Use for testing:
-
-- Component rendering
-- User interactions
-- Visual behavior
-
-Tests are written as `play` functions in story files.
-
-### Important: Imports in Story Files
-
-**Never import from `'vitest'` in story files:**
-
-```typescript
-import { expect } from 'vitest'; // Crashes deployed Storybook
-```
-
-**Use `'storybook/test'` instead:**
-
-```typescript
-import { expect } from 'storybook/test'; // Works everywhere
-```
-
-Vitest's `expect` requires an active test context and crashes when stories run in the deployed Storybook UI.
-
-## Publishing
-
-This package uses Semantic Release for automated versioning and publishing. Commits are analyzed and releases are created automatically based on Conventional Commits.
+Apache-2.0
