@@ -1,4 +1,4 @@
-import { alertTriangleIcon, arrowUpIcon } from '@neovici/cosmoz-icons/untitled';
+import { arrowRightIcon, arrowUpIcon } from '@neovici/cosmoz-icons/untitled';
 import { html } from 'lit-html';
 import '../src/cosmoz-badge';
 
@@ -37,16 +37,16 @@ export default {
 	},
 };
 
-const customTriangleIcon = (props: any) => {
-	return alertTriangleIcon({
+const customPrefixIcon = (props: any) => {
+	return arrowUpIcon({
 		...props,
 		width: props.width || '12',
 		height: props.height || '12',
 	});
 };
 
-const customArrowUpIcon = (props: any) => {
-	return arrowUpIcon({
+const customSuffixIcon = (props: any) => {
+	return arrowRightIcon({
 		...props,
 		width: props.width || '12',
 		height: props.height || '12',
@@ -187,19 +187,19 @@ export const WithPrefixIcon = {
 				<h1 class="story-section-title">Pill</h1>
 				<div class="story-row">
 					<cosmoz-badge>
-						${customTriangleIcon({ slot: 'prefix' })} Default
+						${customPrefixIcon({ slot: 'prefix' })} Default
 					</cosmoz-badge>
 					<cosmoz-badge color="brand">
-						${customTriangleIcon({ slot: 'prefix' })} Brand
+						${customPrefixIcon({ slot: 'prefix' })} Brand
 					</cosmoz-badge>
 					<cosmoz-badge color="error">
-						${customTriangleIcon({ slot: 'prefix' })} Error
+						${customPrefixIcon({ slot: 'prefix' })} Error
 					</cosmoz-badge>
 					<cosmoz-badge color="warning">
-						${customTriangleIcon({ slot: 'prefix' })} Warning
+						${customPrefixIcon({ slot: 'prefix' })} Warning
 					</cosmoz-badge>
 					<cosmoz-badge color="success">
-						${customTriangleIcon({ slot: 'prefix' })} Success
+						${customPrefixIcon({ slot: 'prefix' })} Success
 					</cosmoz-badge>
 				</div>
 			</div>
@@ -207,19 +207,19 @@ export const WithPrefixIcon = {
 				<h1 class="story-section-title">Color</h1>
 				<div class="story-row">
 					<cosmoz-badge type="color">
-						${customTriangleIcon({ slot: 'prefix' })} Default
+						${customPrefixIcon({ slot: 'prefix' })} Default
 					</cosmoz-badge>
 					<cosmoz-badge type="color" color="brand">
-						${customTriangleIcon({ slot: 'prefix' })} Brand
+						${customPrefixIcon({ slot: 'prefix' })} Brand
 					</cosmoz-badge>
 					<cosmoz-badge type="color" color="error">
-						${customTriangleIcon({ slot: 'prefix' })} Error
+						${customPrefixIcon({ slot: 'prefix' })} Error
 					</cosmoz-badge>
 					<cosmoz-badge type="color" color="warning">
-						${customTriangleIcon({ slot: 'prefix' })} Warning
+						${customPrefixIcon({ slot: 'prefix' })} Warning
 					</cosmoz-badge>
 					<cosmoz-badge type="color" color="success">
-						${customTriangleIcon({ slot: 'prefix' })} Success
+						${customPrefixIcon({ slot: 'prefix' })} Success
 					</cosmoz-badge>
 				</div>
 			</div>
@@ -227,19 +227,19 @@ export const WithPrefixIcon = {
 				<h1 class="story-section-title">Modern</h1>
 				<div class="story-row">
 					<cosmoz-badge type="modern">
-						${customTriangleIcon({ slot: 'prefix' })} Default
+						${customPrefixIcon({ slot: 'prefix' })} Default
 					</cosmoz-badge>
 					<cosmoz-badge type="modern" color="brand">
-						${customTriangleIcon({ slot: 'prefix' })} Brand
+						${customPrefixIcon({ slot: 'prefix' })} Brand
 					</cosmoz-badge>
 					<cosmoz-badge type="modern" color="error">
-						${customTriangleIcon({ slot: 'prefix' })} Error
+						${customPrefixIcon({ slot: 'prefix' })} Error
 					</cosmoz-badge>
 					<cosmoz-badge type="modern" color="warning">
-						${customTriangleIcon({ slot: 'prefix' })} Warning
+						${customPrefixIcon({ slot: 'prefix' })} Warning
 					</cosmoz-badge>
 					<cosmoz-badge type="modern" color="success">
-						${customTriangleIcon({ slot: 'prefix' })} Success
+						${customPrefixIcon({ slot: 'prefix' })} Success
 					</cosmoz-badge>
 				</div>
 			</div>
@@ -262,19 +262,19 @@ export const WithSuffixIcon = {
 				<h1 class="story-section-title">Pill</h1>
 				<div class="story-row">
 					<cosmoz-badge>
-						Default ${customArrowUpIcon({ slot: 'suffix' })}
+						Default ${customSuffixIcon({ slot: 'suffix' })}
 					</cosmoz-badge>
 					<cosmoz-badge color="brand">
-						Brand ${customArrowUpIcon({ slot: 'suffix' })}
+						Brand ${customSuffixIcon({ slot: 'suffix' })}
 					</cosmoz-badge>
 					<cosmoz-badge color="error">
-						Error ${customArrowUpIcon({ slot: 'suffix' })}
+						Error ${customSuffixIcon({ slot: 'suffix' })}
 					</cosmoz-badge>
 					<cosmoz-badge color="warning">
-						Warning ${customArrowUpIcon({ slot: 'suffix' })}
+						Warning ${customSuffixIcon({ slot: 'suffix' })}
 					</cosmoz-badge>
 					<cosmoz-badge color="success">
-						Success ${customArrowUpIcon({ slot: 'suffix' })}
+						Success ${customSuffixIcon({ slot: 'suffix' })}
 					</cosmoz-badge>
 				</div>
 			</div>
@@ -282,19 +282,19 @@ export const WithSuffixIcon = {
 				<h1 class="story-section-title">Color</h1>
 				<div class="story-row">
 					<cosmoz-badge type="color">
-						Default ${customArrowUpIcon({ slot: 'suffix' })}
+						Default ${customSuffixIcon({ slot: 'suffix' })}
 					</cosmoz-badge>
 					<cosmoz-badge type="color" color="brand">
-						Brand ${customArrowUpIcon({ slot: 'suffix' })}
+						Brand ${customSuffixIcon({ slot: 'suffix' })}
 					</cosmoz-badge>
 					<cosmoz-badge type="color" color="error">
-						Error ${customArrowUpIcon({ slot: 'suffix' })}
+						Error ${customSuffixIcon({ slot: 'suffix' })}
 					</cosmoz-badge>
 					<cosmoz-badge type="color" color="warning">
-						Warning ${customArrowUpIcon({ slot: 'suffix' })}
+						Warning ${customSuffixIcon({ slot: 'suffix' })}
 					</cosmoz-badge>
 					<cosmoz-badge type="color" color="success">
-						Success ${customArrowUpIcon({ slot: 'suffix' })}
+						Success ${customSuffixIcon({ slot: 'suffix' })}
 					</cosmoz-badge>
 				</div>
 			</div>
@@ -302,19 +302,19 @@ export const WithSuffixIcon = {
 				<h1 class="story-section-title">Modern</h1>
 				<div class="story-row">
 					<cosmoz-badge type="modern">
-						Default ${customArrowUpIcon({ slot: 'suffix' })}
+						Default ${customSuffixIcon({ slot: 'suffix' })}
 					</cosmoz-badge>
 					<cosmoz-badge type="modern" color="brand">
-						Brand ${customArrowUpIcon({ slot: 'suffix' })}
+						Brand ${customSuffixIcon({ slot: 'suffix' })}
 					</cosmoz-badge>
 					<cosmoz-badge type="modern" color="error">
-						Error ${customArrowUpIcon({ slot: 'suffix' })}
+						Error ${customSuffixIcon({ slot: 'suffix' })}
 					</cosmoz-badge>
 					<cosmoz-badge type="modern" color="warning">
-						Warning ${customArrowUpIcon({ slot: 'suffix' })}
+						Warning ${customSuffixIcon({ slot: 'suffix' })}
 					</cosmoz-badge>
 					<cosmoz-badge type="modern" color="success">
-						Success ${customArrowUpIcon({ slot: 'suffix' })}
+						Success ${customSuffixIcon({ slot: 'suffix' })}
 					</cosmoz-badge>
 				</div>
 			</div>
