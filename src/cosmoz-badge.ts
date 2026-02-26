@@ -1,40 +1,67 @@
 import { normalize } from '@neovici/cosmoz-tokens/normalize';
 import { component, html } from '@pionjs/pion';
+import { nothing } from 'lit-html';
+import { when } from 'lit-html/directives/when.js';
 import { styles } from './styles';
 
-export type BadgeVariant =
-	| 'default'
-	| 'error'
-	| 'warning'
-	| 'success'
-	| 'modern';
+export type BadgeType = 'pill' | 'color' | 'modern';
+export type BadgeColor = 'gray' | 'brand' | 'error' | 'warning' | 'success';
 export type BadgeSize = 'sm' | 'md' | 'lg';
-export type BadgeShape = 'rounded' | 'square';
+
 export interface CosmozBadgeElement extends HTMLElement {
-	variant: BadgeVariant;
+	type: BadgeType;
+	color: BadgeColor;
 	size: BadgeSize;
-	shape: BadgeShape;
+	dot: boolean;
 }
 
-const observedAttributes = ['variant', 'size', 'shape'] as const;
+const observedAttributes = ['type', 'color', 'size', 'dot'] as const;
 
 /**
- * A customizable badge component using Untitled UI design tokens.
+ * A customizable badge component using cosmoz design tokens.
  *
  * @element cosmoz-badge
  *
- * @attr {string} variant - Badge style variant: default (default), error, warning, success, modern
+ * @attr {string} type - Badge type: pill (default), color, modern
+ * @attr {string} color - Badge color: gray (default), brand, error, warning, success
  * @attr {string} size - Badge size: sm, md (default), lg
- * @attr {string} shape - Badge shape: rounded (default), square
+ * @attr {boolean} dot - Show a colored dot indicator before text
  *
- * @slot - Default slot for badge text content
- * @slot prefix - Slot for prefix icon (before text)
- * @slot suffix - Slot for suffix icon (after text)
+ * @slot - Default slot for badge text or icon content
+ * @slot prefix - Slot for content before text (icons, images, flags)
+ * @slot suffix - Slot for content after text (icons)
  *
- * @csspart badge - The native badge element
+ *
+ * @csspart badge - The badge container element
+ * @csspart dot - The dot indicator element
+ *
+ * @example Basic badge
+ * ```html
+ * <cosmoz-badge color="brand">Label</cosmoz-badge>
+ * ```
+ *
+ * @example Badge with dot
+ * ```html
+ * <cosmoz-badge color="success" dot>Active</cosmoz-badge>
+ * ```
+ *
+ * @example Badge with icon
+ * ```html
+ * <cosmoz-badge color="warning">
+ *   <svg slot="prefix" ...></svg>
+ *   Warning
+ * </cosmoz-badge>
+ * ```
  */
-const CosmozBadge = () => {
+const CosmozBadge = (host: CosmozBadgeElement) => {
+	const dot = host.hasAttribute('dot');
+
 	return html`<span class="badge" part="badge" role="status">
+		${when(
+			dot,
+			() => html`<span class="dot" part="dot"></span>`,
+			() => nothing,
+		)}
 		<slot name="prefix"></slot>
 		<slot></slot>
 		<slot name="suffix"></slot>
