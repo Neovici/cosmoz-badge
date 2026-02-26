@@ -1,7 +1,7 @@
-import{A as L,b as i,w as G,D as eo}from"./iframe-DczPF-i1.js";import"./preload-helper-PPVm8Dsz.js";const B=o=>o??L;function P(o,e,s){return o?e(o):s?.(o)}const so=({slot:o,title:e,className:s,width:r="24",height:t="24",styles:l}={})=>i`
+import{A as L,b as i,w as N,D as eo}from"./iframe-Db7hVdZy.js";import"./preload-helper-PPVm8Dsz.js";const P=o=>o??L;function W(o,e,s){return o?e(o):s?.(o)}const so=({slot:o,title:e,className:s,width:t="24",height:r="24",styles:l}={})=>i`
   <svg
-    slot=${B(o)}
-    class=${`alert-triangle-icon ${s??""}`}
+    slot=${P(o)}
+    class=${`arrow-right-icon ${s??""}`}
     viewBox="0 0 24 24"
     preserveAspectRatio="xMidYMid meet"
     focusable="false"
@@ -10,18 +10,16 @@ import{A as L,b as i,w as G,D as eo}from"./iframe-DczPF-i1.js";import"./preload-
     stroke-width="2"
     stroke-linecap="round"
     stroke-linejoin="round"
-    width=${r}
-    height=${t}
-    style=${B(l)}
+    width=${t}
+    height=${r}
+    style=${P(l)}
   >
-    ${P(e,()=>G`<title>${e}</title>`)}
-    <path
-      d="M12 9v4m0 4h.01M10.615 3.892 2.39 18.098c-.456.788-.684 1.182-.65 1.506a1 1 0 0 0 .406.705c.263.191.718.191 1.629.191h16.45c.91 0 1.365 0 1.628-.191a1 1 0 0 0 .407-.705c.034-.324-.195-.718-.65-1.506L13.383 3.892c-.454-.785-.681-1.178-.978-1.31a1 1 0 0 0-.813 0c-.296.132-.523.525-.978 1.31Z"
-    />
+    ${W(e,()=>N`<title>${e}</title>`)}
+    <path d="M5 12h14m0 0-7-7m7 7-7 7" />
   </svg>
-`,ro=({slot:o,title:e,className:s,width:r="24",height:t="24",styles:l}={})=>i`
+`,to=({slot:o,title:e,className:s,width:t="24",height:r="24",styles:l}={})=>i`
   <svg
-    slot=${B(o)}
+    slot=${P(o)}
     class=${`arrow-up-icon ${s??""}`}
     viewBox="0 0 24 24"
     preserveAspectRatio="xMidYMid meet"
@@ -31,14 +29,14 @@ import{A as L,b as i,w as G,D as eo}from"./iframe-DczPF-i1.js";import"./preload-
     stroke-width="2"
     stroke-linecap="round"
     stroke-linejoin="round"
-    width=${r}
-    height=${t}
-    style=${B(l)}
+    width=${t}
+    height=${r}
+    style=${P(l)}
   >
-    ${P(e,()=>G`<title>${e}</title>`)}
+    ${W(e,()=>N`<title>${e}</title>`)}
     <path d="M12 19V5m0 0-7 7m7-7 7 7" />
   </svg>
-`;let I,N=0;function M(o){I=o}function R(){I=null,N=0}function to(){return N++}const A=Symbol("haunted.phase"),C=Symbol("haunted.hook"),U=Symbol("haunted.update"),O=Symbol("haunted.commit"),h=Symbol("haunted.effects"),f=Symbol("haunted.layoutEffects"),T="haunted.context";class co{update;host;virtual;[C];[h];[f];constructor(e,s){this.update=e,this.host=s,this[C]=new Map,this[h]=[],this[f]=[]}run(e){M(this);let s=e();return R(),s}_runEffects(e){let s=this[e];M(this);for(let r of s)r.call(this);R()}runEffects(){this._runEffects(h)}runLayoutEffects(){this._runEffects(f)}teardown(){this[C].forEach(s=>{typeof s.teardown=="function"&&s.teardown(!0)})}}const ao=Promise.resolve().then.bind(Promise.resolve());function V(){let o=[],e;function s(){e=null;let r=o;o=[];for(var t=0,l=r.length;t<l;t++)r[t]()}return function(r){o.push(r),e==null&&(e=ao(s))}}const no=V(),j=V();class io{renderer;host;state;[A];_updateQueued;_active;constructor(e,s){this.renderer=e,this.host=s,this.state=new co(this.update.bind(this),s),this[A]=null,this._updateQueued=!1,this._active=!0}update(){this._active&&(this._updateQueued||(no(()=>{let e=this.handlePhase(U);j(()=>{this.handlePhase(O,e),j(()=>{this.handlePhase(h)})}),this._updateQueued=!1}),this._updateQueued=!0))}handlePhase(e,s){switch(this[A]=e,e){case O:this.commit(s),this.runEffects(f);return;case U:return this.render();case h:return this.runEffects(h)}}render(){return this.state.run(()=>this.renderer.call(this.host,this.host))}runEffects(e){this.state._runEffects(e)}teardown(){this.state.teardown()}pause(){this._active=!1}resume(){this._active=!0}}const F=(...o)=>{const e=new CSSStyleSheet;return e.replaceSync(o.join("")),e},lo=o=>o?.map(e=>typeof e=="string"?F(e):e),go=(o,...e)=>o.flatMap((s,r)=>[s,e[r]||""]).join(""),q=go,mo=(o="")=>o.replace(/-+([a-z])?/g,(e,s)=>s?s.toUpperCase():"");function uo(o){class e extends io{frag;renderResult;constructor(t,l,y){super(t,y||l),this.frag=l}commit(t){this.renderResult=o(t,this.frag)}}function s(r,t,l){const y=(l||t||{}).baseElement||HTMLElement,{observedAttributes:Y=[],useShadowDOM:Z=!0,shadowRootInit:J={},styleSheets:K}=l||t||{},D=lo(r.styleSheets||K);class W extends y{_scheduler;static get observedAttributes(){return r.observedAttributes||Y||[]}constructor(){if(super(),Z===!1)this._scheduler=new e(r,this);else{const a=this.attachShadow({mode:"open",...J});D&&(a.adoptedStyleSheets=D),this._scheduler=new e(r,a,this)}}connectedCallback(){this._scheduler.resume(),this._scheduler.update(),this._scheduler.renderResult?.setConnected(!0)}disconnectedCallback(){this._scheduler.pause(),this._scheduler.teardown(),this._scheduler.renderResult?.setConnected(!1)}attributeChangedCallback(a,u,g){if(u===g)return;let m=g===""?!0:g;Reflect.set(this,mo(a),m)}}function X(b){let a=b,u=!1;return Object.freeze({enumerable:!0,configurable:!0,get(){return a},set(g){u&&a===g||(u=!0,a=g,this._scheduler&&this._scheduler.update())}})}const oo=new Proxy(y.prototype,{getPrototypeOf(b){return b},set(b,a,u,g){let m;return a in b?(m=Object.getOwnPropertyDescriptor(b,a),m&&m.set?(m.set.call(g,u),!0):(Reflect.set(b,a,u,g),!0)):(typeof a=="symbol"||a[0]==="_"?m={enumerable:!0,configurable:!0,writable:!0,value:u}:m=X(u),Object.defineProperty(g,a,m),m.set&&m.set.call(g,u),!0)}});return Object.setPrototypeOf(W.prototype,oo),W}return s}class p{id;state;constructor(e,s){this.id=e,this.state=s}}function bo(o,...e){let s=to(),r=I[C],t=r.get(s);return t||(t=new o(s,I,...e),r.set(s,t)),t.update(...e)}function z(o){return bo.bind(null,o)}function Q(o){return z(class extends p{callback;lastValues;values;_teardown;constructor(e,s,r,t){super(e,s),o(s,this)}update(e,s){this.callback=e,this.values=s}call(){const e=!this.values||this.hasChanged();this.lastValues=this.values,e&&this.run()}run(){this.teardown(),this._teardown=this.callback.call(this.state)}teardown(e){typeof this._teardown=="function"&&(this._teardown(),this._teardown=void 0),e&&(this.lastValues=this.values=void 0)}hasChanged(){return!this.lastValues||this.values.some((e,s)=>this.lastValues[s]!==e)}})}function H(o,e){o[h].push(e)}Q(H);const ho=o=>o instanceof Element?o:o.startNode||o.endNode||o.parentNode,po=z(class extends p{Context;value;_ranEffect;_unsubscribe;constructor(o,e,s){super(o,e),this._updater=this._updater.bind(this),this._ranEffect=!1,this._unsubscribe=null,H(e,this)}update(o){return this.Context!==o&&(this._subscribe(o),this.Context=o),this.value}call(){this._ranEffect||(this._ranEffect=!0,this._unsubscribe&&this._unsubscribe(),this._subscribe(this.Context),this.state.update())}_updater(o){this.value=o,this.state.update()}_subscribe(o){const e={Context:o,callback:this._updater};ho(this.state.host).dispatchEvent(new CustomEvent(T,{detail:e,bubbles:!0,cancelable:!0,composed:!0}));const{unsubscribe:r=null,value:t}=e;this.value=r?t:o.defaultValue,this._unsubscribe=r}teardown(){this._unsubscribe&&this._unsubscribe()}});function zo(o){return e=>{const s={Provider:class extends HTMLElement{listeners;_value;constructor(){super(),this.style.display="contents",this.listeners=new Set,this.addEventListener(T,this)}disconnectedCallback(){this.removeEventListener(T,this)}handleEvent(r){const{detail:t}=r;t.Context===s&&(t.value=this.value,t.unsubscribe=this.unsubscribe.bind(this,t.callback),this.listeners.add(t.callback),r.stopPropagation())}unsubscribe(r){this.listeners.delete(r)}set value(r){this._value=r;for(let t of this.listeners)t(r)}get value(){return this._value}},Consumer:o(function({render:r}){const t=po(s);return r(t)},{useShadowDOM:!1}),defaultValue:e};return s}}z(class extends p{value;values;constructor(o,e,s,r){super(o,e),this.value=s(),this.values=r}update(o,e){return this.hasChanged(e)&&(this.values=e,this.value=o()),this.value}hasChanged(o=[]){return o.some((e,s)=>this.values[s]!==e)}});function fo(o,e){o[f].push(e)}Q(fo);z(class extends p{args;constructor(o,e,s){super(o,e),this.updater=this.updater.bind(this),typeof s=="function"&&(s=s()),this.makeArgs(s)}update(){return this.args}updater(o){const[e]=this.args;typeof o=="function"&&(o=o(e)),!Object.is(e,o)&&(this.makeArgs(o),this.state.update())}makeArgs(o){this.args=Object.freeze([o,this.updater])}});z(class extends p{reducer;currentState;constructor(o,e,s,r,t){super(o,e),this.dispatch=this.dispatch.bind(this),this.currentState=t!==void 0?t(r):r}update(o){return this.reducer=o,[this.currentState,this.dispatch]}dispatch(o){this.currentState=this.reducer(this.currentState,o),this.state.update()}});const yo=/([A-Z])/gu;z(class extends p{property;eventName;constructor(o,e,s,r){if(super(o,e),this.state.virtual)throw new Error("Can't be used with virtual components.");this.updater=this.updater.bind(this),this.property=s,this.eventName=s.replace(yo,"-$1").toLowerCase()+"-changed",this.state.host[this.property]==null&&(typeof r=="function"&&(r=r()),r!=null&&this.updateProp(r))}update(o,e){return[this.state.host[this.property],this.updater]}updater(o){const e=this.state.host[this.property];typeof o=="function"&&(o=o(e)),!Object.is(e,o)&&this.updateProp(o)}updateProp(o){this.notify(o).defaultPrevented||(this.state.host[this.property]=o)}notify(o){const e=new CustomEvent(this.eventName,{detail:{value:o,path:this.property},cancelable:!0});return this.state.host.dispatchEvent(e),e}});function vo({render:o}){const e=uo(o),s=zo(e);return{component:e,createContext:s}}const{component:wo}=vo({render:eo}),xo=F(q`
+`;let B,V=0;function R(o){B=o}function T(){B=null,V=0}function ro(){return V++}const I=Symbol("haunted.phase"),C=Symbol("haunted.hook"),O=Symbol("haunted.update"),j=Symbol("haunted.commit"),h=Symbol("haunted.effects"),z=Symbol("haunted.layoutEffects"),D="haunted.context";class co{update;host;virtual;[C];[h];[z];constructor(e,s){this.update=e,this.host=s,this[C]=new Map,this[h]=[],this[z]=[]}run(e){R(this);let s=e();return T(),s}_runEffects(e){let s=this[e];R(this);for(let t of s)t.call(this);T()}runEffects(){this._runEffects(h)}runLayoutEffects(){this._runEffects(z)}teardown(){this[C].forEach(s=>{typeof s.teardown=="function"&&s.teardown(!0)})}}const ao=Promise.resolve().then.bind(Promise.resolve());function F(){let o=[],e;function s(){e=null;let t=o;o=[];for(var r=0,l=t.length;r<l;r++)t[r]()}return function(t){o.push(t),e==null&&(e=ao(s))}}const no=F(),G=F();class io{renderer;host;state;[I];_updateQueued;_active;constructor(e,s){this.renderer=e,this.host=s,this.state=new co(this.update.bind(this),s),this[I]=null,this._updateQueued=!1,this._active=!0}update(){this._active&&(this._updateQueued||(no(()=>{let e=this.handlePhase(O);G(()=>{this.handlePhase(j,e),G(()=>{this.handlePhase(h)})}),this._updateQueued=!1}),this._updateQueued=!0))}handlePhase(e,s){switch(this[I]=e,e){case j:this.commit(s),this.runEffects(z);return;case O:return this.render();case h:return this.runEffects(h)}}render(){return this.state.run(()=>this.renderer.call(this.host,this.host))}runEffects(e){this.state._runEffects(e)}teardown(){this.state.teardown()}pause(){this._active=!1}resume(){this._active=!0}}const U=(...o)=>{const e=new CSSStyleSheet;return e.replaceSync(o.join("")),e},lo=o=>o?.map(e=>typeof e=="string"?U(e):e),mo=(o,...e)=>o.flatMap((s,t)=>[s,e[t]||""]).join(""),q=mo,uo=(o="")=>o.replace(/-+([a-z])?/g,(e,s)=>s?s.toUpperCase():"");function go(o){class e extends io{frag;renderResult;constructor(r,l,y){super(r,y||l),this.frag=l}commit(r){this.renderResult=o(r,this.frag)}}function s(t,r,l){const y=(l||r||{}).baseElement||HTMLElement,{observedAttributes:Y=[],useShadowDOM:Z=!0,shadowRootInit:J={},styleSheets:K}=l||r||{},A=lo(t.styleSheets||K);class M extends y{_scheduler;static get observedAttributes(){return t.observedAttributes||Y||[]}constructor(){if(super(),Z===!1)this._scheduler=new e(t,this);else{const a=this.attachShadow({mode:"open",...J});A&&(a.adoptedStyleSheets=A),this._scheduler=new e(t,a,this)}}connectedCallback(){this._scheduler.resume(),this._scheduler.update(),this._scheduler.renderResult?.setConnected(!0)}disconnectedCallback(){this._scheduler.pause(),this._scheduler.teardown(),this._scheduler.renderResult?.setConnected(!1)}attributeChangedCallback(a,g,m){if(g===m)return;let u=m===""?!0:m;Reflect.set(this,uo(a),u)}}function X(b){let a=b,g=!1;return Object.freeze({enumerable:!0,configurable:!0,get(){return a},set(m){g&&a===m||(g=!0,a=m,this._scheduler&&this._scheduler.update())}})}const oo=new Proxy(y.prototype,{getPrototypeOf(b){return b},set(b,a,g,m){let u;return a in b?(u=Object.getOwnPropertyDescriptor(b,a),u&&u.set?(u.set.call(m,g),!0):(Reflect.set(b,a,g,m),!0)):(typeof a=="symbol"||a[0]==="_"?u={enumerable:!0,configurable:!0,writable:!0,value:g}:u=X(g),Object.defineProperty(m,a,u),u.set&&u.set.call(m,g),!0)}});return Object.setPrototypeOf(M.prototype,oo),M}return s}class p{id;state;constructor(e,s){this.id=e,this.state=s}}function bo(o,...e){let s=ro(),t=B[C],r=t.get(s);return r||(r=new o(s,B,...e),t.set(s,r)),r.update(...e)}function f(o){return bo.bind(null,o)}function Q(o){return f(class extends p{callback;lastValues;values;_teardown;constructor(e,s,t,r){super(e,s),o(s,this)}update(e,s){this.callback=e,this.values=s}call(){const e=!this.values||this.hasChanged();this.lastValues=this.values,e&&this.run()}run(){this.teardown(),this._teardown=this.callback.call(this.state)}teardown(e){typeof this._teardown=="function"&&(this._teardown(),this._teardown=void 0),e&&(this.lastValues=this.values=void 0)}hasChanged(){return!this.lastValues||this.values.some((e,s)=>this.lastValues[s]!==e)}})}function H(o,e){o[h].push(e)}Q(H);const ho=o=>o instanceof Element?o:o.startNode||o.endNode||o.parentNode,po=f(class extends p{Context;value;_ranEffect;_unsubscribe;constructor(o,e,s){super(o,e),this._updater=this._updater.bind(this),this._ranEffect=!1,this._unsubscribe=null,H(e,this)}update(o){return this.Context!==o&&(this._subscribe(o),this.Context=o),this.value}call(){this._ranEffect||(this._ranEffect=!0,this._unsubscribe&&this._unsubscribe(),this._subscribe(this.Context),this.state.update())}_updater(o){this.value=o,this.state.update()}_subscribe(o){const e={Context:o,callback:this._updater};ho(this.state.host).dispatchEvent(new CustomEvent(D,{detail:e,bubbles:!0,cancelable:!0,composed:!0}));const{unsubscribe:t=null,value:r}=e;this.value=t?r:o.defaultValue,this._unsubscribe=t}teardown(){this._unsubscribe&&this._unsubscribe()}});function fo(o){return e=>{const s={Provider:class extends HTMLElement{listeners;_value;constructor(){super(),this.style.display="contents",this.listeners=new Set,this.addEventListener(D,this)}disconnectedCallback(){this.removeEventListener(D,this)}handleEvent(t){const{detail:r}=t;r.Context===s&&(r.value=this.value,r.unsubscribe=this.unsubscribe.bind(this,r.callback),this.listeners.add(r.callback),t.stopPropagation())}unsubscribe(t){this.listeners.delete(t)}set value(t){this._value=t;for(let r of this.listeners)r(t)}get value(){return this._value}},Consumer:o(function({render:t}){const r=po(s);return t(r)},{useShadowDOM:!1}),defaultValue:e};return s}}f(class extends p{value;values;constructor(o,e,s,t){super(o,e),this.value=s(),this.values=t}update(o,e){return this.hasChanged(e)&&(this.values=e,this.value=o()),this.value}hasChanged(o=[]){return o.some((e,s)=>this.values[s]!==e)}});function zo(o,e){o[z].push(e)}Q(zo);f(class extends p{args;constructor(o,e,s){super(o,e),this.updater=this.updater.bind(this),typeof s=="function"&&(s=s()),this.makeArgs(s)}update(){return this.args}updater(o){const[e]=this.args;typeof o=="function"&&(o=o(e)),!Object.is(e,o)&&(this.makeArgs(o),this.state.update())}makeArgs(o){this.args=Object.freeze([o,this.updater])}});f(class extends p{reducer;currentState;constructor(o,e,s,t,r){super(o,e),this.dispatch=this.dispatch.bind(this),this.currentState=r!==void 0?r(t):t}update(o){return this.reducer=o,[this.currentState,this.dispatch]}dispatch(o){this.currentState=this.reducer(this.currentState,o),this.state.update()}});const yo=/([A-Z])/gu;f(class extends p{property;eventName;constructor(o,e,s,t){if(super(o,e),this.state.virtual)throw new Error("Can't be used with virtual components.");this.updater=this.updater.bind(this),this.property=s,this.eventName=s.replace(yo,"-$1").toLowerCase()+"-changed",this.state.host[this.property]==null&&(typeof t=="function"&&(t=t()),t!=null&&this.updateProp(t))}update(o,e){return[this.state.host[this.property],this.updater]}updater(o){const e=this.state.host[this.property];typeof o=="function"&&(o=o(e)),!Object.is(e,o)&&this.updateProp(o)}updateProp(o){this.notify(o).defaultPrevented||(this.state.host[this.property]=o)}notify(o){const e=new CustomEvent(this.eventName,{detail:{value:o,path:this.property},cancelable:!0});return this.state.host.dispatchEvent(e),e}});function vo({render:o}){const e=go(o),s=fo(e);return{component:e,createContext:s}}const{component:xo}=vo({render:eo}),wo=U(q`
 	/*
 	 * Use border-box sizing for all elements.
 	 * This is safe and doesn't conflict with child component styles.
@@ -428,11 +426,11 @@ import{A as L,b as i,w as G,D as eo}from"./iframe-DczPF-i1.js";import"./preload-
 		color: var(--cz-color-fg-success-secondary);
 	}
 `,So=["type","color","size","dot"],Eo=o=>{const e=o.hasAttribute("dot");return i`<span class="badge" part="badge" role="status">
-		${P(e,()=>i`<span class="dot" part="dot"></span>`,()=>L)}
+		${W(e,()=>i`<span class="dot" part="dot"></span>`,()=>L)}
 		<slot name="prefix"></slot>
 		<slot></slot>
 		<slot name="suffix"></slot>
-	</span>`};customElements.define("cosmoz-badge",wo(Eo,{observedAttributes:So,styleSheets:[xo,$o]}));const Bo={title:"Cosmoz Badge",component:"cosmoz-badge",tags:["autodocs"],argTypes:{type:{control:"select",options:["pill","color","modern"],description:"Badge type variant",table:{defaultValue:{summary:"pill"}}},color:{control:"select",options:["gray","brand","error","warning","success"],description:"Badge color scheme",table:{defaultValue:{summary:"gray"}}},size:{control:"select",options:["sm","md","lg"],description:"Badge size",table:{defaultValue:{summary:"md"}}},dot:{control:"boolean",description:"Show dot indicator",table:{defaultValue:{summary:"false"}}},label:{control:"text",description:"Badge label text"}}},n=o=>so({...o,width:o.width||"12",height:o.height||"12"}),d=o=>ro({...o,width:o.width||"12",height:o.height||"12"}),ko=o=>i`
+	</span>`};customElements.define("cosmoz-badge",xo(Eo,{observedAttributes:So,styleSheets:[wo,$o]}));const Po={title:"Cosmoz Badge",component:"cosmoz-badge",tags:["autodocs"],argTypes:{type:{control:"select",options:["pill","color","modern"],description:"Badge type variant",table:{defaultValue:{summary:"pill"}}},color:{control:"select",options:["gray","brand","error","warning","success"],description:"Badge color scheme",table:{defaultValue:{summary:"gray"}}},size:{control:"select",options:["sm","md","lg"],description:"Badge size",table:{defaultValue:{summary:"md"}}},dot:{control:"boolean",description:"Show dot indicator",table:{defaultValue:{summary:"false"}}},label:{control:"text",description:"Badge label text"}}},d=o=>to({...o,width:o.width||"12",height:o.height||"12"}),n=o=>so({...o,width:o.width||"12",height:o.height||"12"}),ko=o=>i`
     <cosmoz-badge
         type=${o.type||"pill"}
         color=${o.color||"gray"}
@@ -441,7 +439,7 @@ import{A as L,b as i,w as G,D as eo}from"./iframe-DczPF-i1.js";import"./preload-
     >
         ${o.label||"Badge"}
     </cosmoz-badge>
-`,v={args:{type:"pill",color:"gray",size:"md",label:"Label",dot:!1},render:ko},w={render:()=>i`
+`,v={args:{type:"pill",color:"gray",size:"md",label:"Label",dot:!1},render:ko},x={render:()=>i`
         <div class="story-row">
             <cosmoz-badge>Default</cosmoz-badge>
             <cosmoz-badge color="brand">Brand</cosmoz-badge>
@@ -449,7 +447,7 @@ import{A as L,b as i,w as G,D as eo}from"./iframe-DczPF-i1.js";import"./preload-
             <cosmoz-badge color="warning">Warning</cosmoz-badge>
             <cosmoz-badge color="success">Success</cosmoz-badge>
         </div>
-    `,parameters:{docs:{description:{story:"All available color variants for the badge."}}}},x={render:()=>i`
+    `,parameters:{docs:{description:{story:"All available color variants for the badge."}}}},w={render:()=>i`
         <div class="story-row">
             <cosmoz-badge>Gray</cosmoz-badge>
             <cosmoz-badge type="color" color="brand">Color</cosmoz-badge>
@@ -500,19 +498,19 @@ import{A as L,b as i,w as G,D as eo}from"./iframe-DczPF-i1.js";import"./preload-
                 <h1 class="story-section-title">Pill</h1>
                 <div class="story-row">
                     <cosmoz-badge>
-                        ${n({slot:"prefix"})} Default
+                        ${d({slot:"prefix"})} Default
                     </cosmoz-badge>
                     <cosmoz-badge color="brand">
-                        ${n({slot:"prefix"})} Brand
+                        ${d({slot:"prefix"})} Brand
                     </cosmoz-badge>
                     <cosmoz-badge color="error">
-                        ${n({slot:"prefix"})} Error
+                        ${d({slot:"prefix"})} Error
                     </cosmoz-badge>
                     <cosmoz-badge color="warning">
-                        ${n({slot:"prefix"})} Warning
+                        ${d({slot:"prefix"})} Warning
                     </cosmoz-badge>
                     <cosmoz-badge color="success">
-                        ${n({slot:"prefix"})} Success
+                        ${d({slot:"prefix"})} Success
                     </cosmoz-badge>
                 </div>
             </div>
@@ -520,19 +518,19 @@ import{A as L,b as i,w as G,D as eo}from"./iframe-DczPF-i1.js";import"./preload-
                 <h1 class="story-section-title">Color</h1>
                 <div class="story-row">
                     <cosmoz-badge type="color">
-                        ${n({slot:"prefix"})} Default
+                        ${d({slot:"prefix"})} Default
                     </cosmoz-badge>
                     <cosmoz-badge type="color" color="brand">
-                        ${n({slot:"prefix"})} Brand
+                        ${d({slot:"prefix"})} Brand
                     </cosmoz-badge>
                     <cosmoz-badge type="color" color="error">
-                        ${n({slot:"prefix"})} Error
+                        ${d({slot:"prefix"})} Error
                     </cosmoz-badge>
                     <cosmoz-badge type="color" color="warning">
-                        ${n({slot:"prefix"})} Warning
+                        ${d({slot:"prefix"})} Warning
                     </cosmoz-badge>
                     <cosmoz-badge type="color" color="success">
-                        ${n({slot:"prefix"})} Success
+                        ${d({slot:"prefix"})} Success
                     </cosmoz-badge>
                 </div>
             </div>
@@ -540,19 +538,19 @@ import{A as L,b as i,w as G,D as eo}from"./iframe-DczPF-i1.js";import"./preload-
                 <h1 class="story-section-title">Modern</h1>
                 <div class="story-row">
                     <cosmoz-badge type="modern">
-                        ${n({slot:"prefix"})} Default
+                        ${d({slot:"prefix"})} Default
                     </cosmoz-badge>
                     <cosmoz-badge type="modern" color="brand">
-                        ${n({slot:"prefix"})} Brand
+                        ${d({slot:"prefix"})} Brand
                     </cosmoz-badge>
                     <cosmoz-badge type="modern" color="error">
-                        ${n({slot:"prefix"})} Error
+                        ${d({slot:"prefix"})} Error
                     </cosmoz-badge>
                     <cosmoz-badge type="modern" color="warning">
-                        ${n({slot:"prefix"})} Warning
+                        ${d({slot:"prefix"})} Warning
                     </cosmoz-badge>
                     <cosmoz-badge type="modern" color="success">
-                        ${n({slot:"prefix"})} Success
+                        ${d({slot:"prefix"})} Success
                     </cosmoz-badge>
                 </div>
             </div>
@@ -563,19 +561,19 @@ import{A as L,b as i,w as G,D as eo}from"./iframe-DczPF-i1.js";import"./preload-
                 <h1 class="story-section-title">Pill</h1>
                 <div class="story-row">
                     <cosmoz-badge>
-                        Default ${d({slot:"suffix"})}
+                        Default ${n({slot:"suffix"})}
                     </cosmoz-badge>
                     <cosmoz-badge color="brand">
-                        Brand ${d({slot:"suffix"})}
+                        Brand ${n({slot:"suffix"})}
                     </cosmoz-badge>
                     <cosmoz-badge color="error">
-                        Error ${d({slot:"suffix"})}
+                        Error ${n({slot:"suffix"})}
                     </cosmoz-badge>
                     <cosmoz-badge color="warning">
-                        Warning ${d({slot:"suffix"})}
+                        Warning ${n({slot:"suffix"})}
                     </cosmoz-badge>
                     <cosmoz-badge color="success">
-                        Success ${d({slot:"suffix"})}
+                        Success ${n({slot:"suffix"})}
                     </cosmoz-badge>
                 </div>
             </div>
@@ -583,19 +581,19 @@ import{A as L,b as i,w as G,D as eo}from"./iframe-DczPF-i1.js";import"./preload-
                 <h1 class="story-section-title">Color</h1>
                 <div class="story-row">
                     <cosmoz-badge type="color">
-                        Default ${d({slot:"suffix"})}
+                        Default ${n({slot:"suffix"})}
                     </cosmoz-badge>
                     <cosmoz-badge type="color" color="brand">
-                        Brand ${d({slot:"suffix"})}
+                        Brand ${n({slot:"suffix"})}
                     </cosmoz-badge>
                     <cosmoz-badge type="color" color="error">
-                        Error ${d({slot:"suffix"})}
+                        Error ${n({slot:"suffix"})}
                     </cosmoz-badge>
                     <cosmoz-badge type="color" color="warning">
-                        Warning ${d({slot:"suffix"})}
+                        Warning ${n({slot:"suffix"})}
                     </cosmoz-badge>
                     <cosmoz-badge type="color" color="success">
-                        Success ${d({slot:"suffix"})}
+                        Success ${n({slot:"suffix"})}
                     </cosmoz-badge>
                 </div>
             </div>
@@ -603,19 +601,19 @@ import{A as L,b as i,w as G,D as eo}from"./iframe-DczPF-i1.js";import"./preload-
                 <h1 class="story-section-title">Modern</h1>
                 <div class="story-row">
                     <cosmoz-badge type="modern">
-                        Default ${d({slot:"suffix"})}
+                        Default ${n({slot:"suffix"})}
                     </cosmoz-badge>
                     <cosmoz-badge type="modern" color="brand">
-                        Brand ${d({slot:"suffix"})}
+                        Brand ${n({slot:"suffix"})}
                     </cosmoz-badge>
                     <cosmoz-badge type="modern" color="error">
-                        Error ${d({slot:"suffix"})}
+                        Error ${n({slot:"suffix"})}
                     </cosmoz-badge>
                     <cosmoz-badge type="modern" color="warning">
-                        Warning ${d({slot:"suffix"})}
+                        Warning ${n({slot:"suffix"})}
                     </cosmoz-badge>
                     <cosmoz-badge type="modern" color="success">
-                        Success ${d({slot:"suffix"})}
+                        Success ${n({slot:"suffix"})}
                     </cosmoz-badge>
                 </div>
             </div>
@@ -662,7 +660,7 @@ import{A as L,b as i,w as G,D as eo}from"./iframe-DczPF-i1.js";import"./preload-
     dot: false
   },
   render: renderBadge
-}`,...v.parameters?.docs?.source}}};w.parameters={...w.parameters,docs:{...w.parameters?.docs,source:{originalSource:`{
+}`,...v.parameters?.docs?.source}}};x.parameters={...x.parameters,docs:{...x.parameters?.docs,source:{originalSource:`{
   render: () => html\`
         <div class="story-row">
             <cosmoz-badge>Default</cosmoz-badge>
@@ -679,7 +677,7 @@ import{A as L,b as i,w as G,D as eo}from"./iframe-DczPF-i1.js";import"./preload-
       }
     }
   }
-}`,...w.parameters?.docs?.source}}};x.parameters={...x.parameters,docs:{...x.parameters?.docs,source:{originalSource:`{
+}`,...x.parameters?.docs?.source}}};w.parameters={...w.parameters,docs:{...w.parameters?.docs,source:{originalSource:`{
   render: () => html\`
         <div class="story-row">
             <cosmoz-badge>Gray</cosmoz-badge>
@@ -694,7 +692,7 @@ import{A as L,b as i,w as G,D as eo}from"./iframe-DczPF-i1.js";import"./preload-
       }
     }
   }
-}`,...x.parameters?.docs?.source}}};$.parameters={...$.parameters,docs:{...$.parameters?.docs,source:{originalSource:`{
+}`,...w.parameters?.docs?.source}}};$.parameters={...$.parameters,docs:{...$.parameters?.docs,source:{originalSource:`{
   render: () => html\`
         <div class="story-row">
             <cosmoz-badge size="sm" color="brand">Small</cosmoz-badge>
@@ -758,27 +756,27 @@ import{A as L,b as i,w as G,D as eo}from"./iframe-DczPF-i1.js";import"./preload-
                 <h1 class="story-section-title">Pill</h1>
                 <div class="story-row">
                     <cosmoz-badge>
-                        \${customTriangleIcon({
+                        \${customPrefixIcon({
     slot: 'prefix'
   })} Default
                     </cosmoz-badge>
                     <cosmoz-badge color="brand">
-                        \${customTriangleIcon({
+                        \${customPrefixIcon({
     slot: 'prefix'
   })} Brand
                     </cosmoz-badge>
                     <cosmoz-badge color="error">
-                        \${customTriangleIcon({
+                        \${customPrefixIcon({
     slot: 'prefix'
   })} Error
                     </cosmoz-badge>
                     <cosmoz-badge color="warning">
-                        \${customTriangleIcon({
+                        \${customPrefixIcon({
     slot: 'prefix'
   })} Warning
                     </cosmoz-badge>
                     <cosmoz-badge color="success">
-                        \${customTriangleIcon({
+                        \${customPrefixIcon({
     slot: 'prefix'
   })} Success
                     </cosmoz-badge>
@@ -788,27 +786,27 @@ import{A as L,b as i,w as G,D as eo}from"./iframe-DczPF-i1.js";import"./preload-
                 <h1 class="story-section-title">Color</h1>
                 <div class="story-row">
                     <cosmoz-badge type="color">
-                        \${customTriangleIcon({
+                        \${customPrefixIcon({
     slot: 'prefix'
   })} Default
                     </cosmoz-badge>
                     <cosmoz-badge type="color" color="brand">
-                        \${customTriangleIcon({
+                        \${customPrefixIcon({
     slot: 'prefix'
   })} Brand
                     </cosmoz-badge>
                     <cosmoz-badge type="color" color="error">
-                        \${customTriangleIcon({
+                        \${customPrefixIcon({
     slot: 'prefix'
   })} Error
                     </cosmoz-badge>
                     <cosmoz-badge type="color" color="warning">
-                        \${customTriangleIcon({
+                        \${customPrefixIcon({
     slot: 'prefix'
   })} Warning
                     </cosmoz-badge>
                     <cosmoz-badge type="color" color="success">
-                        \${customTriangleIcon({
+                        \${customPrefixIcon({
     slot: 'prefix'
   })} Success
                     </cosmoz-badge>
@@ -818,27 +816,27 @@ import{A as L,b as i,w as G,D as eo}from"./iframe-DczPF-i1.js";import"./preload-
                 <h1 class="story-section-title">Modern</h1>
                 <div class="story-row">
                     <cosmoz-badge type="modern">
-                        \${customTriangleIcon({
+                        \${customPrefixIcon({
     slot: 'prefix'
   })} Default
                     </cosmoz-badge>
                     <cosmoz-badge type="modern" color="brand">
-                        \${customTriangleIcon({
+                        \${customPrefixIcon({
     slot: 'prefix'
   })} Brand
                     </cosmoz-badge>
                     <cosmoz-badge type="modern" color="error">
-                        \${customTriangleIcon({
+                        \${customPrefixIcon({
     slot: 'prefix'
   })} Error
                     </cosmoz-badge>
                     <cosmoz-badge type="modern" color="warning">
-                        \${customTriangleIcon({
+                        \${customPrefixIcon({
     slot: 'prefix'
   })} Warning
                     </cosmoz-badge>
                     <cosmoz-badge type="modern" color="success">
-                        \${customTriangleIcon({
+                        \${customPrefixIcon({
     slot: 'prefix'
   })} Success
                     </cosmoz-badge>
@@ -860,27 +858,27 @@ import{A as L,b as i,w as G,D as eo}from"./iframe-DczPF-i1.js";import"./preload-
                 <h1 class="story-section-title">Pill</h1>
                 <div class="story-row">
                     <cosmoz-badge>
-                        Default \${customArrowUpIcon({
+                        Default \${customSuffixIcon({
     slot: 'suffix'
   })}
                     </cosmoz-badge>
                     <cosmoz-badge color="brand">
-                        Brand \${customArrowUpIcon({
+                        Brand \${customSuffixIcon({
     slot: 'suffix'
   })}
                     </cosmoz-badge>
                     <cosmoz-badge color="error">
-                        Error \${customArrowUpIcon({
+                        Error \${customSuffixIcon({
     slot: 'suffix'
   })}
                     </cosmoz-badge>
                     <cosmoz-badge color="warning">
-                        Warning \${customArrowUpIcon({
+                        Warning \${customSuffixIcon({
     slot: 'suffix'
   })}
                     </cosmoz-badge>
                     <cosmoz-badge color="success">
-                        Success \${customArrowUpIcon({
+                        Success \${customSuffixIcon({
     slot: 'suffix'
   })}
                     </cosmoz-badge>
@@ -890,27 +888,27 @@ import{A as L,b as i,w as G,D as eo}from"./iframe-DczPF-i1.js";import"./preload-
                 <h1 class="story-section-title">Color</h1>
                 <div class="story-row">
                     <cosmoz-badge type="color">
-                        Default \${customArrowUpIcon({
+                        Default \${customSuffixIcon({
     slot: 'suffix'
   })}
                     </cosmoz-badge>
                     <cosmoz-badge type="color" color="brand">
-                        Brand \${customArrowUpIcon({
+                        Brand \${customSuffixIcon({
     slot: 'suffix'
   })}
                     </cosmoz-badge>
                     <cosmoz-badge type="color" color="error">
-                        Error \${customArrowUpIcon({
+                        Error \${customSuffixIcon({
     slot: 'suffix'
   })}
                     </cosmoz-badge>
                     <cosmoz-badge type="color" color="warning">
-                        Warning \${customArrowUpIcon({
+                        Warning \${customSuffixIcon({
     slot: 'suffix'
   })}
                     </cosmoz-badge>
                     <cosmoz-badge type="color" color="success">
-                        Success \${customArrowUpIcon({
+                        Success \${customSuffixIcon({
     slot: 'suffix'
   })}
                     </cosmoz-badge>
@@ -920,27 +918,27 @@ import{A as L,b as i,w as G,D as eo}from"./iframe-DczPF-i1.js";import"./preload-
                 <h1 class="story-section-title">Modern</h1>
                 <div class="story-row">
                     <cosmoz-badge type="modern">
-                        Default \${customArrowUpIcon({
+                        Default \${customSuffixIcon({
     slot: 'suffix'
   })}
                     </cosmoz-badge>
                     <cosmoz-badge type="modern" color="brand">
-                        Brand \${customArrowUpIcon({
+                        Brand \${customSuffixIcon({
     slot: 'suffix'
   })}
                     </cosmoz-badge>
                     <cosmoz-badge type="modern" color="error">
-                        Error \${customArrowUpIcon({
+                        Error \${customSuffixIcon({
     slot: 'suffix'
   })}
                     </cosmoz-badge>
                     <cosmoz-badge type="modern" color="warning">
-                        Warning \${customArrowUpIcon({
+                        Warning \${customSuffixIcon({
     slot: 'suffix'
   })}
                     </cosmoz-badge>
                     <cosmoz-badge type="modern" color="success">
-                        Success \${customArrowUpIcon({
+                        Success \${customSuffixIcon({
     slot: 'suffix'
   })}
                     </cosmoz-badge>
@@ -997,4 +995,4 @@ import{A as L,b as i,w as G,D as eo}from"./iframe-DczPF-i1.js";import"./preload-
       }
     }
   }
-}`,..._.parameters?.docs?.source}}};const Io=["Default","Colors","Types","Sizes","WithDot","WithPrefixIcon","WithSuffixIcon","AllColorsByType"];export{_ as AllColorsByType,w as Colors,v as Default,$ as Sizes,x as Types,S as WithDot,E as WithPrefixIcon,k as WithSuffixIcon,Io as __namedExportsOrder,Bo as default};
+}`,..._.parameters?.docs?.source}}};const Bo=["Default","Colors","Types","Sizes","WithDot","WithPrefixIcon","WithSuffixIcon","AllColorsByType"];export{_ as AllColorsByType,x as Colors,v as Default,$ as Sizes,w as Types,S as WithDot,E as WithPrefixIcon,k as WithSuffixIcon,Bo as __namedExportsOrder,Po as default};
