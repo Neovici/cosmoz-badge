@@ -1,6 +1,1 @@
-export {
-	CosmozBadge,
-	type BadgeColor,
-	type BadgeSize,
-	type BadgeType,
-} from './cosmoz-badge';
+export { CosmozBadge } from './cosmoz-badge';

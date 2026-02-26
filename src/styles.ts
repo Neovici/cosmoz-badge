@@ -124,6 +124,9 @@ export const styles = css`
 		background-color: var(--cz-color-fg-quaternary);
 		flex-shrink: 0;
 	}
+	:host(:not([dot])) .dot {
+		display: none;
+	}
 	:host([color='brand']) .dot {
 		background-color: var(--cz-color-fg-brand-secondary);
 	}

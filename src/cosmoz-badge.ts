@@ -1,21 +1,6 @@
 import { normalize } from '@neovici/cosmoz-tokens/normalize';
 import { component, html } from '@pionjs/pion';
-import { nothing } from 'lit-html';
-import { when } from 'lit-html/directives/when.js';
 import { styles } from './styles';
-
-export type BadgeType = 'pill' | 'color' | 'modern';
-export type BadgeColor = 'gray' | 'brand' | 'error' | 'warning' | 'success';
-export type BadgeSize = 'sm' | 'md' | 'lg';
-
-export interface CosmozBadgeElement extends HTMLElement {
-	type: BadgeType;
-	color: BadgeColor;
-	size: BadgeSize;
-	dot: boolean;
-}
-
-const observedAttributes = ['type', 'color', 'size', 'dot'] as const;
 
 /**
  * A customizable badge component using cosmoz design tokens.
@@ -53,15 +38,9 @@ const observedAttributes = ['type', 'color', 'size', 'dot'] as const;
  * </cosmoz-badge>
  * ```
  */
-const CosmozBadge = (host: CosmozBadgeElement) => {
-	const dot = host.hasAttribute('dot');
-
+const CosmozBadge = () => {
 	return html`<span class="badge" part="badge" role="status">
-		${when(
-			dot,
-			() => html`<span class="dot" part="dot"></span>`,
-			() => nothing,
-		)}
+		<span class="dot" part="dot"></span>
 		<slot name="prefix"></slot>
 		<slot></slot>
 		<slot name="suffix"></slot>
@@ -70,8 +49,7 @@ const CosmozBadge = (host: CosmozBadgeElement) => {
 
 customElements.define(
 	'cosmoz-badge',
-	component<CosmozBadgeElement>(CosmozBadge, {
-		observedAttributes,
+	component(CosmozBadge, {
 		styleSheets: [normalize, styles],
 	}),
 );
