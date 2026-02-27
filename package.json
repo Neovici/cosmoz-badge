@@ -1,19 +1,19 @@
 {
-  "name": "@neovici/cosmoz-component",
-  "version": "1.4.0",
-  "description": "Template for Neovici public web components",
+  "name": "@neovici/cosmoz-badge",
+  "version": "1.0.0",
+  "description": "A customizable badge web component built with Untitled UI design tokens",
   "keywords": [
     "web-components",
     "pion",
     "lit-html"
   ],
-  "homepage": "https://github.com/Neovici/cosmoz-component#readme",
+  "homepage": "https://github.com/Neovici/cosmoz-badge#readme",
   "bugs": {
-    "url": "https://github.com/Neovici/cosmoz-component/issues"
+    "url": "https://github.com/Neovici/cosmoz-badge/issues"
   },
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/Neovici/cosmoz-component.git"
+    "url": "git+https://github.com/Neovici/cosmoz-badge.git"
   },
   "license": "Apache-2.0",
   "author": "Neovici Development",
@@ -55,7 +55,7 @@
   ],
   "exports": {
     ".": "./dist/index.js",
-    "./cosmoz-component": "./dist/component.js"
+    "./cosmoz-badge": "./dist/cosmoz-badge.js"
   },
   "dependencies": {
     "@neovici/cosmoz-icons": "^1.5.0",
