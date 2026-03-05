@@ -170,9 +170,38 @@ export const styles = css`
 	}
 
 	/* =========================================
+	 * ICON-ONLY TYPE
+	 * ========================================= */
+	:host([type='icon']) .badge {
+		padding: ${sp(2)};
+		gap: 0;
+	}
+
+	:host([type='icon'][size='sm']) .badge {
+		padding: ${sp(1.5)};
+	}
+
+	:host([type='icon'][size='lg']) .badge {
+		padding: ${sp(2.5)};
+	}
+
+	:host([type='icon']) .dot,
+	:host([type='icon']) slot[name='prefix'],
+	:host([type='icon']) slot[name='suffix'] {
+		display: none;
+	}
+
+	:host([type='icon']) ::slotted(svg) {
+		width: ${sp(3)};
+		height: ${sp(3)};
+	}
+
+	/* =========================================
 	 * SLOTTED CONTENT (icons, images, flags)
 	 * ========================================= */
 	::slotted(svg) {
+		width: ${sp(3)};
+		height: ${sp(3)};
 		color: var(--cz-color-fg-quaternary);
 	}
 

@@ -7,7 +7,7 @@ import { styles } from './styles';
  *
  * @element cosmoz-badge
  *
- * @attr {string} type - Badge type: pill (default), color, modern
+ * @attr {string} type - Badge type: pill (default), color, modern, icon
  * @attr {string} color - Badge color: gray (default), brand, error, warning, success
  * @attr {string} size - Badge size: sm, md (default), lg
  * @attr {boolean} dot - Show a colored dot indicator before text
