@@ -40,8 +40,8 @@ export const styles = css`
 	 * ========================================= */
 
 	:host([color='brand']) .badge {
-		background-color: var(--cz-color-bg-brand);
-		color: var(--cz-color-text-brand);
+		background-color: var(--cz-color-brand-50);
+		color: var(--cz-color-brand-700);
 		border-color: var(--cz-color-brand-200);
 	}
 
