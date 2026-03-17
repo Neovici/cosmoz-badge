@@ -1,3 +1,9 @@
+## [1.0.2](https://github.com/Neovici/cosmoz-badge/compare/v1.0.1...v1.0.2) (2026-03-17)
+
+### Bug Fixes
+
+* brand color variant ([a45531d](https://github.com/Neovici/cosmoz-badge/commit/a45531d84910661b4a73a91c4535410398042444))
+
 ## [1.0.1](https://github.com/Neovici/cosmoz-badge/compare/v1.0.0...v1.0.1) (2026-03-17)
 
 ### Bug Fixes
