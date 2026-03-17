@@ -1,4 +1,4 @@
-import{A as so,b as l,w as M,D as ro}from"./iframe-CZeUWApT.js";import"./preload-helper-PPVm8Dsz.js";const z=o=>o??so;function A(o,e,s){return o?e(o):s?.(o)}const n=({slot:o,title:e,className:s,width:r="24",height:c="24",styles:i}={})=>l`
+import{A as so,b as l,w as M,D as ro}from"./iframe-BkSCYEIj.js";import"./preload-helper-PPVm8Dsz.js";const z=o=>o??so;function A(o,e,s){return o?e(o):s?.(o)}const n=({slot:o,title:e,className:s,width:r="24",height:c="24",styles:i}={})=>l`
   <svg
     slot=${z(o)}
     class=${`arrow-right-icon ${s??""}`}
@@ -299,8 +299,8 @@ import{A as so,b as l,w as M,D as ro}from"./iframe-CZeUWApT.js";import"./preload
 	 * ========================================= */
 
 	:host([color='brand']) .badge {
-		background-color: var(--cz-color-brand-50);
-		color: var(--cz-color-brand-700);
+		background-color: var(--cz-color-bg-brand);
+		color: var(--cz-color-text-on-brand);
 		border-color: var(--cz-color-brand-200);
 	}
 
