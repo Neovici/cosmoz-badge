@@ -1,3 +1,9 @@
+## [1.0.1](https://github.com/Neovici/cosmoz-badge/compare/v1.0.0...v1.0.1) (2026-03-17)
+
+### Bug Fixes
+
+* brand color variant for light/dark theme ([#10](https://github.com/Neovici/cosmoz-badge/issues/10)) ([67bf7f7](https://github.com/Neovici/cosmoz-badge/commit/67bf7f7321a2f7f9173b26e76c086616cca41385))
+
 ## 1.0.0 (2026-03-06)
 
 ### Features
