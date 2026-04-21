@@ -26,8 +26,12 @@ export const styles = css`
 		white-space: nowrap;
 		font-family: var(--cz-font-body);
 		font-weight: var(--cz-font-weight-medium);
-		border: 1px solid var(--cz-color-border-secondary);
-		background-color: var(--cz-color-bg-secondary);
+		border: 1px solid
+			var(--cosmoz-badge-border-color, var(--cz-color-border-secondary));
+		background-color: var(
+			--cosmoz-badge-bg-color,
+			var(--cz-color-bg-secondary)
+		);
 		color: var(--cz-color-text-secondary);
 		border-radius: var(--cz-radius-full);
 		padding: ${sp(0.5)} ${sp(2)};
