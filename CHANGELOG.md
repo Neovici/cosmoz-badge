@@ -1,3 +1,9 @@
+## [1.1.0](https://github.com/Neovici/cosmoz-badge/compare/v1.0.2...v1.1.0) (2026-04-21)
+
+### Features
+
+* expose CSS custom properties for badge border and background ([#12](https://github.com/Neovici/cosmoz-badge/issues/12)) ([3ee4e37](https://github.com/Neovici/cosmoz-badge/commit/3ee4e37b3b931797ebfdd81ccc088c7651c7d909))
+
 ## [1.0.2](https://github.com/Neovici/cosmoz-badge/compare/v1.0.1...v1.0.2) (2026-03-17)
 
 ### Bug Fixes
