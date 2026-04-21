@@ -1,4 +1,4 @@
-import{A as so,b as l,w as M,D as ro}from"./iframe-khLZ_lHL.js";import"./preload-helper-PPVm8Dsz.js";const z=o=>o??so;function A(o,e,s){return o?e(o):s?.(o)}const n=({slot:o,title:e,className:s,width:r="24",height:c="24",styles:i}={})=>l`
+import{A as so,b as l,w as M,D as ro}from"./iframe-Dqm4C7kE.js";import"./preload-helper-PPVm8Dsz.js";const z=o=>o??so;function A(o,e,s){return o?e(o):s?.(o)}const n=({slot:o,title:e,className:s,width:r="24",height:c="24",styles:i}={})=>l`
   <svg
     slot=${z(o)}
     class=${`arrow-right-icon ${s??""}`}
@@ -285,8 +285,12 @@ import{A as so,b as l,w as M,D as ro}from"./iframe-khLZ_lHL.js";import"./preload
 		white-space: nowrap;
 		font-family: var(--cz-font-body);
 		font-weight: var(--cz-font-weight-medium);
-		border: 1px solid var(--cz-color-border-secondary);
-		background-color: var(--cz-color-bg-secondary);
+		border: 1px solid
+			var(--cosmoz-badge-border-color, var(--cz-color-border-secondary));
+		background-color: var(
+			--cosmoz-badge-bg-color,
+			var(--cz-color-bg-secondary)
+		);
 		color: var(--cz-color-text-secondary);
 		border-radius: var(--cz-radius-full);
 		padding: ${t(.5)} ${t(2)};
