@@ -11,7 +11,9 @@ export const styles = css`
 	 * HOST
 	 * ========================================= */
 	:host {
-		display: inline-flex;
+		display: inline-block;
+		max-width: 100%;
+		min-width: 0;
 	}
 
 	/* =========================================
@@ -21,8 +23,8 @@ export const styles = css`
 		display: inline-flex;
 		align-items: center;
 		gap: ${sp(1.5)};
-		width: max-content;
-		height: max-content;
+		max-width: 100%;
+		min-width: calc(var(--cz-spacing) * 2);
 		white-space: nowrap;
 		font-family: var(--cz-font-body);
 		font-weight: var(--cz-font-weight-medium);
@@ -37,6 +39,12 @@ export const styles = css`
 		padding: ${sp(0.5)} ${sp(2)};
 		font-size: var(--cz-text-sm);
 		line-height: var(--cz-text-sm-line-height);
+	}
+
+	.content {
+		overflow: hidden;
+		text-overflow: ellipsis;
+		min-width: 0;
 	}
 
 	/* =========================================
@@ -204,8 +212,10 @@ export const styles = css`
 	 * SLOTTED CONTENT (icons, images, flags)
 	 * ========================================= */
 	::slotted(svg) {
+		display: block;
 		width: ${sp(3)};
 		height: ${sp(3)};
+		flex-shrink: 0;
 		color: var(--cz-color-fg-quaternary);
 	}
 
