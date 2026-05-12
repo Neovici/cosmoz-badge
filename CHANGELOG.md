@@ -1,3 +1,9 @@
+## [1.1.1](https://github.com/Neovici/cosmoz-badge/compare/v1.1.0...v1.1.1) (2026-05-12)
+
+### Bug Fixes
+
+* use inline-flex layout with proper text truncation ([#13](https://github.com/Neovici/cosmoz-badge/issues/13)) ([69fff3c](https://github.com/Neovici/cosmoz-badge/commit/69fff3c755bc357810f45728a2b0729f3625e8e8))
+
 ## [1.1.0](https://github.com/Neovici/cosmoz-badge/compare/v1.0.2...v1.1.0) (2026-04-21)
 
 ### Features
