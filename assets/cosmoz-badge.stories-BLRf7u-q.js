@@ -1,4 +1,4 @@
-import{A as so,b as l,w as M,D as ro}from"./iframe-Dqm4C7kE.js";import"./preload-helper-PPVm8Dsz.js";const z=o=>o??so;function A(o,e,s){return o?e(o):s?.(o)}const n=({slot:o,title:e,className:s,width:r="24",height:c="24",styles:i}={})=>l`
+import{A as so,b as l,w as M,D as ro}from"./iframe-DYF1qRoN.js";import"./preload-helper-PPVm8Dsz.js";const z=o=>o??so;function A(o,e,s){return o?e(o):s?.(o)}const n=({slot:o,title:e,className:s,width:r="24",height:c="24",styles:i}={})=>l`
   <svg
     slot=${z(o)}
     class=${`arrow-right-icon ${s??""}`}
@@ -270,7 +270,9 @@ import{A as so,b as l,w as M,D as ro}from"./iframe-Dqm4C7kE.js";import"./preload
 	 * HOST
 	 * ========================================= */
 	:host {
-		display: inline-flex;
+		display: inline-block;
+		max-width: 100%;
+		min-width: 0;
 	}
 
 	/* =========================================
@@ -280,8 +282,8 @@ import{A as so,b as l,w as M,D as ro}from"./iframe-Dqm4C7kE.js";import"./preload
 		display: inline-flex;
 		align-items: center;
 		gap: ${t(1.5)};
-		width: max-content;
-		height: max-content;
+		max-width: 100%;
+		min-width: calc(var(--cz-spacing) * 2);
 		white-space: nowrap;
 		font-family: var(--cz-font-body);
 		font-weight: var(--cz-font-weight-medium);
@@ -296,6 +298,12 @@ import{A as so,b as l,w as M,D as ro}from"./iframe-Dqm4C7kE.js";import"./preload
 		padding: ${t(.5)} ${t(2)};
 		font-size: var(--cz-text-sm);
 		line-height: var(--cz-text-sm-line-height);
+	}
+
+	.content {
+		overflow: hidden;
+		text-overflow: ellipsis;
+		min-width: 0;
 	}
 
 	/* =========================================
@@ -463,8 +471,10 @@ import{A as so,b as l,w as M,D as ro}from"./iframe-Dqm4C7kE.js";import"./preload
 	 * SLOTTED CONTENT (icons, images, flags)
 	 * ========================================= */
 	::slotted(svg) {
+		display: block;
 		width: ${t(3)};
 		height: ${t(3)};
+		flex-shrink: 0;
 		color: var(--cz-color-fg-quaternary);
 	}
 
@@ -483,9 +493,9 @@ import{A as so,b as l,w as M,D as ro}from"./iframe-Dqm4C7kE.js";import"./preload
 `,So=()=>l`<span class="badge" part="badge" role="status">
 		<span class="dot" part="dot"></span>
 		<slot name="prefix"></slot>
-		<slot></slot>
+		<span class="content"><slot></slot></span>
 		<slot name="suffix"></slot>
-	</span>`;customElements.define("cosmoz-badge",wo(So,{styleSheets:[$o,xo]}));const Io={title:"Cosmoz Badge",component:"cosmoz-badge",tags:["autodocs"],argTypes:{type:{control:"select",options:["pill","color","modern","icon"],description:"Badge type variant",table:{defaultValue:{summary:"pill"}}},color:{control:"select",options:["gray","brand","error","warning","success"],description:"Badge color scheme",table:{defaultValue:{summary:"gray"}}},size:{control:"select",options:["sm","md","lg"],description:"Badge size",table:{defaultValue:{summary:"md"}}},dot:{control:"boolean",description:"Show dot indicator",table:{defaultValue:{summary:"false"}}},label:{control:"text",description:"Badge label text"}}},Eo=o=>l`
+	</span>`;customElements.define("cosmoz-badge",wo(So,{styleSheets:[$o,xo]}));const Io={title:"Cosmoz Badge",component:"cosmoz-badge",tags:["autodocs"],argTypes:{type:{control:"select",options:["pill","color","modern","icon"],description:"Badge type variant",table:{defaultValue:{summary:"pill"}}},color:{control:"select",options:["gray","brand","error","warning","success"],description:"Badge color scheme",table:{defaultValue:{summary:"gray"}}},size:{control:"select",options:["sm","md","lg"],description:"Badge size",table:{defaultValue:{summary:"md"}}},dot:{control:"boolean",description:"Show dot indicator",table:{defaultValue:{summary:"false"}}},label:{control:"text",description:"Badge label text"}}},ko=o=>l`
     <cosmoz-badge
         type=${o.type||"pill"}
         color=${o.color||"gray"}
@@ -494,7 +504,7 @@ import{A as so,b as l,w as M,D as ro}from"./iframe-Dqm4C7kE.js";import"./preload
     >
         ${o.label||"Badge"}
     </cosmoz-badge>
-`,$={args:{type:"pill",color:"gray",size:"md",label:"Label",dot:!1},render:Eo},x={render:()=>l`
+`,$={args:{type:"pill",color:"gray",size:"md",label:"Label",dot:!1},render:ko},x={render:()=>l`
         <div class="story-row">
             <cosmoz-badge>Default</cosmoz-badge>
             <cosmoz-badge color="brand">Brand</cosmoz-badge>
@@ -508,13 +518,13 @@ import{A as so,b as l,w as M,D as ro}from"./iframe-Dqm4C7kE.js";import"./preload
             <cosmoz-badge type="color" color="brand">Color</cosmoz-badge>
             <cosmoz-badge type="modern">Modern</cosmoz-badge>
         </div>
-    `,parameters:{docs:{description:{story:"The three badge types: pill (rounded), badge (square corners), and modern (shadow + neutral colors)."}}}},E={render:()=>l`
+    `,parameters:{docs:{description:{story:"The three badge types: pill (rounded), badge (square corners), and modern (shadow + neutral colors)."}}}},k={render:()=>l`
         <div class="story-row">
             <cosmoz-badge size="sm" color="brand">Small</cosmoz-badge>
             <cosmoz-badge size="md" color="brand">Medium</cosmoz-badge>
             <cosmoz-badge size="lg" color="brand">Large</cosmoz-badge>
         </div>
-    `,parameters:{docs:{description:{story:"Badge sizes: sm, md, and lg."}}}},k={render:()=>l`
+    `,parameters:{docs:{description:{story:"Badge sizes: sm, md, and lg."}}}},E={render:()=>l`
         <div class="story-stack">
             <div>
                 <h1 class="story-section-title">Pill</h1>
@@ -772,7 +782,7 @@ import{A as so,b as l,w as M,D as ro}from"./iframe-Dqm4C7kE.js";import"./preload
       }
     }
   }
-}`,...S.parameters?.docs?.source}}};E.parameters={...E.parameters,docs:{...E.parameters?.docs,source:{originalSource:`{
+}`,...S.parameters?.docs?.source}}};k.parameters={...k.parameters,docs:{...k.parameters?.docs,source:{originalSource:`{
   render: () => html\`
         <div class="story-row">
             <cosmoz-badge size="sm" color="brand">Small</cosmoz-badge>
@@ -787,7 +797,7 @@ import{A as so,b as l,w as M,D as ro}from"./iframe-Dqm4C7kE.js";import"./preload
       }
     }
   }
-}`,...E.parameters?.docs?.source}}};k.parameters={...k.parameters,docs:{...k.parameters?.docs,source:{originalSource:`{
+}`,...k.parameters?.docs?.source}}};E.parameters={...E.parameters,docs:{...E.parameters?.docs,source:{originalSource:`{
   render: () => html\`
         <div class="story-stack">
             <div>
@@ -829,7 +839,7 @@ import{A as so,b as l,w as M,D as ro}from"./iframe-Dqm4C7kE.js";import"./preload
       }
     }
   }
-}`,...k.parameters?.docs?.source}}};C.parameters={...C.parameters,docs:{...C.parameters?.docs,source:{originalSource:`{
+}`,...E.parameters?.docs?.source}}};C.parameters={...C.parameters,docs:{...C.parameters?.docs,source:{originalSource:`{
   render: () => html\`
         <div class="story-stack">
             <div>
@@ -1109,4 +1119,4 @@ import{A as so,b as l,w as M,D as ro}from"./iframe-Dqm4C7kE.js";import"./preload
       }
     }
   }
-}`,...B.parameters?.docs?.source}}};const _o=["Default","Colors","Types","Sizes","WithDot","WithPrefixIcon","WithSuffixIcon","IconOnly","AllColorsByType"];export{B as AllColorsByType,x as Colors,$ as Default,_ as IconOnly,E as Sizes,S as Types,k as WithDot,C as WithPrefixIcon,I as WithSuffixIcon,_o as __namedExportsOrder,Io as default};
+}`,...B.parameters?.docs?.source}}};const _o=["Default","Colors","Types","Sizes","WithDot","WithPrefixIcon","WithSuffixIcon","IconOnly","AllColorsByType"];export{B as AllColorsByType,x as Colors,$ as Default,_ as IconOnly,k as Sizes,S as Types,E as WithDot,C as WithPrefixIcon,I as WithSuffixIcon,_o as __namedExportsOrder,Io as default};
