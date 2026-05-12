@@ -42,7 +42,7 @@ const CosmozBadge = () => {
 	return html`<span class="badge" part="badge" role="status">
 		<span class="dot" part="dot"></span>
 		<slot name="prefix"></slot>
-		<slot></slot>
+		<span class="content"><slot></slot></span>
 		<slot name="suffix"></slot>
 	</span>`;
 };
