@@ -52,9 +52,9 @@ export const styles = css`
 	 * ========================================= */
 
 	:host([color='brand']) .badge {
-		background-color: var(--cz-color-bg-brand);
-		color: var(--cz-color-text-secondary);
-		border-color: var(--cz-color-brand-200);
+		background-color: var(--cz-color-brand-300);
+		color: var(--cz-color-brand-950);
+		border-color: var(--cz-color-brand-900);
 	}
 
 	:host([color='error']) .badge {
@@ -73,6 +73,12 @@ export const styles = css`
 		background-color: var(--cz-color-bg-success);
 		color: var(--cz-color-text-success);
 		border-color: var(--cz-color-success-200);
+	}
+
+	:host([color='processing']) .badge {
+		background-color: var(--cz-color-indigo-300);
+		color: var(--cz-color-indigo-900);
+		border-color: var(--cz-color-indigo-900);
 	}
 
 	/* Modern type: neutral bg/text/border regardless of color */
@@ -151,7 +157,9 @@ export const styles = css`
 	:host([color='success']) .dot {
 		background-color: var(--cz-color-fg-success-secondary);
 	}
-
+	:host([color='processing']) .dot {
+		background-color: var(--cz-color-indigo-800);
+	}
 	/* Pill + dot: asymmetric padding (tighter left) */
 	:host([dot]) .badge {
 		padding: ${sp(0.5)} ${sp(2.5)} ${sp(0.5)} ${sp(2)};
@@ -204,8 +212,17 @@ export const styles = css`
 	}
 
 	:host([type='icon']) ::slotted(svg) {
+		width: ${sp(4)};
+		height: ${sp(4)};
+	}
+
+	:host([type='icon'][size='sm']) ::slotted(svg) {
 		width: ${sp(3)};
 		height: ${sp(3)};
+	}
+	:host([type='icon'][size='lg']) ::slotted(svg) {
+		width: ${sp(5)};
+		height: ${sp(5)};
 	}
 
 	/* =========================================
@@ -230,5 +247,8 @@ export const styles = css`
 	}
 	:host([color='success']) ::slotted(svg) {
 		color: var(--cz-color-fg-success-secondary);
+	}
+	:host([color='processing']) ::slotted(svg) {
+		color: var(--cz-color-indigo-800);
 	}
 `;
