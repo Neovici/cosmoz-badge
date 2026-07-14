@@ -1,4 +1,4 @@
-import{A as so,b as l,w as M,D as ro}from"./iframe-D-XWP3QK.js";import"./preload-helper-PPVm8Dsz.js";const z=o=>o??so;function A(o,e,s){return o?e(o):s?.(o)}const a=({slot:o,title:e,className:s,width:r="24",height:c="24",styles:i}={})=>l`
+import{A as so,b as l,w as M,D as ro}from"./iframe-CpFNmd4y.js";import"./preload-helper-PPVm8Dsz.js";const z=o=>o??so;function A(o,e,s){return o?e(o):s?.(o)}const a=({slot:o,title:e,className:s,width:r="24",height:c="24",styles:i}={})=>l`
   <svg
     slot=${z(o)}
     class=${`arrow-right-icon ${s??""}`}
@@ -311,9 +311,9 @@ import{A as so,b as l,w as M,D as ro}from"./iframe-D-XWP3QK.js";import"./preload
 	 * ========================================= */
 
 	:host([color='brand']) .badge {
-		background-color: var(--cz-color-brand-300);
-		color: var(--cz-color-brand-950);
-		border-color: var(--cz-color-brand-900);
+		background-color: var(--cz-color-brand-50);
+		color: var(--cz-color-brand-800);
+		border-color: var(--cz-color-brand-300);
 	}
 
 	:host([color='error']) .badge {
@@ -335,9 +335,9 @@ import{A as so,b as l,w as M,D as ro}from"./iframe-D-XWP3QK.js";import"./preload
 	}
 
 	:host([color='processing']) .badge {
-		background-color: var(--cz-color-indigo-300);
-		color: var(--cz-color-indigo-900);
-		border-color: var(--cz-color-indigo-900);
+		background-color: var(--cz-color-indigo-100);
+		color: var(--cz-color-indigo-800);
+		border-color: var(--cz-color-indigo-300);
 	}
 
 	/* Modern type: neutral bg/text/border regardless of color */
