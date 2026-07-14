@@ -1,5 +1,11 @@
 ## [1.1.1](https://github.com/Neovici/cosmoz-badge/compare/v1.1.0...v1.1.1) (2026-05-12)
 
+## 1.1.3
+
+### Patch Changes
+
+- 3f4770f: Add new color option, refactor the brand color and resize the type icon svg dimensions
+
 ## 1.1.2
 
 ### Patch Changes
