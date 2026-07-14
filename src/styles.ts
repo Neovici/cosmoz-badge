@@ -52,9 +52,9 @@ export const styles = css`
 	 * ========================================= */
 
 	:host([color='brand']) .badge {
-		background-color: var(--cz-color-brand-300);
-		color: var(--cz-color-brand-950);
-		border-color: var(--cz-color-brand-900);
+		background-color: var(--cz-color-brand-50);
+		color: var(--cz-color-brand-800);
+		border-color: var(--cz-color-brand-300);
 	}
 
 	:host([color='error']) .badge {
@@ -76,9 +76,9 @@ export const styles = css`
 	}
 
 	:host([color='processing']) .badge {
-		background-color: var(--cz-color-indigo-300);
-		color: var(--cz-color-indigo-900);
-		border-color: var(--cz-color-indigo-900);
+		background-color: var(--cz-color-indigo-100);
+		color: var(--cz-color-indigo-800);
+		border-color: var(--cz-color-indigo-300);
 	}
 
 	/* Modern type: neutral bg/text/border regardless of color */
