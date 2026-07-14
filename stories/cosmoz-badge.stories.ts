@@ -75,6 +75,7 @@ export const Colors = {
 			<cosmoz-badge color="error">Error</cosmoz-badge>
 			<cosmoz-badge color="warning">Warning</cosmoz-badge>
 			<cosmoz-badge color="success">Success</cosmoz-badge>
+			<cosmoz-badge color="processing">Processing</cosmoz-badge>
 		</div>
 	`,
 	parameters: {
@@ -132,6 +133,7 @@ export const WithDot = {
 					<cosmoz-badge dot color="error">Error</cosmoz-badge>
 					<cosmoz-badge dot color="warning">Warning</cosmoz-badge>
 					<cosmoz-badge dot color="success">Success</cosmoz-badge>
+					<cosmoz-badge dot color="processing">Processing</cosmoz-badge>
 				</div>
 			</div>
 			<div>
@@ -142,6 +144,9 @@ export const WithDot = {
 					<cosmoz-badge dot type="color" color="error">Error</cosmoz-badge>
 					<cosmoz-badge dot type="color" color="warning">Warning</cosmoz-badge>
 					<cosmoz-badge dot type="color" color="success">Success</cosmoz-badge>
+					<cosmoz-badge dot type="color" color="processing"
+						>Processing</cosmoz-badge
+					>
 				</div>
 			</div>
 			<div>
@@ -152,6 +157,9 @@ export const WithDot = {
 					<cosmoz-badge dot type="modern" color="error">Error</cosmoz-badge>
 					<cosmoz-badge dot type="modern" color="warning">Warning</cosmoz-badge>
 					<cosmoz-badge dot type="modern" color="success">Success</cosmoz-badge>
+					<cosmoz-badge dot type="modern" color="processing"
+						>Processing</cosmoz-badge
+					>
 				</div>
 			</div>
 		</div>
@@ -189,6 +197,9 @@ export const WithPrefixIcon = {
 					<cosmoz-badge color="success">
 						${arrowUpIcon({ slot: 'prefix' })} Success
 					</cosmoz-badge>
+					<cosmoz-badge color="processing">
+						${arrowUpIcon({ slot: 'prefix' })} Processing
+					</cosmoz-badge>
 				</div>
 			</div>
 			<div>
@@ -209,6 +220,9 @@ export const WithPrefixIcon = {
 					<cosmoz-badge type="color" color="success">
 						${arrowUpIcon({ slot: 'prefix' })} Success
 					</cosmoz-badge>
+					<cosmoz-badge type="color" color="processing">
+						${arrowUpIcon({ slot: 'prefix' })} Processing
+					</cosmoz-badge>
 				</div>
 			</div>
 			<div>
@@ -228,6 +242,9 @@ export const WithPrefixIcon = {
 					</cosmoz-badge>
 					<cosmoz-badge type="modern" color="success">
 						${arrowUpIcon({ slot: 'prefix' })} Success
+					</cosmoz-badge>
+					<cosmoz-badge type="modern" color="processing">
+						${arrowUpIcon({ slot: 'prefix' })} Processing
 					</cosmoz-badge>
 				</div>
 			</div>
@@ -264,6 +281,9 @@ export const WithSuffixIcon = {
 					<cosmoz-badge color="success">
 						Success ${arrowRightIcon({ slot: 'suffix' })}
 					</cosmoz-badge>
+					<cosmoz-badge color="processing">
+						Processing ${arrowRightIcon({ slot: 'suffix' })}
+					</cosmoz-badge>
 				</div>
 			</div>
 			<div>
@@ -284,6 +304,9 @@ export const WithSuffixIcon = {
 					<cosmoz-badge type="color" color="success">
 						Success ${arrowRightIcon({ slot: 'suffix' })}
 					</cosmoz-badge>
+					<cosmoz-badge type="color" color="processing">
+						Processing ${arrowRightIcon({ slot: 'suffix' })}
+					</cosmoz-badge>
 				</div>
 			</div>
 			<div>
@@ -303,6 +326,9 @@ export const WithSuffixIcon = {
 					</cosmoz-badge>
 					<cosmoz-badge type="modern" color="success">
 						Success ${arrowRightIcon({ slot: 'suffix' })}
+					</cosmoz-badge>
+					<cosmoz-badge type="modern" color="processing">
+						Processing ${arrowRightIcon({ slot: 'suffix' })}
 					</cosmoz-badge>
 				</div>
 			</div>
@@ -343,6 +369,9 @@ export const IconOnly = {
 					<cosmoz-badge type="icon" color="success">
 						${plusIcon()}
 					</cosmoz-badge>
+					<cosmoz-badge type="icon" color="processing">
+						${plusIcon()}
+					</cosmoz-badge>
 				</div>
 			</div>
 		</div>
@@ -370,6 +399,7 @@ export const AllColorsByType = {
 					<cosmoz-badge color="error">Error</cosmoz-badge>
 					<cosmoz-badge color="warning">Warning</cosmoz-badge>
 					<cosmoz-badge color="success">Success</cosmoz-badge>
+					<cosmoz-badge color="processing">Processing</cosmoz-badge>
 				</div>
 			</div>
 			<div>
@@ -380,6 +410,9 @@ export const AllColorsByType = {
 					<cosmoz-badge type="color" color="error">Error</cosmoz-badge>
 					<cosmoz-badge type="color" color="warning">Warning</cosmoz-badge>
 					<cosmoz-badge type="color" color="success">Success</cosmoz-badge>
+					<cosmoz-badge type="color" color="processing"
+						>Processing</cosmoz-badge
+					>
 				</div>
 			</div>
 			<div>
@@ -390,6 +423,9 @@ export const AllColorsByType = {
 					<cosmoz-badge type="modern" color="error">Error</cosmoz-badge>
 					<cosmoz-badge type="modern" color="warning">Warning</cosmoz-badge>
 					<cosmoz-badge type="modern" color="success">Success</cosmoz-badge>
+					<cosmoz-badge type="modern" color="processing"
+						>Processing</cosmoz-badge
+					>
 				</div>
 			</div>
 		</div>
