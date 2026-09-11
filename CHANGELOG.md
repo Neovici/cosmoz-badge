@@ -1,5 +1,3 @@
-## [1.1.1](https://github.com/Neovici/cosmoz-badge/compare/v1.1.0...v1.1.1) (2026-05-12)
-
 ## 1.1.4
 
 ### Patch Changes
