@@ -52,9 +52,9 @@ export const styles = css`
 	 * ========================================= */
 
 	:host([color='brand']) .badge {
-		background-color: var(--cz-color-brand-50);
-		color: var(--cz-color-brand-800);
-		border-color: var(--cz-color-brand-300);
+		background-color: var(--cz-color-bg-brand);
+		color: var(--cz-color-text-on-brand);
+		border-color: var(--cz-color-border-brand);
 	}
 
 	:host([color='error']) .badge {
