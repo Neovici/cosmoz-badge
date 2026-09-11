@@ -52,9 +52,17 @@ export const styles = css`
 	 * ========================================= */
 
 	:host([color='brand']) .badge {
-		background-color: var(--cz-color-bg-brand);
-		color: var(--cz-color-text-on-brand);
-		border-color: var(--cz-color-border-brand);
+		background-color: color-mix(
+			in oklab,
+			var(--cz-color-fg-brand) 10%,
+			var(--cz-color-bg-primary)
+		);
+		color: var(--cz-color-text-brand);
+		border-color: color-mix(
+			in oklab,
+			var(--cz-color-fg-brand) 40%,
+			transparent
+		);
 	}
 
 	:host([color='error']) .badge {
