@@ -1,4 +1,8 @@
-## [1.1.1](https://github.com/Neovici/cosmoz-badge/compare/v1.1.0...v1.1.1) (2026-05-12)
+## 1.1.4
+
+### Patch Changes
+
+- 681b4d1: Use semantic color tokens for brand badges so they adapt to light and dark themes.
 
 ## 1.1.3
 
