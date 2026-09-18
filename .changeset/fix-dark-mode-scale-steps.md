@@ -2,16 +2,15 @@
 '@neovici/cosmoz-badge': minor
 ---
 
-Upgrade to `@neovici/cosmoz-tokens` v4 and stop reading raw scale steps.
+Fix badge colors in dark mode.
 
-The `error`, `warning` and `success` borders read `--cz-color-*-200`, and the
-whole `processing` variant read `--cz-color-indigo-100/300/800`. Raw scale
-steps are static — the token package only resolves its _semantic_ layer per
-colour-scheme — so in dark mode those chips drew near-white borders and
-`processing` rendered fully inverted: a pale fill with dark navy text.
+Error, warning and success badges had a pale, almost white outline, and the
+processing badge came out completely wrong: a near-white pill with dark navy
+text, as if it had never left light mode.
 
-Borders now derive from the scheme-aware `--cz-color-fg-*` tokens, matching the
-pattern `brand` already used. `processing` has no semantic equivalent in tokens,
-so it derives a `light-dark()` pair locally from the indigo ramp.
+These badges picked their colors from the fixed color scale, which always
+returns light values. They now use the theme's semantic colors, which follow
+the light or dark theme automatically.
 
-Requires `color-scheme` on the host document, per tokens v4.
+Also upgrades to cosmoz-tokens v4. Dark mode now follows the page's
+`color-scheme` instead of a CSS class.
