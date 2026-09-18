@@ -1,4 +1,4 @@
-import{A as so,b as l,w as M,D as ro}from"./iframe-BeWWkn7z.js";import"./preload-helper-PPVm8Dsz.js";const z=o=>o??so;function A(o,e,s){return o?e(o):s?.(o)}const a=({slot:o,title:e,className:s,width:r="24",height:c="24",styles:i}={})=>l`
+import{A as so,b as l,w as M,D as ro}from"./iframe-tQPJvHRP.js";import"./preload-helper-PPVm8Dsz.js";const z=o=>o??so;function A(o,e,s){return o?e(o):s?.(o)}const a=({slot:o,title:e,className:s,width:r="24",height:c="24",styles:i}={})=>l`
   <svg
     slot=${z(o)}
     class=${`arrow-right-icon ${s??""}`}
@@ -273,15 +273,6 @@ import{A as so,b as l,w as M,D as ro}from"./iframe-BeWWkn7z.js";import"./preload
 		display: inline-block;
 		max-width: 100%;
 		min-width: 0;
-
-		/* tokens has no semantic equivalent for 'processing', so derive a
-		   scheme-aware pair here the way the semantic fg-* tokens do.
-		   Raw scale steps are static in tokens v4 and must not be used
-		   directly, or the variant renders light colours in dark mode. */
-		--_cz-badge-processing-fg: light-dark(
-			var(--cz-color-indigo-700),
-			var(--cz-color-indigo-300)
-		);
 	}
 
 	/* =========================================
@@ -364,15 +355,11 @@ import{A as so,b as l,w as M,D as ro}from"./iframe-BeWWkn7z.js";import"./preload
 	}
 
 	:host([color='processing']) .badge {
-		background-color: color-mix(
-			in oklab,
-			var(--_cz-badge-processing-fg) 10%,
-			var(--cz-color-bg-primary)
-		);
-		color: var(--_cz-badge-processing-fg);
+		background-color: var(--cz-color-bg-processing);
+		color: var(--cz-color-text-processing);
 		border-color: color-mix(
 			in oklab,
-			var(--_cz-badge-processing-fg) 40%,
+			var(--cz-color-fg-processing) 40%,
 			transparent
 		);
 	}
@@ -454,7 +441,7 @@ import{A as so,b as l,w as M,D as ro}from"./iframe-BeWWkn7z.js";import"./preload
 		background-color: var(--cz-color-fg-success-secondary);
 	}
 	:host([color='processing']) .dot {
-		background-color: var(--_cz-badge-processing-fg);
+		background-color: var(--cz-color-fg-processing-secondary);
 	}
 	/* Pill + dot: asymmetric padding (tighter left) */
 	:host([dot]) .badge {
@@ -545,7 +532,7 @@ import{A as so,b as l,w as M,D as ro}from"./iframe-BeWWkn7z.js";import"./preload
 		color: var(--cz-color-fg-success-secondary);
 	}
 	:host([color='processing']) ::slotted(svg) {
-		color: var(--_cz-badge-processing-fg);
+		color: var(--cz-color-fg-processing-secondary);
 	}
 `,So=()=>l`<span class="badge" part="badge" role="status">
 		<span class="dot" part="dot"></span>
@@ -766,7 +753,7 @@ import{A as so,b as l,w as M,D as ro}from"./iframe-BeWWkn7z.js";import"./preload
                 </div>
             </div>
         </div>
-    `,parameters:{docs:{description:{story:'Badge with a trailing (suffix) icon. Place an SVG with slot="suffix".'}}}},_={render:()=>l`
+    `,parameters:{docs:{description:{story:'Badge with a trailing (suffix) icon. Place an SVG with slot="suffix".'}}}},C={render:()=>l`
         <div class="story-stack">
             <div>
                 <h1 class="story-section-title">Sizes</h1>
@@ -794,7 +781,7 @@ import{A as so,b as l,w as M,D as ro}from"./iframe-BeWWkn7z.js";import"./preload
                 </div>
             </div>
         </div>
-    `,parameters:{docs:{description:{story:"Icon-only badge with no text. Circular shape with equal padding. Pass an icon in the default slot."}}}},C={render:()=>l`
+    `,parameters:{docs:{description:{story:"Icon-only badge with no text. Circular shape with equal padding. Pass an icon in the default slot."}}}},_={render:()=>l`
         <div class="story-stack">
             <div>
                 <h1 class="story-section-title">Pill</h1>
@@ -1174,7 +1161,7 @@ import{A as so,b as l,w as M,D as ro}from"./iframe-BeWWkn7z.js";import"./preload
       }
     }
   }
-}`,...I.parameters?.docs?.source}}};_.parameters={..._.parameters,docs:{..._.parameters?.docs,source:{originalSource:`{
+}`,...I.parameters?.docs?.source}}};C.parameters={...C.parameters,docs:{...C.parameters?.docs,source:{originalSource:`{
   render: () => html\`
         <div class="story-stack">
             <div>
@@ -1211,7 +1198,7 @@ import{A as so,b as l,w as M,D as ro}from"./iframe-BeWWkn7z.js";import"./preload
       }
     }
   }
-}`,..._.parameters?.docs?.source}}};C.parameters={...C.parameters,docs:{...C.parameters?.docs,source:{originalSource:`{
+}`,...C.parameters?.docs?.source}}};_.parameters={..._.parameters,docs:{..._.parameters?.docs,source:{originalSource:`{
   render: () => html\`
         <div class="story-stack">
             <div>
@@ -1260,4 +1247,4 @@ import{A as so,b as l,w as M,D as ro}from"./iframe-BeWWkn7z.js";import"./preload
       }
     }
   }
-}`,...C.parameters?.docs?.source}}};const _o=["Default","Colors","Types","Sizes","WithDot","WithPrefixIcon","WithSuffixIcon","IconOnly","AllColorsByType"];export{C as AllColorsByType,x as Colors,$ as Default,_ as IconOnly,k as Sizes,S as Types,E as WithDot,P as WithPrefixIcon,I as WithSuffixIcon,_o as __namedExportsOrder,Io as default};
+}`,..._.parameters?.docs?.source}}};const Co=["Default","Colors","Types","Sizes","WithDot","WithPrefixIcon","WithSuffixIcon","IconOnly","AllColorsByType"];export{_ as AllColorsByType,x as Colors,$ as Default,C as IconOnly,k as Sizes,S as Types,E as WithDot,P as WithPrefixIcon,I as WithSuffixIcon,Co as __namedExportsOrder,Io as default};
