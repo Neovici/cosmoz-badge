@@ -14,15 +14,6 @@ export const styles = css`
 		display: inline-block;
 		max-width: 100%;
 		min-width: 0;
-
-		/* tokens has no semantic equivalent for 'processing', so derive a
-		   scheme-aware pair here the way the semantic fg-* tokens do.
-		   Raw scale steps are static in tokens v4 and must not be used
-		   directly, or the variant renders light colours in dark mode. */
-		--_cz-badge-processing-fg: light-dark(
-			var(--cz-color-indigo-700),
-			var(--cz-color-indigo-300)
-		);
 	}
 
 	/* =========================================
@@ -105,15 +96,11 @@ export const styles = css`
 	}
 
 	:host([color='processing']) .badge {
-		background-color: color-mix(
-			in oklab,
-			var(--_cz-badge-processing-fg) 10%,
-			var(--cz-color-bg-primary)
-		);
-		color: var(--_cz-badge-processing-fg);
+		background-color: var(--cz-color-bg-processing);
+		color: var(--cz-color-text-processing);
 		border-color: color-mix(
 			in oklab,
-			var(--_cz-badge-processing-fg) 40%,
+			var(--cz-color-fg-processing) 40%,
 			transparent
 		);
 	}
@@ -195,7 +182,7 @@ export const styles = css`
 		background-color: var(--cz-color-fg-success-secondary);
 	}
 	:host([color='processing']) .dot {
-		background-color: var(--_cz-badge-processing-fg);
+		background-color: var(--cz-color-fg-processing-secondary);
 	}
 	/* Pill + dot: asymmetric padding (tighter left) */
 	:host([dot]) .badge {
@@ -286,6 +273,6 @@ export const styles = css`
 		color: var(--cz-color-fg-success-secondary);
 	}
 	:host([color='processing']) ::slotted(svg) {
-		color: var(--_cz-badge-processing-fg);
+		color: var(--cz-color-fg-processing-secondary);
 	}
 `;

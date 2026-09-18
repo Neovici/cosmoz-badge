@@ -10,7 +10,8 @@ text, as if it had never left light mode.
 
 These badges picked their colors from the fixed color scale, which always
 returns light values. They now use the theme's semantic colors, which follow
-the light or dark theme automatically.
+the light or dark theme automatically — so every badge color behaves the same
+way.
 
-Also upgrades to cosmoz-tokens v4. Dark mode now follows the page's
+Also upgrades to cosmoz-tokens v4.1. Dark mode now follows the page's
 `color-scheme` instead of a CSS class.
