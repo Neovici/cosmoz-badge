@@ -1,4 +1,4 @@
-import{A as so,b as l,w as M,D as ro}from"./iframe-Dmz3I8Ig.js";import"./preload-helper-PPVm8Dsz.js";const z=o=>o??so;function A(o,e,s){return o?e(o):s?.(o)}const a=({slot:o,title:e,className:s,width:r="24",height:c="24",styles:i}={})=>l`
+import{A as so,b as l,w as M,D as ro}from"./iframe-tQPJvHRP.js";import"./preload-helper-PPVm8Dsz.js";const z=o=>o??so;function A(o,e,s){return o?e(o):s?.(o)}const a=({slot:o,title:e,className:s,width:r="24",height:c="24",styles:i}={})=>l`
   <svg
     slot=${z(o)}
     class=${`arrow-right-icon ${s??""}`}
@@ -327,25 +327,41 @@ import{A as so,b as l,w as M,D as ro}from"./iframe-Dmz3I8Ig.js";import"./preload
 	:host([color='error']) .badge {
 		background-color: var(--cz-color-bg-error);
 		color: var(--cz-color-text-error);
-		border-color: var(--cz-color-error-200);
+		border-color: color-mix(
+			in oklab,
+			var(--cz-color-fg-error) 40%,
+			transparent
+		);
 	}
 
 	:host([color='warning']) .badge {
 		background-color: var(--cz-color-bg-warning);
 		color: var(--cz-color-text-warning);
-		border-color: var(--cz-color-warning-200);
+		border-color: color-mix(
+			in oklab,
+			var(--cz-color-fg-warning) 40%,
+			transparent
+		);
 	}
 
 	:host([color='success']) .badge {
 		background-color: var(--cz-color-bg-success);
 		color: var(--cz-color-text-success);
-		border-color: var(--cz-color-success-200);
+		border-color: color-mix(
+			in oklab,
+			var(--cz-color-fg-success) 40%,
+			transparent
+		);
 	}
 
 	:host([color='processing']) .badge {
-		background-color: var(--cz-color-indigo-100);
-		color: var(--cz-color-indigo-800);
-		border-color: var(--cz-color-indigo-300);
+		background-color: var(--cz-color-bg-processing);
+		color: var(--cz-color-text-processing);
+		border-color: color-mix(
+			in oklab,
+			var(--cz-color-fg-processing) 40%,
+			transparent
+		);
 	}
 
 	/* Modern type: neutral bg/text/border regardless of color */
@@ -425,7 +441,7 @@ import{A as so,b as l,w as M,D as ro}from"./iframe-Dmz3I8Ig.js";import"./preload
 		background-color: var(--cz-color-fg-success-secondary);
 	}
 	:host([color='processing']) .dot {
-		background-color: var(--cz-color-indigo-800);
+		background-color: var(--cz-color-fg-processing-secondary);
 	}
 	/* Pill + dot: asymmetric padding (tighter left) */
 	:host([dot]) .badge {
@@ -516,7 +532,7 @@ import{A as so,b as l,w as M,D as ro}from"./iframe-Dmz3I8Ig.js";import"./preload
 		color: var(--cz-color-fg-success-secondary);
 	}
 	:host([color='processing']) ::slotted(svg) {
-		color: var(--cz-color-indigo-800);
+		color: var(--cz-color-fg-processing-secondary);
 	}
 `,So=()=>l`<span class="badge" part="badge" role="status">
 		<span class="dot" part="dot"></span>
