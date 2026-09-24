@@ -1,4 +1,4 @@
-import{A as so,b as l,w as M,D as ro}from"./iframe-tQPJvHRP.js";import"./preload-helper-PPVm8Dsz.js";const z=o=>o??so;function A(o,e,s){return o?e(o):s?.(o)}const a=({slot:o,title:e,className:s,width:r="24",height:c="24",styles:i}={})=>l`
+import{A as so,b as l,w as M,D as ro}from"./iframe-CH7ZV2gw.js";import"./preload-helper-PPVm8Dsz.js";const z=o=>o??so;function A(o,e,s){return o?e(o):s?.(o)}const a=({slot:o,title:e,className:s,width:r="24",height:c="24",styles:i}={})=>l`
   <svg
     slot=${z(o)}
     class=${`arrow-right-icon ${s??""}`}
@@ -36,7 +36,7 @@ import{A as so,b as l,w as M,D as ro}from"./iframe-tQPJvHRP.js";import"./preload
     ${A(e,()=>M`<title>${e}</title>`)}
     <path d="M12 19V5m0 0-7 7m7-7 7 7" />
   </svg>
-`,p=({slot:o,title:e,className:s,width:r="24",height:c="24",styles:i}={})=>l`
+`,u=({slot:o,title:e,className:s,width:r="24",height:c="24",styles:i}={})=>l`
   <svg
     slot=${z(o)}
     class=${`plus-icon ${s??""}`}
@@ -55,7 +55,7 @@ import{A as so,b as l,w as M,D as ro}from"./iframe-tQPJvHRP.js";import"./preload
     ${A(e,()=>M`<title>${e}</title>`)}
     <path d="M12 5v14m-7-7h14" />
   </svg>
-`;let R,V=0;function U(o){R=o}function j(){R=null,V=0}function to(){return V++}const D=Symbol("haunted.phase"),B=Symbol("haunted.hook"),L=Symbol("haunted.update"),N=Symbol("haunted.commit"),h=Symbol("haunted.effects"),v=Symbol("haunted.layoutEffects"),W="haunted.context";class co{update;host;virtual;[B];[h];[v];constructor(e,s){this.update=e,this.host=s,this[B]=new Map,this[h]=[],this[v]=[]}run(e){U(this);let s=e();return j(),s}_runEffects(e){let s=this[e];U(this);for(let r of s)r.call(this);j()}runEffects(){this._runEffects(h)}runLayoutEffects(){this._runEffects(v)}teardown(){this[B].forEach(s=>{typeof s.teardown=="function"&&s.teardown(!0)})}}const ao=Promise.resolve().then.bind(Promise.resolve());function F(){let o=[],e;function s(){e=null;let r=o;o=[];for(var c=0,i=r.length;c<i;c++)r[c]()}return function(r){o.push(r),e==null&&(e=ao(s))}}const no=F(),G=F();class io{renderer;host;state;[D];_updateQueued;_active;constructor(e,s){this.renderer=e,this.host=s,this.state=new co(this.update.bind(this),s),this[D]=null,this._updateQueued=!1,this._active=!0}update(){this._active&&(this._updateQueued||(no(()=>{let e=this.handlePhase(L);G(()=>{this.handlePhase(N,e),G(()=>{this.handlePhase(h)})}),this._updateQueued=!1}),this._updateQueued=!0))}handlePhase(e,s){switch(this[D]=e,e){case N:this.commit(s),this.runEffects(v);return;case L:return this.render();case h:return this.runEffects(h)}}render(){return this.state.run(()=>this.renderer.call(this.host,this.host))}runEffects(e){this.state._runEffects(e)}teardown(){this.state.teardown()}pause(){this._active=!1}resume(){this._active=!0}}const q=(...o)=>{const e=new CSSStyleSheet;return e.replaceSync(o.join("")),e},lo=o=>o?.map(e=>typeof e=="string"?q(e):e),go=(o,...e)=>o.flatMap((s,r)=>[s,e[r]||""]).join(""),Y=go,mo=(o="")=>o.replace(/-+([a-z])?/g,(e,s)=>s?s.toUpperCase():"");function bo(o){class e extends io{frag;renderResult;constructor(c,i,w){super(c,w||i),this.frag=i}commit(c){this.renderResult=o(c,this.frag)}}function s(r,c,i){const w=(i||c||{}).baseElement||HTMLElement,{observedAttributes:Z=[],useShadowDOM:J=!0,shadowRootInit:K={},styleSheets:X}=i||c||{},O=lo(r.styleSheets||X);class T extends w{_scheduler;static get observedAttributes(){return r.observedAttributes||Z||[]}constructor(){if(super(),J===!1)this._scheduler=new e(r,this);else{const d=this.attachShadow({mode:"open",...K});O&&(d.adoptedStyleSheets=O),this._scheduler=new e(r,d,this)}}connectedCallback(){this._scheduler.resume(),this._scheduler.update(),this._scheduler.renderResult?.setConnected(!0)}disconnectedCallback(){this._scheduler.pause(),this._scheduler.teardown(),this._scheduler.renderResult?.setConnected(!1)}attributeChangedCallback(d,b,g){if(b===g)return;let m=g===""?!0:g;Reflect.set(this,mo(d),m)}}function oo(u){let d=u,b=!1;return Object.freeze({enumerable:!0,configurable:!0,get(){return d},set(g){b&&d===g||(b=!0,d=g,this._scheduler&&this._scheduler.update())}})}const eo=new Proxy(w.prototype,{getPrototypeOf(u){return u},set(u,d,b,g){let m;return d in u?(m=Object.getOwnPropertyDescriptor(u,d),m&&m.set?(m.set.call(g,b),!0):(Reflect.set(u,d,b,g),!0)):(typeof d=="symbol"||d[0]==="_"?m={enumerable:!0,configurable:!0,writable:!0,value:b}:m=oo(b),Object.defineProperty(g,d,m),m.set&&m.set.call(g,b),!0)}});return Object.setPrototypeOf(T.prototype,eo),T}return s}class f{id;state;constructor(e,s){this.id=e,this.state=s}}function po(o,...e){let s=to(),r=R[B],c=r.get(s);return c||(c=new o(s,R,...e),r.set(s,c)),c.update(...e)}function y(o){return po.bind(null,o)}function Q(o){return y(class extends f{callback;lastValues;values;_teardown;constructor(e,s,r,c){super(e,s),o(s,this)}update(e,s){this.callback=e,this.values=s}call(){const e=!this.values||this.hasChanged();this.lastValues=this.values,e&&this.run()}run(){this.teardown(),this._teardown=this.callback.call(this.state)}teardown(e){typeof this._teardown=="function"&&(this._teardown(),this._teardown=void 0),e&&(this.lastValues=this.values=void 0)}hasChanged(){return!this.lastValues||this.values.some((e,s)=>this.lastValues[s]!==e)}})}function H(o,e){o[h].push(e)}Q(H);const uo=o=>o instanceof Element?o:o.startNode||o.endNode||o.parentNode,ho=y(class extends f{Context;value;_ranEffect;_unsubscribe;constructor(o,e,s){super(o,e),this._updater=this._updater.bind(this),this._ranEffect=!1,this._unsubscribe=null,H(e,this)}update(o){return this.Context!==o&&(this._subscribe(o),this.Context=o),this.value}call(){this._ranEffect||(this._ranEffect=!0,this._unsubscribe&&this._unsubscribe(),this._subscribe(this.Context),this.state.update())}_updater(o){this.value=o,this.state.update()}_subscribe(o){const e={Context:o,callback:this._updater};uo(this.state.host).dispatchEvent(new CustomEvent(W,{detail:e,bubbles:!0,cancelable:!0,composed:!0}));const{unsubscribe:r=null,value:c}=e;this.value=r?c:o.defaultValue,this._unsubscribe=r}teardown(){this._unsubscribe&&this._unsubscribe()}});function zo(o){return e=>{const s={Provider:class extends HTMLElement{listeners;_value;constructor(){super(),this.style.display="contents",this.listeners=new Set,this.addEventListener(W,this)}disconnectedCallback(){this.removeEventListener(W,this)}handleEvent(r){const{detail:c}=r;c.Context===s&&(c.value=this.value,c.unsubscribe=this.unsubscribe.bind(this,c.callback),this.listeners.add(c.callback),r.stopPropagation())}unsubscribe(r){this.listeners.delete(r)}set value(r){this._value=r;for(let c of this.listeners)c(r)}get value(){return this._value}},Consumer:o(function({render:r}){const c=ho(s);return r(c)},{useShadowDOM:!1}),defaultValue:e};return s}}y(class extends f{value;values;constructor(o,e,s,r){super(o,e),this.value=s(),this.values=r}update(o,e){return this.hasChanged(e)&&(this.values=e,this.value=o()),this.value}hasChanged(o=[]){return o.some((e,s)=>this.values[s]!==e)}});function fo(o,e){o[v].push(e)}Q(fo);y(class extends f{args;constructor(o,e,s){super(o,e),this.updater=this.updater.bind(this),typeof s=="function"&&(s=s()),this.makeArgs(s)}update(){return this.args}updater(o){const[e]=this.args;typeof o=="function"&&(o=o(e)),!Object.is(e,o)&&(this.makeArgs(o),this.state.update())}makeArgs(o){this.args=Object.freeze([o,this.updater])}});y(class extends f{reducer;currentState;constructor(o,e,s,r,c){super(o,e),this.dispatch=this.dispatch.bind(this),this.currentState=c!==void 0?c(r):r}update(o){return this.reducer=o,[this.currentState,this.dispatch]}dispatch(o){this.currentState=this.reducer(this.currentState,o),this.state.update()}});const yo=/([A-Z])/gu;y(class extends f{property;eventName;constructor(o,e,s,r){if(super(o,e),this.state.virtual)throw new Error("Can't be used with virtual components.");this.updater=this.updater.bind(this),this.property=s,this.eventName=s.replace(yo,"-$1").toLowerCase()+"-changed",this.state.host[this.property]==null&&(typeof r=="function"&&(r=r()),r!=null&&this.updateProp(r))}update(o,e){return[this.state.host[this.property],this.updater]}updater(o){const e=this.state.host[this.property];typeof o=="function"&&(o=o(e)),!Object.is(e,o)&&this.updateProp(o)}updateProp(o){this.notify(o).defaultPrevented||(this.state.host[this.property]=o)}notify(o){const e=new CustomEvent(this.eventName,{detail:{value:o,path:this.property},cancelable:!0});return this.state.host.dispatchEvent(e),e}});function vo({render:o}){const e=bo(o),s=zo(e);return{component:e,createContext:s}}const{component:wo}=vo({render:ro}),$o=q(Y`
+`;let R,V=0;function U(o){R=o}function j(){R=null,V=0}function to(){return V++}const D=Symbol("haunted.phase"),B=Symbol("haunted.hook"),L=Symbol("haunted.update"),N=Symbol("haunted.commit"),h=Symbol("haunted.effects"),v=Symbol("haunted.layoutEffects"),W="haunted.context";class co{update;host;virtual;[B];[h];[v];constructor(e,s){this.update=e,this.host=s,this[B]=new Map,this[h]=[],this[v]=[]}run(e){U(this);let s=e();return j(),s}_runEffects(e){let s=this[e];U(this);for(let r of s)r.call(this);j()}runEffects(){this._runEffects(h)}runLayoutEffects(){this._runEffects(v)}teardown(){this[B].forEach(s=>{typeof s.teardown=="function"&&s.teardown(!0)})}}const ao=Promise.resolve().then.bind(Promise.resolve());function F(){let o=[],e;function s(){e=null;let r=o;o=[];for(var c=0,i=r.length;c<i;c++)r[c]()}return function(r){o.push(r),e==null&&(e=ao(s))}}const no=F(),G=F();class io{renderer;host;state;[D];_updateQueued;_active;constructor(e,s){this.renderer=e,this.host=s,this.state=new co(this.update.bind(this),s),this[D]=null,this._updateQueued=!1,this._active=!0}update(){this._active&&(this._updateQueued||(no(()=>{let e=this.handlePhase(L);G(()=>{this.handlePhase(N,e),G(()=>{this.handlePhase(h)})}),this._updateQueued=!1}),this._updateQueued=!0))}handlePhase(e,s){switch(this[D]=e,e){case N:this.commit(s),this.runEffects(v);return;case L:return this.render();case h:return this.runEffects(h)}}render(){return this.state.run(()=>this.renderer.call(this.host,this.host))}runEffects(e){this.state._runEffects(e)}teardown(){this.state.teardown()}pause(){this._active=!1}resume(){this._active=!0}}const q=(...o)=>{const e=new CSSStyleSheet;return e.replaceSync(o.join("")),e},lo=o=>o?.map(e=>typeof e=="string"?q(e):e),go=(o,...e)=>o.flatMap((s,r)=>[s,e[r]||""]).join(""),Y=go,mo=(o="")=>o.replace(/-+([a-z])?/g,(e,s)=>s?s.toUpperCase():"");function bo(o){class e extends io{frag;renderResult;constructor(c,i,w){super(c,w||i),this.frag=i}commit(c){this.renderResult=o(c,this.frag)}}function s(r,c,i){const w=(i||c||{}).baseElement||HTMLElement,{observedAttributes:Z=[],useShadowDOM:J=!0,shadowRootInit:K={},styleSheets:X}=i||c||{},O=lo(r.styleSheets||X);class T extends w{_scheduler;static get observedAttributes(){return r.observedAttributes||Z||[]}constructor(){if(super(),J===!1)this._scheduler=new e(r,this);else{const d=this.attachShadow({mode:"open",...K});O&&(d.adoptedStyleSheets=O),this._scheduler=new e(r,d,this)}}connectedCallback(){this._scheduler.resume(),this._scheduler.update(),this._scheduler.renderResult?.setConnected(!0)}disconnectedCallback(){this._scheduler.pause(),this._scheduler.teardown(),this._scheduler.renderResult?.setConnected(!1)}attributeChangedCallback(d,b,g){if(b===g)return;let m=g===""?!0:g;Reflect.set(this,mo(d),m)}}function oo(p){let d=p,b=!1;return Object.freeze({enumerable:!0,configurable:!0,get(){return d},set(g){b&&d===g||(b=!0,d=g,this._scheduler&&this._scheduler.update())}})}const eo=new Proxy(w.prototype,{getPrototypeOf(p){return p},set(p,d,b,g){let m;return d in p?(m=Object.getOwnPropertyDescriptor(p,d),m&&m.set?(m.set.call(g,b),!0):(Reflect.set(p,d,b,g),!0)):(typeof d=="symbol"||d[0]==="_"?m={enumerable:!0,configurable:!0,writable:!0,value:b}:m=oo(b),Object.defineProperty(g,d,m),m.set&&m.set.call(g,b),!0)}});return Object.setPrototypeOf(T.prototype,eo),T}return s}class f{id;state;constructor(e,s){this.id=e,this.state=s}}function uo(o,...e){let s=to(),r=R[B],c=r.get(s);return c||(c=new o(s,R,...e),r.set(s,c)),c.update(...e)}function y(o){return uo.bind(null,o)}function Q(o){return y(class extends f{callback;lastValues;values;_teardown;constructor(e,s,r,c){super(e,s),o(s,this)}update(e,s){this.callback=e,this.values=s}call(){const e=!this.values||this.hasChanged();this.lastValues=this.values,e&&this.run()}run(){this.teardown(),this._teardown=this.callback.call(this.state)}teardown(e){typeof this._teardown=="function"&&(this._teardown(),this._teardown=void 0),e&&(this.lastValues=this.values=void 0)}hasChanged(){return!this.lastValues||this.values.some((e,s)=>this.lastValues[s]!==e)}})}function H(o,e){o[h].push(e)}Q(H);const po=o=>o instanceof Element?o:o.startNode||o.endNode||o.parentNode,ho=y(class extends f{Context;value;_ranEffect;_unsubscribe;constructor(o,e,s){super(o,e),this._updater=this._updater.bind(this),this._ranEffect=!1,this._unsubscribe=null,H(e,this)}update(o){return this.Context!==o&&(this._subscribe(o),this.Context=o),this.value}call(){this._ranEffect||(this._ranEffect=!0,this._unsubscribe&&this._unsubscribe(),this._subscribe(this.Context),this.state.update())}_updater(o){this.value=o,this.state.update()}_subscribe(o){const e={Context:o,callback:this._updater};po(this.state.host).dispatchEvent(new CustomEvent(W,{detail:e,bubbles:!0,cancelable:!0,composed:!0}));const{unsubscribe:r=null,value:c}=e;this.value=r?c:o.defaultValue,this._unsubscribe=r}teardown(){this._unsubscribe&&this._unsubscribe()}});function zo(o){return e=>{const s={Provider:class extends HTMLElement{listeners;_value;constructor(){super(),this.style.display="contents",this.listeners=new Set,this.addEventListener(W,this)}disconnectedCallback(){this.removeEventListener(W,this)}handleEvent(r){const{detail:c}=r;c.Context===s&&(c.value=this.value,c.unsubscribe=this.unsubscribe.bind(this,c.callback),this.listeners.add(c.callback),r.stopPropagation())}unsubscribe(r){this.listeners.delete(r)}set value(r){this._value=r;for(let c of this.listeners)c(r)}get value(){return this._value}},Consumer:o(function({render:r}){const c=ho(s);return r(c)},{useShadowDOM:!1}),defaultValue:e};return s}}y(class extends f{value;values;constructor(o,e,s,r){super(o,e),this.value=s(),this.values=r}update(o,e){return this.hasChanged(e)&&(this.values=e,this.value=o()),this.value}hasChanged(o=[]){return o.some((e,s)=>this.values[s]!==e)}});function fo(o,e){o[v].push(e)}Q(fo);y(class extends f{args;constructor(o,e,s){super(o,e),this.updater=this.updater.bind(this),typeof s=="function"&&(s=s()),this.makeArgs(s)}update(){return this.args}updater(o){const[e]=this.args;typeof o=="function"&&(o=o(e)),!Object.is(e,o)&&(this.makeArgs(o),this.state.update())}makeArgs(o){this.args=Object.freeze([o,this.updater])}});y(class extends f{reducer;currentState;constructor(o,e,s,r,c){super(o,e),this.dispatch=this.dispatch.bind(this),this.currentState=c!==void 0?c(r):r}update(o){return this.reducer=o,[this.currentState,this.dispatch]}dispatch(o){this.currentState=this.reducer(this.currentState,o),this.state.update()}});const yo=/([A-Z])/gu;y(class extends f{property;eventName;constructor(o,e,s,r){if(super(o,e),this.state.virtual)throw new Error("Can't be used with virtual components.");this.updater=this.updater.bind(this),this.property=s,this.eventName=s.replace(yo,"-$1").toLowerCase()+"-changed",this.state.host[this.property]==null&&(typeof r=="function"&&(r=r()),r!=null&&this.updateProp(r))}update(o,e){return[this.state.host[this.property],this.updater]}updater(o){const e=this.state.host[this.property];typeof o=="function"&&(o=o(e)),!Object.is(e,o)&&this.updateProp(o)}updateProp(o){this.notify(o).defaultPrevented||(this.state.host[this.property]=o)}notify(o){const e=new CustomEvent(this.eventName,{detail:{value:o,path:this.property},cancelable:!0});return this.state.host.dispatchEvent(e),e}});function vo({render:o}){const e=bo(o),s=zo(e);return{component:e,createContext:s}}const{component:wo}=vo({render:ro}),$o=q(Y`
 	/*
 	 * Use border-box sizing for all elements.
 	 * This is safe and doesn't conflict with child component styles.
@@ -311,57 +311,33 @@ import{A as so,b as l,w as M,D as ro}from"./iframe-tQPJvHRP.js";import"./preload
 	 * ========================================= */
 
 	:host([color='brand']) .badge {
-		background-color: color-mix(
-			in oklab,
-			var(--cz-color-fg-brand) 10%,
-			var(--cz-color-bg-primary)
-		);
+		background-color: var(--cz-color-bg-brand-subtle);
 		color: var(--cz-color-text-brand);
-		border-color: color-mix(
-			in oklab,
-			var(--cz-color-fg-brand) 40%,
-			transparent
-		);
+		border-color: var(--cz-color-border-brand-subtle);
 	}
 
 	:host([color='error']) .badge {
 		background-color: var(--cz-color-bg-error);
 		color: var(--cz-color-text-error);
-		border-color: color-mix(
-			in oklab,
-			var(--cz-color-fg-error) 40%,
-			transparent
-		);
+		border-color: var(--cz-color-border-error-subtle);
 	}
 
 	:host([color='warning']) .badge {
 		background-color: var(--cz-color-bg-warning);
 		color: var(--cz-color-text-warning);
-		border-color: color-mix(
-			in oklab,
-			var(--cz-color-fg-warning) 40%,
-			transparent
-		);
+		border-color: var(--cz-color-border-warning-subtle);
 	}
 
 	:host([color='success']) .badge {
 		background-color: var(--cz-color-bg-success);
 		color: var(--cz-color-text-success);
-		border-color: color-mix(
-			in oklab,
-			var(--cz-color-fg-success) 40%,
-			transparent
-		);
+		border-color: var(--cz-color-border-success-subtle);
 	}
 
 	:host([color='processing']) .badge {
 		background-color: var(--cz-color-bg-processing);
 		color: var(--cz-color-text-processing);
-		border-color: color-mix(
-			in oklab,
-			var(--cz-color-fg-processing) 40%,
-			transparent
-		);
+		border-color: var(--cz-color-border-processing-subtle);
 	}
 
 	/* Modern type: neutral bg/text/border regardless of color */
@@ -758,25 +734,25 @@ import{A as so,b as l,w as M,D as ro}from"./iframe-tQPJvHRP.js";import"./preload
             <div>
                 <h1 class="story-section-title">Sizes</h1>
                 <div class="story-row">
-                    <cosmoz-badge type="icon" size="sm"> ${p()} </cosmoz-badge>
-                    <cosmoz-badge type="icon"> ${p()} </cosmoz-badge>
-                    <cosmoz-badge type="icon" size="lg"> ${p()} </cosmoz-badge>
+                    <cosmoz-badge type="icon" size="sm"> ${u()} </cosmoz-badge>
+                    <cosmoz-badge type="icon"> ${u()} </cosmoz-badge>
+                    <cosmoz-badge type="icon" size="lg"> ${u()} </cosmoz-badge>
                 </div>
             </div>
             <div>
                 <h1 class="story-section-title">Colors</h1>
                 <div class="story-row">
-                    <cosmoz-badge type="icon"> ${p()} </cosmoz-badge>
-                    <cosmoz-badge type="icon" color="brand"> ${p()} </cosmoz-badge>
-                    <cosmoz-badge type="icon" color="error"> ${p()} </cosmoz-badge>
+                    <cosmoz-badge type="icon"> ${u()} </cosmoz-badge>
+                    <cosmoz-badge type="icon" color="brand"> ${u()} </cosmoz-badge>
+                    <cosmoz-badge type="icon" color="error"> ${u()} </cosmoz-badge>
                     <cosmoz-badge type="icon" color="warning">
-                        ${p()}
+                        ${u()}
                     </cosmoz-badge>
                     <cosmoz-badge type="icon" color="success">
-                        ${p()}
+                        ${u()}
                     </cosmoz-badge>
                     <cosmoz-badge type="icon" color="processing">
-                        ${p()}
+                        ${u()}
                     </cosmoz-badge>
                 </div>
             </div>
