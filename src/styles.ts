@@ -52,57 +52,33 @@ export const styles = css`
 	 * ========================================= */
 
 	:host([color='brand']) .badge {
-		background-color: color-mix(
-			in oklab,
-			var(--cz-color-fg-brand) 10%,
-			var(--cz-color-bg-primary)
-		);
+		background-color: var(--cz-color-bg-brand-subtle);
 		color: var(--cz-color-text-brand);
-		border-color: color-mix(
-			in oklab,
-			var(--cz-color-fg-brand) 40%,
-			transparent
-		);
+		border-color: var(--cz-color-border-brand-subtle);
 	}
 
 	:host([color='error']) .badge {
 		background-color: var(--cz-color-bg-error);
 		color: var(--cz-color-text-error);
-		border-color: color-mix(
-			in oklab,
-			var(--cz-color-fg-error) 40%,
-			transparent
-		);
+		border-color: var(--cz-color-border-error-subtle);
 	}
 
 	:host([color='warning']) .badge {
 		background-color: var(--cz-color-bg-warning);
 		color: var(--cz-color-text-warning);
-		border-color: color-mix(
-			in oklab,
-			var(--cz-color-fg-warning) 40%,
-			transparent
-		);
+		border-color: var(--cz-color-border-warning-subtle);
 	}
 
 	:host([color='success']) .badge {
 		background-color: var(--cz-color-bg-success);
 		color: var(--cz-color-text-success);
-		border-color: color-mix(
-			in oklab,
-			var(--cz-color-fg-success) 40%,
-			transparent
-		);
+		border-color: var(--cz-color-border-success-subtle);
 	}
 
 	:host([color='processing']) .badge {
 		background-color: var(--cz-color-bg-processing);
 		color: var(--cz-color-text-processing);
-		border-color: color-mix(
-			in oklab,
-			var(--cz-color-fg-processing) 40%,
-			transparent
-		);
+		border-color: var(--cz-color-border-processing-subtle);
 	}
 
 	/* Modern type: neutral bg/text/border regardless of color */
