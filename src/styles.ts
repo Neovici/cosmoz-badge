@@ -52,7 +52,7 @@ export const styles = css`
 	 * ========================================= */
 
 	:host([color='brand']) .badge {
-		background-color: var(--cz-color-bg-brand);
+		background-color: var(--cz-color-bg-brand-subtle);
 		color: var(--cz-color-text-brand);
 		border-color: var(--cz-color-border-brand-subtle);
 	}
