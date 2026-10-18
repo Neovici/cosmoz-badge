@@ -25,7 +25,7 @@ export default {
 		},
 		size: {
 			control: 'select',
-			options: ['sm', 'md', 'lg'],
+			options: ['xs', 'sm', 'md', 'lg'],
 			description: 'Badge size',
 			table: { defaultValue: { summary: 'md' } },
 		},
@@ -108,6 +108,7 @@ export const Types = {
 export const Sizes = {
 	render: () => html`
 		<div class="story-row">
+			<cosmoz-badge size="xs" color="brand">Extra small</cosmoz-badge>
 			<cosmoz-badge size="sm" color="brand">Small</cosmoz-badge>
 			<cosmoz-badge size="md" color="brand">Medium</cosmoz-badge>
 			<cosmoz-badge size="lg" color="brand">Large</cosmoz-badge>
@@ -115,7 +116,7 @@ export const Sizes = {
 	`,
 	parameters: {
 		docs: {
-			description: { story: 'Badge sizes: sm, md, and lg.' },
+			description: { story: 'Badge sizes: xs, sm, md, and lg.' },
 		},
 	},
 };

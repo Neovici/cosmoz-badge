@@ -9,7 +9,7 @@ import { styles } from './styles';
  *
  * @attr {string} type - Badge type: pill (default), color, modern, icon
  * @attr {string} color - Badge color: gray (default), brand, error, warning, success
- * @attr {string} size - Badge size: sm, md (default), lg
+ * @attr {string} size - Badge size: xs (compact), sm, md (default), lg
  * @attr {boolean} dot - Show a colored dot indicator before text
  *
  * @slot - Default slot for badge text or icon content

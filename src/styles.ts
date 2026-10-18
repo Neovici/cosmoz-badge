@@ -251,4 +251,25 @@ export const styles = css`
 	:host([color='processing']) ::slotted(svg) {
 		color: var(--cz-color-fg-processing-secondary);
 	}
+
+	/* Compact counters keep a stable pill height around smaller metadata text. */
+	:host([size='xs']) .badge,
+	:host([size='xs'][dot]) .badge {
+		box-sizing: border-box;
+		min-height: ${sp(5)};
+		padding: 0 ${sp(1)};
+		font-size: var(--cz-text-2xs, var(--cz-text-xs));
+		line-height: var(--cz-text-2xs-line-height, var(--cz-text-xs-line-height));
+		font-weight: var(--cz-font-weight-regular);
+		gap: ${sp(1)};
+	}
+
+	:host([type='icon'][size='xs']) .badge {
+		padding: ${sp(0.5)};
+	}
+
+	:host([type='icon'][size='xs']) ::slotted(svg) {
+		width: ${sp(3)};
+		height: ${sp(3)};
+	}
 `;
