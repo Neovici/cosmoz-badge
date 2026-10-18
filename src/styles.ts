@@ -35,7 +35,9 @@ export const styles = css`
 			var(--cz-color-bg-secondary)
 		);
 		color: var(--cz-color-text-secondary);
-		border-radius: var(--cz-radius-full);
+		background-image: var(--cz-badge-sheen, none);
+		box-shadow: var(--cz-badge-shadow, none);
+		border-radius: var(--cz-badge-radius, var(--cz-radius-full));
 		padding: ${sp(0.5)} ${sp(2)};
 		font-size: var(--cz-text-sm);
 		line-height: var(--cz-text-sm-line-height);
@@ -93,12 +95,12 @@ export const styles = css`
 	 * ========================================= */
 	:host([type='color']) .badge,
 	:host([type='modern']) .badge {
-		border-radius: var(--cz-radius-sm);
+		border-radius: var(--cz-badge-radius, var(--cz-radius-sm));
 		padding: ${sp(0.5)} ${sp(2)};
 	}
 
 	:host([type='modern']) .badge {
-		box-shadow: var(--cz-shadow-xs);
+		box-shadow: var(--cz-badge-shadow, var(--cz-shadow-xs));
 	}
 
 	/* =========================================
@@ -129,7 +131,7 @@ export const styles = css`
 	:host([type='color'][size='lg']) .badge,
 	:host([type='modern'][size='lg']) .badge {
 		padding: ${sp(1)} ${sp(2.5)};
-		border-radius: var(--cz-radius-md);
+		border-radius: var(--cz-badge-radius, var(--cz-radius-md));
 	}
 
 	/* =========================================
@@ -140,10 +142,15 @@ export const styles = css`
 		height: ${sp(2)};
 		border-radius: var(--cz-radius-full);
 		background-color: var(--cz-color-fg-quaternary);
+		background-image: var(--cz-status-dot-sheen, none);
+		box-shadow: var(--cz-status-dot-shadow, none);
 		flex-shrink: 0;
 	}
 	:host(:not([dot])) .dot {
 		display: none;
+	}
+	:host([type='color']:not([dot])) .dot {
+		display: var(--cz-badge-dot-display, none);
 	}
 	:host([color='brand']) .dot {
 		background-color: var(--cz-color-fg-brand-secondary);
