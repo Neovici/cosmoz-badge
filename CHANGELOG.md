@@ -1,3 +1,9 @@
+## 2.1.0
+
+### Minor Changes
+
+- 46c21d2: Add an opt-in xs badge size with compact text and a 20px minimum height.
+
 ## 2.0.1
 
 ### Patch Changes
