@@ -36,6 +36,9 @@ export const styles = css`
 		);
 		color: var(--cz-color-text-secondary);
 		border-radius: var(--cz-radius-full);
+		/* Pill rungs hardcoded: md 1.75rem, lg 2rem = control height minus 2x spacing of air */
+		box-sizing: border-box;
+		min-height: 1.75rem;
 		padding: ${sp(0.5)} ${sp(2)};
 		font-size: var(--cz-text-sm);
 		line-height: var(--cz-text-sm-line-height);
@@ -107,6 +110,7 @@ export const styles = css`
 
 	/* --- Pill sizes --- */
 	:host([size='sm']) .badge {
+		min-height: 1.5rem;
 		padding: ${sp(0.5)} ${sp(2)};
 		font-size: var(--cz-text-xs);
 		line-height: var(--cz-text-xs-line-height);
@@ -114,6 +118,7 @@ export const styles = css`
 	}
 
 	:host([size='lg']) .badge {
+		min-height: 2rem;
 		padding: ${sp(1)} ${sp(3)};
 	}
 
@@ -255,8 +260,7 @@ export const styles = css`
 	/* Compact counters keep a stable pill height around smaller metadata text. */
 	:host([size='xs']) .badge,
 	:host([size='xs'][dot]) .badge {
-		box-sizing: border-box;
-		min-height: ${sp(5)};
+		min-height: 1.25rem;
 		padding: 0 ${sp(1)};
 		font-size: var(--cz-text-2xs, var(--cz-text-xs));
 		line-height: var(--cz-text-2xs-line-height, var(--cz-text-xs-line-height));

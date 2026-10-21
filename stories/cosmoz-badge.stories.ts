@@ -121,6 +121,25 @@ export const Sizes = {
 	},
 };
 
+export const TagLadder = {
+	render: () => html`
+		<div class="story-row">
+			<cosmoz-badge type="color" size="xs">xs · 20px</cosmoz-badge>
+			<cosmoz-badge type="color" size="sm">sm · 24px</cosmoz-badge>
+			<cosmoz-badge type="color" size="md">md · 28px</cosmoz-badge>
+			<cosmoz-badge type="color" size="lg">lg · 32px</cosmoz-badge>
+		</div>
+	`,
+	parameters: {
+		docs: {
+			description: {
+				story:
+					'Colored tag pills at each size, rendering the pill ladder: 20, 24, 28, 32.',
+			},
+		},
+	},
+};
+
 // ========== BADGE WITH DOT ==========
 
 export const WithDot = {
