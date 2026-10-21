@@ -1,4 +1,4 @@
-import{A as x,b as r,w}from"./iframe-yClQ41RU.js";import"./cosmoz-badge-CipmQa2t.js";import"./preload-helper-PPVm8Dsz.js";const n=e=>e??x;function $(e,c,d){return e?c(e):d?.(e)}const o=({slot:e,title:c,className:d,width:t="24",height:i="24",styles:l}={})=>r`
+import{A as x,b as r,w}from"./iframe-BfhJtqL4.js";import"./cosmoz-badge-CLPwUxig.js";import"./preload-helper-PPVm8Dsz.js";const n=e=>e??x;function $(e,c,d){return e?c(e):d?.(e)}const o=({slot:e,title:c,className:d,width:t="24",height:i="24",styles:l}={})=>r`
   <svg
     slot=${n(e)}
     class=${`arrow-right-icon ${d??""}`}
@@ -93,7 +93,7 @@ import{A as x,b as r,w}from"./iframe-yClQ41RU.js";import"./cosmoz-badge-CipmQa2t
             <cosmoz-badge type="color" size="md">md · 28px</cosmoz-badge>
             <cosmoz-badge type="color" size="lg">lg · 32px</cosmoz-badge>
         </div>
-    `,parameters:{docs:{description:{story:"Colored tag pills at each size, the rendering of the --cz-tag-height-* ladder: 20, 24, 28, 32."}}}},y={render:()=>r`
+    `,parameters:{docs:{description:{story:"Colored tag pills at each size, rendering the pill ladder: 20, 24, 28, 32."}}}},y={render:()=>r`
         <div class="story-stack">
             <div>
                 <h1 class="story-section-title">Pill</h1>
@@ -415,7 +415,7 @@ import{A as x,b as r,w}from"./iframe-yClQ41RU.js";import"./cosmoz-badge-CipmQa2t
   parameters: {
     docs: {
       description: {
-        story: 'Colored tag pills at each size, the rendering of the --cz-tag-height-* ladder: 20, 24, 28, 32.'
+        story: 'Colored tag pills at each size, rendering the pill ladder: 20, 24, 28, 32.'
       }
     }
   }
