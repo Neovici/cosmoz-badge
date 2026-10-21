@@ -1,4 +1,4 @@
-import{A as x,b as r,w}from"./iframe-gic9MX1c.js";import"./cosmoz-badge-D4ecPG93.js";import"./preload-helper-PPVm8Dsz.js";const n=e=>e??x;function $(e,c,d){return e?c(e):d?.(e)}const o=({slot:e,title:c,className:d,width:t="24",height:i="24",styles:l}={})=>r`
+import{A as x,b as r,w}from"./iframe-BhoxE1Ia.js";import"./cosmoz-badge-BxxO5waI.js";import"./preload-helper-PPVm8Dsz.js";const n=e=>e??x;function $(e,c,d){return e?c(e):d?.(e)}const o=({slot:e,title:c,className:d,width:t="24",height:i="24",styles:l}={})=>r`
   <svg
     slot=${n(e)}
     class=${`arrow-right-icon ${d??""}`}

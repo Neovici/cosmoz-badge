@@ -1,4 +1,4 @@
-import{D as M,b as B}from"./iframe-gic9MX1c.js";let v,C=0;function _(t){v=t}function $(){v=null,C=0}function U(){return C++}const y=Symbol("haunted.phase"),m=Symbol("haunted.hook"),k=Symbol("haunted.update"),S=Symbol("haunted.commit"),u=Symbol("haunted.effects"),b=Symbol("haunted.layoutEffects"),z="haunted.context";class Q{update;host;virtual;[m];[u];[b];constructor(e,s){this.update=e,this.host=s,this[m]=new Map,this[u]=[],this[b]=[]}run(e){_(this);let s=e();return $(),s}_runEffects(e){let s=this[e];_(this);for(let r of s)r.call(this);$()}runEffects(){this._runEffects(u)}runLayoutEffects(){this._runEffects(b)}teardown(){this[m].forEach(s=>{typeof s.teardown=="function"&&s.teardown(!0)})}}const H=Promise.resolve().then.bind(Promise.resolve());function P(){let t=[],e;function s(){e=null;let r=t;t=[];for(var n=0,h=r.length;n<h;n++)r[n]()}return function(r){t.push(r),e==null&&(e=H(s))}}const q=P(),E=P();class Y{renderer;host;state;[y];_updateQueued;_active;constructor(e,s){this.renderer=e,this.host=s,this.state=new Q(this.update.bind(this),s),this[y]=null,this._updateQueued=!1,this._active=!0}update(){this._active&&(this._updateQueued||(q(()=>{let e=this.handlePhase(k);E(()=>{this.handlePhase(S,e),E(()=>{this.handlePhase(u)})}),this._updateQueued=!1}),this._updateQueued=!0))}handlePhase(e,s){switch(this[y]=e,e){case S:this.commit(s),this.runEffects(b);return;case k:return this.render();case u:return this.runEffects(u)}}render(){return this.state.run(()=>this.renderer.call(this.host,this.host))}runEffects(e){this.state._runEffects(e)}teardown(){this.state.teardown()}pause(){this._active=!1}resume(){this._active=!0}}const O=(...t)=>{const e=new CSSStyleSheet;return e.replaceSync(t.join("")),e},Z=t=>t?.map(e=>typeof e=="string"?O(e):e),G=(t,...e)=>t.flatMap((s,r)=>[s,e[r]||""]).join(""),R=G,V=(t="")=>t.replace(/-+([a-z])?/g,(e,s)=>s?s.toUpperCase():"");function J(t){class e extends Y{frag;renderResult;constructor(n,h,f){super(n,f||h),this.frag=h}commit(n){this.renderResult=t(n,this.frag)}}function s(r,n,h){const f=(h||n||{}).baseElement||HTMLElement,{observedAttributes:N=[],useShadowDOM:j=!0,shadowRootInit:I={},styleSheets:L}=h||n||{},w=Z(r.styleSheets||L);class x extends f{_scheduler;static get observedAttributes(){return r.observedAttributes||N||[]}constructor(){if(super(),j===!1)this._scheduler=new e(r,this);else{const i=this.attachShadow({mode:"open",...I});w&&(i.adoptedStyleSheets=w),this._scheduler=new e(r,i,this)}}connectedCallback(){this._scheduler.resume(),this._scheduler.update(),this._scheduler.renderResult?.setConnected(!0)}disconnectedCallback(){this._scheduler.pause(),this._scheduler.teardown(),this._scheduler.renderResult?.setConnected(!1)}attributeChangedCallback(i,d,a){if(d===a)return;let c=a===""?!0:a;Reflect.set(this,V(i),c)}}function D(l){let i=l,d=!1;return Object.freeze({enumerable:!0,configurable:!0,get(){return i},set(a){d&&i===a||(d=!0,i=a,this._scheduler&&this._scheduler.update())}})}const F=new Proxy(f.prototype,{getPrototypeOf(l){return l},set(l,i,d,a){let c;return i in l?(c=Object.getOwnPropertyDescriptor(l,i),c&&c.set?(c.set.call(a,d),!0):(Reflect.set(l,i,d,a),!0)):(typeof i=="symbol"||i[0]==="_"?c={enumerable:!0,configurable:!0,writable:!0,value:d}:c=D(d),Object.defineProperty(a,i,c),c.set&&c.set.call(a,d),!0)}});return Object.setPrototypeOf(x.prototype,F),x}return s}class p{id;state;constructor(e,s){this.id=e,this.state=s}}function K(t,...e){let s=U(),r=v[m],n=r.get(s);return n||(n=new t(s,v,...e),r.set(s,n)),n.update(...e)}function g(t){return K.bind(null,t)}function A(t){return g(class extends p{callback;lastValues;values;_teardown;constructor(e,s,r,n){super(e,s),t(s,this)}update(e,s){this.callback=e,this.values=s}call(){const e=!this.values||this.hasChanged();this.lastValues=this.values,e&&this.run()}run(){this.teardown(),this._teardown=this.callback.call(this.state)}teardown(e){typeof this._teardown=="function"&&(this._teardown(),this._teardown=void 0),e&&(this.lastValues=this.values=void 0)}hasChanged(){return!this.lastValues||this.values.some((e,s)=>this.lastValues[s]!==e)}})}function T(t,e){t[u].push(e)}A(T);const W=t=>t instanceof Element?t:t.startNode||t.endNode||t.parentNode,X=g(class extends p{Context;value;_ranEffect;_unsubscribe;constructor(t,e,s){super(t,e),this._updater=this._updater.bind(this),this._ranEffect=!1,this._unsubscribe=null,T(e,this)}update(t){return this.Context!==t&&(this._subscribe(t),this.Context=t),this.value}call(){this._ranEffect||(this._ranEffect=!0,this._unsubscribe&&this._unsubscribe(),this._subscribe(this.Context),this.state.update())}_updater(t){this.value=t,this.state.update()}_subscribe(t){const e={Context:t,callback:this._updater};W(this.state.host).dispatchEvent(new CustomEvent(z,{detail:e,bubbles:!0,cancelable:!0,composed:!0}));const{unsubscribe:r=null,value:n}=e;this.value=r?n:t.defaultValue,this._unsubscribe=r}teardown(){this._unsubscribe&&this._unsubscribe()}});function tt(t){return e=>{const s={Provider:class extends HTMLElement{listeners;_value;constructor(){super(),this.style.display="contents",this.listeners=new Set,this.addEventListener(z,this)}disconnectedCallback(){this.removeEventListener(z,this)}handleEvent(r){const{detail:n}=r;n.Context===s&&(n.value=this.value,n.unsubscribe=this.unsubscribe.bind(this,n.callback),this.listeners.add(n.callback),r.stopPropagation())}unsubscribe(r){this.listeners.delete(r)}set value(r){this._value=r;for(let n of this.listeners)n(r)}get value(){return this._value}},Consumer:t(function({render:r}){const n=X(s);return r(n)},{useShadowDOM:!1}),defaultValue:e};return s}}g(class extends p{value;values;constructor(t,e,s,r){super(t,e),this.value=s(),this.values=r}update(t,e){return this.hasChanged(e)&&(this.values=e,this.value=t()),this.value}hasChanged(t=[]){return t.some((e,s)=>this.values[s]!==e)}});function et(t,e){t[b].push(e)}A(et);g(class extends p{args;constructor(t,e,s){super(t,e),this.updater=this.updater.bind(this),typeof s=="function"&&(s=s()),this.makeArgs(s)}update(){return this.args}updater(t){const[e]=this.args;typeof t=="function"&&(t=t(e)),!Object.is(e,t)&&(this.makeArgs(t),this.state.update())}makeArgs(t){this.args=Object.freeze([t,this.updater])}});g(class extends p{reducer;currentState;constructor(t,e,s,r,n){super(t,e),this.dispatch=this.dispatch.bind(this),this.currentState=n!==void 0?n(r):r}update(t){return this.reducer=t,[this.currentState,this.dispatch]}dispatch(t){this.currentState=this.reducer(this.currentState,t),this.state.update()}});const st=/([A-Z])/gu;g(class extends p{property;eventName;constructor(t,e,s,r){if(super(t,e),this.state.virtual)throw new Error("Can't be used with virtual components.");this.updater=this.updater.bind(this),this.property=s,this.eventName=s.replace(st,"-$1").toLowerCase()+"-changed",this.state.host[this.property]==null&&(typeof r=="function"&&(r=r()),r!=null&&this.updateProp(r))}update(t,e){return[this.state.host[this.property],this.updater]}updater(t){const e=this.state.host[this.property];typeof t=="function"&&(t=t(e)),!Object.is(e,t)&&this.updateProp(t)}updateProp(t){this.notify(t).defaultPrevented||(this.state.host[this.property]=t)}notify(t){const e=new CustomEvent(this.eventName,{detail:{value:t,path:this.property},cancelable:!0});return this.state.host.dispatchEvent(e),e}});function ot({render:t}){const e=J(t),s=tt(e);return{component:e,createContext:s}}const{component:rt}=ot({render:M}),nt=O(R`
+import{D as M,b as B}from"./iframe-BhoxE1Ia.js";let v,C=0;function _(t){v=t}function $(){v=null,C=0}function U(){return C++}const y=Symbol("haunted.phase"),m=Symbol("haunted.hook"),k=Symbol("haunted.update"),S=Symbol("haunted.commit"),u=Symbol("haunted.effects"),f=Symbol("haunted.layoutEffects"),z="haunted.context";class Q{update;host;virtual;[m];[u];[f];constructor(e,s){this.update=e,this.host=s,this[m]=new Map,this[u]=[],this[f]=[]}run(e){_(this);let s=e();return $(),s}_runEffects(e){let s=this[e];_(this);for(let r of s)r.call(this);$()}runEffects(){this._runEffects(u)}runLayoutEffects(){this._runEffects(f)}teardown(){this[m].forEach(s=>{typeof s.teardown=="function"&&s.teardown(!0)})}}const H=Promise.resolve().then.bind(Promise.resolve());function P(){let t=[],e;function s(){e=null;let r=t;t=[];for(var n=0,h=r.length;n<h;n++)r[n]()}return function(r){t.push(r),e==null&&(e=H(s))}}const q=P(),E=P();class Y{renderer;host;state;[y];_updateQueued;_active;constructor(e,s){this.renderer=e,this.host=s,this.state=new Q(this.update.bind(this),s),this[y]=null,this._updateQueued=!1,this._active=!0}update(){this._active&&(this._updateQueued||(q(()=>{let e=this.handlePhase(k);E(()=>{this.handlePhase(S,e),E(()=>{this.handlePhase(u)})}),this._updateQueued=!1}),this._updateQueued=!0))}handlePhase(e,s){switch(this[y]=e,e){case S:this.commit(s),this.runEffects(f);return;case k:return this.render();case u:return this.runEffects(u)}}render(){return this.state.run(()=>this.renderer.call(this.host,this.host))}runEffects(e){this.state._runEffects(e)}teardown(){this.state.teardown()}pause(){this._active=!1}resume(){this._active=!0}}const O=(...t)=>{const e=new CSSStyleSheet;return e.replaceSync(t.join("")),e},Z=t=>t?.map(e=>typeof e=="string"?O(e):e),G=(t,...e)=>t.flatMap((s,r)=>[s,e[r]||""]).join(""),R=G,V=(t="")=>t.replace(/-+([a-z])?/g,(e,s)=>s?s.toUpperCase():"");function J(t){class e extends Y{frag;renderResult;constructor(n,h,b){super(n,b||h),this.frag=h}commit(n){this.renderResult=t(n,this.frag)}}function s(r,n,h){const b=(h||n||{}).baseElement||HTMLElement,{observedAttributes:N=[],useShadowDOM:j=!0,shadowRootInit:I={},styleSheets:L}=h||n||{},w=Z(r.styleSheets||L);class x extends b{_scheduler;static get observedAttributes(){return r.observedAttributes||N||[]}constructor(){if(super(),j===!1)this._scheduler=new e(r,this);else{const i=this.attachShadow({mode:"open",...I});w&&(i.adoptedStyleSheets=w),this._scheduler=new e(r,i,this)}}connectedCallback(){this._scheduler.resume(),this._scheduler.update(),this._scheduler.renderResult?.setConnected(!0)}disconnectedCallback(){this._scheduler.pause(),this._scheduler.teardown(),this._scheduler.renderResult?.setConnected(!1)}attributeChangedCallback(i,d,a){if(d===a)return;let c=a===""?!0:a;Reflect.set(this,V(i),c)}}function D(l){let i=l,d=!1;return Object.freeze({enumerable:!0,configurable:!0,get(){return i},set(a){d&&i===a||(d=!0,i=a,this._scheduler&&this._scheduler.update())}})}const F=new Proxy(b.prototype,{getPrototypeOf(l){return l},set(l,i,d,a){let c;return i in l?(c=Object.getOwnPropertyDescriptor(l,i),c&&c.set?(c.set.call(a,d),!0):(Reflect.set(l,i,d,a),!0)):(typeof i=="symbol"||i[0]==="_"?c={enumerable:!0,configurable:!0,writable:!0,value:d}:c=D(d),Object.defineProperty(a,i,c),c.set&&c.set.call(a,d),!0)}});return Object.setPrototypeOf(x.prototype,F),x}return s}class g{id;state;constructor(e,s){this.id=e,this.state=s}}function K(t,...e){let s=U(),r=v[m],n=r.get(s);return n||(n=new t(s,v,...e),r.set(s,n)),n.update(...e)}function p(t){return K.bind(null,t)}function A(t){return p(class extends g{callback;lastValues;values;_teardown;constructor(e,s,r,n){super(e,s),t(s,this)}update(e,s){this.callback=e,this.values=s}call(){const e=!this.values||this.hasChanged();this.lastValues=this.values,e&&this.run()}run(){this.teardown(),this._teardown=this.callback.call(this.state)}teardown(e){typeof this._teardown=="function"&&(this._teardown(),this._teardown=void 0),e&&(this.lastValues=this.values=void 0)}hasChanged(){return!this.lastValues||this.values.some((e,s)=>this.lastValues[s]!==e)}})}function T(t,e){t[u].push(e)}A(T);const W=t=>t instanceof Element?t:t.startNode||t.endNode||t.parentNode,X=p(class extends g{Context;value;_ranEffect;_unsubscribe;constructor(t,e,s){super(t,e),this._updater=this._updater.bind(this),this._ranEffect=!1,this._unsubscribe=null,T(e,this)}update(t){return this.Context!==t&&(this._subscribe(t),this.Context=t),this.value}call(){this._ranEffect||(this._ranEffect=!0,this._unsubscribe&&this._unsubscribe(),this._subscribe(this.Context),this.state.update())}_updater(t){this.value=t,this.state.update()}_subscribe(t){const e={Context:t,callback:this._updater};W(this.state.host).dispatchEvent(new CustomEvent(z,{detail:e,bubbles:!0,cancelable:!0,composed:!0}));const{unsubscribe:r=null,value:n}=e;this.value=r?n:t.defaultValue,this._unsubscribe=r}teardown(){this._unsubscribe&&this._unsubscribe()}});function tt(t){return e=>{const s={Provider:class extends HTMLElement{listeners;_value;constructor(){super(),this.style.display="contents",this.listeners=new Set,this.addEventListener(z,this)}disconnectedCallback(){this.removeEventListener(z,this)}handleEvent(r){const{detail:n}=r;n.Context===s&&(n.value=this.value,n.unsubscribe=this.unsubscribe.bind(this,n.callback),this.listeners.add(n.callback),r.stopPropagation())}unsubscribe(r){this.listeners.delete(r)}set value(r){this._value=r;for(let n of this.listeners)n(r)}get value(){return this._value}},Consumer:t(function({render:r}){const n=X(s);return r(n)},{useShadowDOM:!1}),defaultValue:e};return s}}p(class extends g{value;values;constructor(t,e,s,r){super(t,e),this.value=s(),this.values=r}update(t,e){return this.hasChanged(e)&&(this.values=e,this.value=t()),this.value}hasChanged(t=[]){return t.some((e,s)=>this.values[s]!==e)}});function et(t,e){t[f].push(e)}A(et);p(class extends g{args;constructor(t,e,s){super(t,e),this.updater=this.updater.bind(this),typeof s=="function"&&(s=s()),this.makeArgs(s)}update(){return this.args}updater(t){const[e]=this.args;typeof t=="function"&&(t=t(e)),!Object.is(e,t)&&(this.makeArgs(t),this.state.update())}makeArgs(t){this.args=Object.freeze([t,this.updater])}});p(class extends g{reducer;currentState;constructor(t,e,s,r,n){super(t,e),this.dispatch=this.dispatch.bind(this),this.currentState=n!==void 0?n(r):r}update(t){return this.reducer=t,[this.currentState,this.dispatch]}dispatch(t){this.currentState=this.reducer(this.currentState,t),this.state.update()}});const st=/([A-Z])/gu;p(class extends g{property;eventName;constructor(t,e,s,r){if(super(t,e),this.state.virtual)throw new Error("Can't be used with virtual components.");this.updater=this.updater.bind(this),this.property=s,this.eventName=s.replace(st,"-$1").toLowerCase()+"-changed",this.state.host[this.property]==null&&(typeof r=="function"&&(r=r()),r!=null&&this.updateProp(r))}update(t,e){return[this.state.host[this.property],this.updater]}updater(t){const e=this.state.host[this.property];typeof t=="function"&&(t=t(e)),!Object.is(e,t)&&this.updateProp(t)}updateProp(t){this.notify(t).defaultPrevented||(this.state.host[this.property]=t)}notify(t){const e=new CustomEvent(this.eventName,{detail:{value:t,path:this.property},cancelable:!0});return this.state.host.dispatchEvent(e),e}});function ot({render:t}){const e=J(t),s=tt(e);return{component:e,createContext:s}}const{component:rt}=ot({render:M}),nt=O(R`
 	/*
 	 * Use border-box sizing for all elements.
 	 * This is safe and doesn't conflict with child component styles.
@@ -238,9 +238,10 @@ import{D as M,b as B}from"./iframe-gic9MX1c.js";let v,C=0;function _(t){v=t}func
 		);
 		color: var(--cz-color-text-secondary);
 		border-radius: var(--cz-radius-full);
-		/* Block air sized so md/lg boxes render their --cz-tag-height-* rung:
-		   21px line + 2px border + 2x air */
-		padding: ${o(.625)} ${o(2)};
+		/* Boxes render their --cz-tag-height-* rung; padding gives the air */
+		box-sizing: border-box;
+		min-height: var(--cz-tag-height-md);
+		padding: ${o(.5)} ${o(2)};
 		font-size: var(--cz-text-sm);
 		line-height: var(--cz-text-sm-line-height);
 	}
@@ -298,7 +299,7 @@ import{D as M,b as B}from"./iframe-gic9MX1c.js";let v,C=0;function _(t){v=t}func
 	:host([type='color']) .badge,
 	:host([type='modern']) .badge {
 		border-radius: var(--cz-radius-sm);
-		padding: ${o(.625)} ${o(2)};
+		padding: ${o(.5)} ${o(2)};
 	}
 
 	:host([type='modern']) .badge {
@@ -311,6 +312,7 @@ import{D as M,b as B}from"./iframe-gic9MX1c.js";let v,C=0;function _(t){v=t}func
 
 	/* --- Pill sizes --- */
 	:host([size='sm']) .badge {
+		min-height: var(--cz-tag-height-sm);
 		padding: ${o(.5)} ${o(2)};
 		font-size: var(--cz-text-xs);
 		line-height: var(--cz-text-xs-line-height);
@@ -318,7 +320,8 @@ import{D as M,b as B}from"./iframe-gic9MX1c.js";let v,C=0;function _(t){v=t}func
 	}
 
 	:host([size='lg']) .badge {
-		padding: ${o(1.125)} ${o(3)};
+		min-height: var(--cz-tag-height-lg);
+		padding: ${o(1)} ${o(3)};
 	}
 
 	/* --- Badge sizes --- */
@@ -332,7 +335,7 @@ import{D as M,b as B}from"./iframe-gic9MX1c.js";let v,C=0;function _(t){v=t}func
 
 	:host([type='color'][size='lg']) .badge,
 	:host([type='modern'][size='lg']) .badge {
-		padding: ${o(1.125)} ${o(2.5)};
+		padding: ${o(1)} ${o(2.5)};
 		border-radius: var(--cz-radius-md);
 	}
 
@@ -366,7 +369,7 @@ import{D as M,b as B}from"./iframe-gic9MX1c.js";let v,C=0;function _(t){v=t}func
 	}
 	/* Pill + dot: asymmetric padding (tighter left) */
 	:host([dot]) .badge {
-		padding: ${o(.625)} ${o(2.5)} ${o(.625)} ${o(2)};
+		padding: ${o(.5)} ${o(2.5)} ${o(.5)} ${o(2)};
 	}
 
 	:host([dot][size='sm']) .badge {
@@ -374,13 +377,13 @@ import{D as M,b as B}from"./iframe-gic9MX1c.js";let v,C=0;function _(t){v=t}func
 	}
 
 	:host([dot][size='lg']) .badge {
-		padding: ${o(1.125)} ${o(3)} ${o(1.125)} ${o(2.5)};
+		padding: ${o(1)} ${o(3)} ${o(1)} ${o(2.5)};
 	}
 
 	/* Badge + dot: symmetric padding (same as base badge) */
 	:host([dot][type='color']) .badge,
 	:host([dot][type='modern']) .badge {
-		padding: ${o(.625)} ${o(2)};
+		padding: ${o(.5)} ${o(2)};
 	}
 
 	:host([dot][type='color'][size='sm']) .badge,
@@ -390,7 +393,7 @@ import{D as M,b as B}from"./iframe-gic9MX1c.js";let v,C=0;function _(t){v=t}func
 
 	:host([dot][type='color'][size='lg']) .badge,
 	:host([dot][type='modern'][size='lg']) .badge {
-		padding: ${o(1.125)} ${o(2.5)};
+		padding: ${o(1)} ${o(2.5)};
 	}
 
 	/* =========================================
@@ -459,7 +462,6 @@ import{D as M,b as B}from"./iframe-gic9MX1c.js";let v,C=0;function _(t){v=t}func
 	/* Compact counters keep a stable pill height around smaller metadata text. */
 	:host([size='xs']) .badge,
 	:host([size='xs'][dot]) .badge {
-		box-sizing: border-box;
 		min-height: ${o(5)};
 		padding: 0 ${o(1)};
 		font-size: var(--cz-text-2xs, var(--cz-text-xs));
