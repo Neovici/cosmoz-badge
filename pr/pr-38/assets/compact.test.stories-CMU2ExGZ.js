@@ -1,4 +1,4 @@
-import{b as r}from"./iframe-Yr9wd4n6.js";import"./cosmoz-badge-DrCc54XO.js";import"./preload-helper-PPVm8Dsz.js";const{expect:e,waitFor:g}=__STORYBOOK_MODULE_TEST__,h={title:"Tests/Compact badge"},o={render:()=>r`
+import{b as r}from"./iframe-gic9MX1c.js";import"./cosmoz-badge-D4ecPG93.js";import"./preload-helper-PPVm8Dsz.js";const{expect:e,waitFor:g}=__STORYBOOK_MODULE_TEST__,h={title:"Tests/Compact badge"},o={render:()=>r`
         <div style="--cz-text-2xs: .6875rem; --cz-text-2xs-line-height: 1.5">
             ${["pill","color","modern"].map(t=>r`
                     <cosmoz-badge size="xs" type=${t}>1 409 166</cosmoz-badge>
