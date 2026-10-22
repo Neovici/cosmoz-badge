@@ -81,6 +81,19 @@ export const styles = css`
 		border-color: var(--cz-color-border-processing-subtle);
 	}
 
+	.custom {
+		background-color: var(
+			--cosmoz-badge-bg-color,
+			color-mix(in oklab, var(--color) 14%, var(--cz-color-bg-primary))
+		);
+		border-color: var(
+			--cosmoz-badge-border-color,
+			color-mix(in oklab, var(--color) 32%, var(--cz-color-bg-primary))
+		);
+		/* mostly text-primary, so user-picked very light or dark colors stay readable */
+		color: color-mix(in oklab, var(--color) 40%, var(--cz-color-text-primary));
+	}
+
 	/* Modern type: neutral bg/text/border regardless of color */
 	:host([type='modern']) .badge {
 		background-color: var(--cz-color-bg-primary);
@@ -160,6 +173,13 @@ export const styles = css`
 	:host([color='processing']) .dot {
 		background-color: var(--cz-color-fg-processing-secondary);
 	}
+	.custom .dot {
+		background-color: var(--color);
+	}
+	.custom ::slotted(svg) {
+		color: var(--color);
+	}
+
 	/* Pill + dot: asymmetric padding (tighter left) */
 	:host([dot]) .badge {
 		padding: ${sp(0.5)} ${sp(2.5)} ${sp(0.5)} ${sp(2)};
