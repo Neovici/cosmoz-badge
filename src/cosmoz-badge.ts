@@ -39,7 +39,7 @@ import { styles } from './styles';
  * ```
  */
 const CosmozBadge = () => {
-	return html`<span class="badge" part="badge" role="status">
+	return html`<span class="badge" part="badge">
 		<span class="dot" part="dot"></span>
 		<slot name="prefix"></slot>
 		<span class="content"><slot></slot></span>
