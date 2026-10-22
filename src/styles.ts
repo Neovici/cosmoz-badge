@@ -90,7 +90,8 @@ export const styles = css`
 			--cosmoz-badge-border-color,
 			color-mix(in oklab, var(--color) 32%, var(--cz-color-bg-primary))
 		);
-		color: color-mix(in oklab, var(--color) 60%, var(--cz-color-text-primary));
+		/* mostly text-primary, so user-picked very light or dark colors stay readable */
+		color: color-mix(in oklab, var(--color) 40%, var(--cz-color-text-primary));
 	}
 
 	/* Modern type: neutral bg/text/border regardless of color */

@@ -35,12 +35,12 @@ import '@neovici/cosmoz-badge';
 
 ## Attributes
 
-| Attribute | Type    | Default | Description                                                 |
-| --------- | ------- | ------- | ----------------------------------------------------------- |
-| `type`    | string  | `pill`  | Badge type: `pill`, `color`, `modern`                       |
-| `color`   | string  | `gray`  | Badge color: `gray`, `brand`, `error`, `warning`, `success` |
-| `size`    | string  | `md`    | Badge size: `sm`, `md`, `lg`                                |
-| `dot`     | boolean | `false` | Show a colored dot indicator before text                    |
+| Attribute | Type    | Default | Description                                                                                                                                                    |
+| --------- | ------- | ------- | -------------------------------------------------------------------------------------------------------------------------------------------------------------- |
+| `type`    | string  | `pill`  | Badge type: `pill`, `color`, `modern`                                                                                                                          |
+| `color`   | string  | `gray`  | Badge color: `gray`, `brand`, `error`, `warning`, `success`, `processing`, or any CSS color (e.g. `#7c3aed`), which tints the background, border, text and dot |
+| `size`    | string  | `md`    | Badge size: `sm`, `md`, `lg`                                                                                                                                   |
+| `dot`     | boolean | `false` | Show a colored dot indicator before text                                                                                                                       |
 
 ## Type Variants
 

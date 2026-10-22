@@ -4,6 +4,13 @@ import { classMap } from 'lit-html/directives/class-map.js';
 import { styleMap } from 'lit-html/directives/style-map.js';
 import { styles } from './styles';
 
+const NAMED = ['gray', 'brand', 'error', 'warning', 'success', 'processing'];
+
+// Anything else that is a valid CSS color tints the badge; unknown names keep
+// the gray default instead of rendering an invalid color-mix().
+const isCustom = (color?: string): color is string =>
+	!!color && !NAMED.includes(color) && CSS.supports('color', color);
+
 /**
  * A customizable badge component using cosmoz design tokens.
  *
@@ -41,10 +48,8 @@ import { styles } from './styles';
  * </cosmoz-badge>
  * ```
  */
-const NAMED = ['gray', 'brand', 'error', 'warning', 'success', 'processing'];
-
 const CosmozBadge = ({ color }: { color?: string }) => {
-	const custom = !!color && !NAMED.includes(color);
+	const custom = isCustom(color);
 	return html`<span
 		class=${classMap({ badge: true, custom })}
 		part="badge"

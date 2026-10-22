@@ -45,3 +45,37 @@ export const SwitchToNamed: StoryObj = {
 		});
 	},
 };
+
+export const UnknownColorFallsBack: StoryObj = {
+	render: () => html`
+		<cosmoz-badge id="plain">Plain</cosmoz-badge>
+		<cosmoz-badge id="unknown" color="primary">Unknown</cosmoz-badge>
+	`,
+	play: async ({ canvasElement }) => {
+		const $ = (id: string) => canvasElement.querySelector(`#${id}`)!;
+		await waitFor(() => {
+			const unknown = badgeOf($('unknown'));
+			expect(unknown.classList.contains('custom')).toBe(false);
+			expect(getComputedStyle(unknown).backgroundColor).toBe(
+				getComputedStyle(badgeOf($('plain'))).backgroundColor,
+			);
+		});
+	},
+};
+
+export const OverridesWin: StoryObj = {
+	render: () =>
+		html`<cosmoz-badge
+			color="#ff0000"
+			style="--cosmoz-badge-bg-color: rgb(0, 128, 0)"
+			>Badge</cosmoz-badge
+		>`,
+	play: async ({ canvasElement }) => {
+		const host = canvasElement.querySelector('cosmoz-badge')!;
+		await waitFor(() =>
+			expect(getComputedStyle(badgeOf(host)).backgroundColor).toBe(
+				'rgb(0, 128, 0)',
+			),
+		);
+	},
+};
