@@ -78,6 +78,18 @@ export const Colors = {
 			<cosmoz-badge color="processing">Processing</cosmoz-badge>
 		</div>
 	`,
+};
+
+export const CustomColors = {
+	render: () => html`
+		<div class="story-row">
+			${['#7c3aed', '#db2777', '#0891b2', '#65a30d', '#ea580c'].map(
+				(color) =>
+					html`<cosmoz-badge color=${color} dot>${color}</cosmoz-badge>
+						<cosmoz-badge color=${color} type="color">${color}</cosmoz-badge>`,
+			)}
+		</div>
+	`,
 	parameters: {
 		docs: {
 			description: {
