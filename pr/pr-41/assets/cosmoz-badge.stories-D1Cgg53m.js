@@ -1,4 +1,4 @@
-import{A as x,b as r,w}from"./iframe-Cwj_Xr1N.js";import"./cosmoz-badge-Bbz2oMaz.js";import"./preload-helper-PPVm8Dsz.js";const n=o=>o??x;function $(o,c,d){return o?c(o):d?.(o)}const s=({slot:o,title:c,className:d,width:t="24",height:l="24",styles:i}={})=>r`
+import{A as x,b as r,w}from"./iframe-lup-5wst.js";import"./cosmoz-badge-Bk8X_uKe.js";import"./preload-helper-PPVm8Dsz.js";const n=o=>o??x;function $(o,c,d){return o?c(o):d?.(o)}const s=({slot:o,title:c,className:d,width:t="24",height:i="24",styles:l}={})=>r`
   <svg
     slot=${n(o)}
     class=${`arrow-right-icon ${d??""}`}
@@ -11,13 +11,13 @@ import{A as x,b as r,w}from"./iframe-Cwj_Xr1N.js";import"./cosmoz-badge-Bbz2oMaz
     stroke-linecap="round"
     stroke-linejoin="round"
     width=${t}
-    height=${l}
-    style=${n(i)}
+    height=${i}
+    style=${n(l)}
   >
     ${$(c,()=>w`<title>${c}</title>`)}
     <path d="M5 12h14m0 0-7-7m7 7-7 7" />
   </svg>
-`,e=({slot:o,title:c,className:d,width:t="24",height:l="24",styles:i}={})=>r`
+`,e=({slot:o,title:c,className:d,width:t="24",height:i="24",styles:l}={})=>r`
   <svg
     slot=${n(o)}
     class=${`arrow-up-icon ${d??""}`}
@@ -30,13 +30,13 @@ import{A as x,b as r,w}from"./iframe-Cwj_Xr1N.js";import"./cosmoz-badge-Bbz2oMaz
     stroke-linecap="round"
     stroke-linejoin="round"
     width=${t}
-    height=${l}
-    style=${n(i)}
+    height=${i}
+    style=${n(l)}
   >
     ${$(c,()=>w`<title>${c}</title>`)}
     <path d="M12 19V5m0 0-7 7m7-7 7 7" />
   </svg>
-`,a=({slot:o,title:c,className:d,width:t="24",height:l="24",styles:i}={})=>r`
+`,a=({slot:o,title:c,className:d,width:t="24",height:i="24",styles:l}={})=>r`
   <svg
     slot=${n(o)}
     class=${`plus-icon ${d??""}`}
@@ -49,13 +49,13 @@ import{A as x,b as r,w}from"./iframe-Cwj_Xr1N.js";import"./cosmoz-badge-Bbz2oMaz
     stroke-linecap="round"
     stroke-linejoin="round"
     width=${t}
-    height=${l}
-    style=${n(i)}
+    height=${i}
+    style=${n(l)}
   >
     ${$(c,()=>w`<title>${c}</title>`)}
     <path d="M12 5v14m-7-7h14" />
   </svg>
-`,W={title:"Cosmoz Badge",component:"cosmoz-badge",tags:["autodocs"],argTypes:{type:{control:"select",options:["pill","color","modern","icon"],description:"Badge type variant",table:{defaultValue:{summary:"pill"}}},color:{control:"select",options:["gray","brand","error","warning","success"],description:"Badge color scheme",table:{defaultValue:{summary:"gray"}}},size:{control:"select",options:["xs","sm","md","lg"],description:"Badge size",table:{defaultValue:{summary:"md"}}},dot:{control:"boolean",description:"Show dot indicator",table:{defaultValue:{summary:"false"}}},label:{control:"text",description:"Badge label text"}}},I=o=>r`
+`,W={title:"Cosmoz Badge",component:"cosmoz-badge",tags:["autodocs"],argTypes:{type:{control:"select",options:["pill","color","modern","icon"],description:"Badge type variant",table:{defaultValue:{summary:"pill"}}},color:{control:"select",options:["gray","brand","error","warning","success","processing","#7c3aed"],description:"Badge color scheme",table:{defaultValue:{summary:"gray"}}},size:{control:"select",options:["xs","sm","md","lg"],description:"Badge size",table:{defaultValue:{summary:"md"}}},dot:{control:"boolean",description:"Show dot indicator",table:{defaultValue:{summary:"false"}}},label:{control:"text",description:"Badge label text"}}},I=o=>r`
     <cosmoz-badge
         type=${o.type||"pill"}
         color=${o.color||"gray"}
@@ -73,12 +73,12 @@ import{A as x,b as r,w}from"./iframe-Cwj_Xr1N.js";import"./cosmoz-badge-Bbz2oMaz
             <cosmoz-badge color="success">Success</cosmoz-badge>
             <cosmoz-badge color="processing">Processing</cosmoz-badge>
         </div>
-    `},b={render:()=>r`
+    `,parameters:{docs:{description:{story:"All available color variants for the badge."}}}},b={render:()=>r`
         <div class="story-row">
             ${["#7c3aed","#db2777","#0891b2","#65a30d","#ea580c"].map(o=>r`<cosmoz-badge color=${o} dot>${o}</cosmoz-badge>
                         <cosmoz-badge color=${o} type="color">${o}</cosmoz-badge>`)}
         </div>
-    `,parameters:{docs:{description:{story:"All available color variants for the badge."}}}},z={render:()=>r`
+    `,parameters:{docs:{description:{story:"Any CSS color tints the background, border, text and dot, e.g. for user-defined labels."}}}},z={render:()=>r`
         <div class="story-row">
             <cosmoz-badge>Gray</cosmoz-badge>
             <cosmoz-badge type="color" color="brand">Color</cosmoz-badge>
@@ -362,7 +362,14 @@ import{A as x,b as r,w}from"./iframe-Cwj_Xr1N.js";import"./cosmoz-badge-Bbz2oMaz
             <cosmoz-badge color="success">Success</cosmoz-badge>
             <cosmoz-badge color="processing">Processing</cosmoz-badge>
         </div>
-    \`
+    \`,
+  parameters: {
+    docs: {
+      description: {
+        story: 'All available color variants for the badge.'
+      }
+    }
+  }
 }`,...m.parameters?.docs?.source}}};b.parameters={...b.parameters,docs:{...b.parameters?.docs,source:{originalSource:`{
   render: () => html\`
         <div class="story-row">
@@ -373,7 +380,7 @@ import{A as x,b as r,w}from"./iframe-Cwj_Xr1N.js";import"./cosmoz-badge-Bbz2oMaz
   parameters: {
     docs: {
       description: {
-        story: 'All available color variants for the badge.'
+        story: 'Any CSS color tints the background, border, text and dot, e.g. for user-defined labels.'
       }
     }
   }
@@ -777,4 +784,4 @@ import{A as x,b as r,w}from"./iframe-Cwj_Xr1N.js";import"./cosmoz-badge-Bbz2oMaz
       }
     }
   }
-}`,...h.parameters?.docs?.source}}};const E=["Default","Colors","CustomColors","Types","Sizes","WithDot","WithPrefixIcon","WithSuffixIcon","IconOnly","AllColorsByType"];export{h as AllColorsByType,m as Colors,b as CustomColors,g as Default,v as IconOnly,p as Sizes,z as Types,y as WithDot,u as WithPrefixIcon,f as WithSuffixIcon,E as __namedExportsOrder,W as default};
+}`,...h.parameters?.docs?.source}}};const C=["Default","Colors","CustomColors","Types","Sizes","WithDot","WithPrefixIcon","WithSuffixIcon","IconOnly","AllColorsByType"];export{h as AllColorsByType,m as Colors,b as CustomColors,g as Default,v as IconOnly,p as Sizes,z as Types,y as WithDot,u as WithPrefixIcon,f as WithSuffixIcon,C as __namedExportsOrder,W as default};
