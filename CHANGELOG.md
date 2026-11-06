@@ -1,3 +1,9 @@
+## 2.2.0
+
+### Minor Changes
+
+- 4ccb9d4: `color` accepts any CSS color, tinting the background, border, text and dot from it.
+
 ## 2.1.1
 
 ### Patch Changes
