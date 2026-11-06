@@ -1,6 +1,6 @@
-import{A as $,b as r,w as h}from"./iframe-DwtbWc_h.js";import"./cosmoz-badge-Bbedxmzu.js";import"./preload-helper-PPVm8Dsz.js";const n=e=>e??$;function w(e,c,d){return e?c(e):d?.(e)}const o=({slot:e,title:c,className:d,width:t="24",height:i="24",styles:l}={})=>r`
+import{A as x,b as r,w}from"./iframe-lup-5wst.js";import"./cosmoz-badge-Bk8X_uKe.js";import"./preload-helper-PPVm8Dsz.js";const n=o=>o??x;function $(o,c,d){return o?c(o):d?.(o)}const s=({slot:o,title:c,className:d,width:t="24",height:i="24",styles:l}={})=>r`
   <svg
-    slot=${n(e)}
+    slot=${n(o)}
     class=${`arrow-right-icon ${d??""}`}
     viewBox="0 0 24 24"
     preserveAspectRatio="xMidYMid meet"
@@ -14,12 +14,12 @@ import{A as $,b as r,w as h}from"./iframe-DwtbWc_h.js";import"./cosmoz-badge-Bbe
     height=${i}
     style=${n(l)}
   >
-    ${w(c,()=>h`<title>${c}</title>`)}
+    ${$(c,()=>w`<title>${c}</title>`)}
     <path d="M5 12h14m0 0-7-7m7 7-7 7" />
   </svg>
-`,s=({slot:e,title:c,className:d,width:t="24",height:i="24",styles:l}={})=>r`
+`,e=({slot:o,title:c,className:d,width:t="24",height:i="24",styles:l}={})=>r`
   <svg
-    slot=${n(e)}
+    slot=${n(o)}
     class=${`arrow-up-icon ${d??""}`}
     viewBox="0 0 24 24"
     preserveAspectRatio="xMidYMid meet"
@@ -33,12 +33,12 @@ import{A as $,b as r,w as h}from"./iframe-DwtbWc_h.js";import"./cosmoz-badge-Bbe
     height=${i}
     style=${n(l)}
   >
-    ${w(c,()=>h`<title>${c}</title>`)}
+    ${$(c,()=>w`<title>${c}</title>`)}
     <path d="M12 19V5m0 0-7 7m7-7 7 7" />
   </svg>
-`,a=({slot:e,title:c,className:d,width:t="24",height:i="24",styles:l}={})=>r`
+`,a=({slot:o,title:c,className:d,width:t="24",height:i="24",styles:l}={})=>r`
   <svg
-    slot=${n(e)}
+    slot=${n(o)}
     class=${`plus-icon ${d??""}`}
     viewBox="0 0 24 24"
     preserveAspectRatio="xMidYMid meet"
@@ -52,19 +52,19 @@ import{A as $,b as r,w as h}from"./iframe-DwtbWc_h.js";import"./cosmoz-badge-Bbe
     height=${i}
     style=${n(l)}
   >
-    ${w(c,()=>h`<title>${c}</title>`)}
+    ${$(c,()=>w`<title>${c}</title>`)}
     <path d="M12 5v14m-7-7h14" />
   </svg>
-`,P={title:"Cosmoz Badge",component:"cosmoz-badge",tags:["autodocs"],argTypes:{type:{control:"select",options:["pill","color","modern","icon"],description:"Badge type variant",table:{defaultValue:{summary:"pill"}}},color:{control:"select",options:["gray","brand","error","warning","success"],description:"Badge color scheme",table:{defaultValue:{summary:"gray"}}},size:{control:"select",options:["xs","sm","md","lg"],description:"Badge size",table:{defaultValue:{summary:"md"}}},dot:{control:"boolean",description:"Show dot indicator",table:{defaultValue:{summary:"false"}}},label:{control:"text",description:"Badge label text"}}},x=e=>r`
+`,W={title:"Cosmoz Badge",component:"cosmoz-badge",tags:["autodocs"],argTypes:{type:{control:"select",options:["pill","color","modern","icon"],description:"Badge type variant",table:{defaultValue:{summary:"pill"}}},color:{control:"select",options:["gray","brand","error","warning","success","processing","#7c3aed"],description:"Badge color scheme",table:{defaultValue:{summary:"gray"}}},size:{control:"select",options:["xs","sm","md","lg"],description:"Badge size",table:{defaultValue:{summary:"md"}}},dot:{control:"boolean",description:"Show dot indicator",table:{defaultValue:{summary:"false"}}},label:{control:"text",description:"Badge label text"}}},I=o=>r`
     <cosmoz-badge
-        type=${e.type||"pill"}
-        color=${e.color||"gray"}
-        size=${e.size||"md"}
-        ?dot=${e.dot}
+        type=${o.type||"pill"}
+        color=${o.color||"gray"}
+        size=${o.size||"md"}
+        ?dot=${o.dot}
     >
-        ${e.label||"Badge"}
+        ${o.label||"Badge"}
     </cosmoz-badge>
-`,g={args:{type:"pill",color:"gray",size:"md",label:"Label",dot:!1},render:x},m={render:()=>r`
+`,g={args:{type:"pill",color:"gray",size:"md",label:"Label",dot:!1},render:I},m={render:()=>r`
         <div class="story-row">
             <cosmoz-badge>Default</cosmoz-badge>
             <cosmoz-badge color="brand">Brand</cosmoz-badge>
@@ -75,18 +75,23 @@ import{A as $,b as r,w as h}from"./iframe-DwtbWc_h.js";import"./cosmoz-badge-Bbe
         </div>
     `,parameters:{docs:{description:{story:"All available color variants for the badge."}}}},b={render:()=>r`
         <div class="story-row">
+            ${["#7c3aed","#db2777","#0891b2","#65a30d","#ea580c"].map(o=>r`<cosmoz-badge color=${o} dot>${o}</cosmoz-badge>
+                        <cosmoz-badge color=${o} type="color">${o}</cosmoz-badge>`)}
+        </div>
+    `,parameters:{docs:{description:{story:"Any CSS color tints the background, border, text and dot, e.g. for user-defined labels."}}}},z={render:()=>r`
+        <div class="story-row">
             <cosmoz-badge>Gray</cosmoz-badge>
             <cosmoz-badge type="color" color="brand">Color</cosmoz-badge>
             <cosmoz-badge type="modern">Modern</cosmoz-badge>
         </div>
-    `,parameters:{docs:{description:{story:"The three badge types: pill (rounded), badge (square corners), and modern (shadow + neutral colors)."}}}},z={render:()=>r`
+    `,parameters:{docs:{description:{story:"The three badge types: pill (rounded), badge (square corners), and modern (shadow + neutral colors)."}}}},p={render:()=>r`
         <div class="story-row">
             <cosmoz-badge size="xs" color="brand">Extra small</cosmoz-badge>
             <cosmoz-badge size="sm" color="brand">Small</cosmoz-badge>
             <cosmoz-badge size="md" color="brand">Medium</cosmoz-badge>
             <cosmoz-badge size="lg" color="brand">Large</cosmoz-badge>
         </div>
-    `,parameters:{docs:{description:{story:"Badge sizes: xs, sm, md, and lg."}}}},p={render:()=>r`
+    `,parameters:{docs:{description:{story:"Badge sizes: xs, sm, md, and lg."}}}},y={render:()=>r`
         <div class="story-stack">
             <div>
                 <h1 class="story-section-title">Pill</h1>
@@ -126,28 +131,28 @@ import{A as $,b as r,w as h}from"./iframe-DwtbWc_h.js";import"./cosmoz-badge-Bbe
                 </div>
             </div>
         </div>
-    `,parameters:{docs:{description:{story:"Badge with a colored dot indicator. The dot color follows the badge color scheme."}}}},y={render:()=>r`
+    `,parameters:{docs:{description:{story:"Badge with a colored dot indicator. The dot color follows the badge color scheme."}}}},u={render:()=>r`
         <div class="story-stack">
             <div>
                 <h1 class="story-section-title">Pill</h1>
                 <div class="story-row">
                     <cosmoz-badge>
-                        ${s({slot:"prefix"})} Default
+                        ${e({slot:"prefix"})} Default
                     </cosmoz-badge>
                     <cosmoz-badge color="brand">
-                        ${s({slot:"prefix"})} Brand
+                        ${e({slot:"prefix"})} Brand
                     </cosmoz-badge>
                     <cosmoz-badge color="error">
-                        ${s({slot:"prefix"})} Error
+                        ${e({slot:"prefix"})} Error
                     </cosmoz-badge>
                     <cosmoz-badge color="warning">
-                        ${s({slot:"prefix"})} Warning
+                        ${e({slot:"prefix"})} Warning
                     </cosmoz-badge>
                     <cosmoz-badge color="success">
-                        ${s({slot:"prefix"})} Success
+                        ${e({slot:"prefix"})} Success
                     </cosmoz-badge>
                     <cosmoz-badge color="processing">
-                        ${s({slot:"prefix"})} Processing
+                        ${e({slot:"prefix"})} Processing
                     </cosmoz-badge>
                 </div>
             </div>
@@ -155,22 +160,22 @@ import{A as $,b as r,w as h}from"./iframe-DwtbWc_h.js";import"./cosmoz-badge-Bbe
                 <h1 class="story-section-title">Color</h1>
                 <div class="story-row">
                     <cosmoz-badge type="color">
-                        ${s({slot:"prefix"})} Default
+                        ${e({slot:"prefix"})} Default
                     </cosmoz-badge>
                     <cosmoz-badge type="color" color="brand">
-                        ${s({slot:"prefix"})} Brand
+                        ${e({slot:"prefix"})} Brand
                     </cosmoz-badge>
                     <cosmoz-badge type="color" color="error">
-                        ${s({slot:"prefix"})} Error
+                        ${e({slot:"prefix"})} Error
                     </cosmoz-badge>
                     <cosmoz-badge type="color" color="warning">
-                        ${s({slot:"prefix"})} Warning
+                        ${e({slot:"prefix"})} Warning
                     </cosmoz-badge>
                     <cosmoz-badge type="color" color="success">
-                        ${s({slot:"prefix"})} Success
+                        ${e({slot:"prefix"})} Success
                     </cosmoz-badge>
                     <cosmoz-badge type="color" color="processing">
-                        ${s({slot:"prefix"})} Processing
+                        ${e({slot:"prefix"})} Processing
                     </cosmoz-badge>
                 </div>
             </div>
@@ -178,48 +183,48 @@ import{A as $,b as r,w as h}from"./iframe-DwtbWc_h.js";import"./cosmoz-badge-Bbe
                 <h1 class="story-section-title">Modern</h1>
                 <div class="story-row">
                     <cosmoz-badge type="modern">
-                        ${s({slot:"prefix"})} Default
+                        ${e({slot:"prefix"})} Default
                     </cosmoz-badge>
                     <cosmoz-badge type="modern" color="brand">
-                        ${s({slot:"prefix"})} Brand
+                        ${e({slot:"prefix"})} Brand
                     </cosmoz-badge>
                     <cosmoz-badge type="modern" color="error">
-                        ${s({slot:"prefix"})} Error
+                        ${e({slot:"prefix"})} Error
                     </cosmoz-badge>
                     <cosmoz-badge type="modern" color="warning">
-                        ${s({slot:"prefix"})} Warning
+                        ${e({slot:"prefix"})} Warning
                     </cosmoz-badge>
                     <cosmoz-badge type="modern" color="success">
-                        ${s({slot:"prefix"})} Success
+                        ${e({slot:"prefix"})} Success
                     </cosmoz-badge>
                     <cosmoz-badge type="modern" color="processing">
-                        ${s({slot:"prefix"})} Processing
+                        ${e({slot:"prefix"})} Processing
                     </cosmoz-badge>
                 </div>
             </div>
         </div>
-    `,parameters:{docs:{description:{story:'Badge with a leading (prefix) icon. Place an SVG with slot="prefix".'}}}},u={render:()=>r`
+    `,parameters:{docs:{description:{story:'Badge with a leading (prefix) icon. Place an SVG with slot="prefix".'}}}},f={render:()=>r`
         <div class="story-stack">
             <div>
                 <h1 class="story-section-title">Pill</h1>
                 <div class="story-row">
                     <cosmoz-badge>
-                        Default ${o({slot:"suffix"})}
+                        Default ${s({slot:"suffix"})}
                     </cosmoz-badge>
                     <cosmoz-badge color="brand">
-                        Brand ${o({slot:"suffix"})}
+                        Brand ${s({slot:"suffix"})}
                     </cosmoz-badge>
                     <cosmoz-badge color="error">
-                        Error ${o({slot:"suffix"})}
+                        Error ${s({slot:"suffix"})}
                     </cosmoz-badge>
                     <cosmoz-badge color="warning">
-                        Warning ${o({slot:"suffix"})}
+                        Warning ${s({slot:"suffix"})}
                     </cosmoz-badge>
                     <cosmoz-badge color="success">
-                        Success ${o({slot:"suffix"})}
+                        Success ${s({slot:"suffix"})}
                     </cosmoz-badge>
                     <cosmoz-badge color="processing">
-                        Processing ${o({slot:"suffix"})}
+                        Processing ${s({slot:"suffix"})}
                     </cosmoz-badge>
                 </div>
             </div>
@@ -227,22 +232,22 @@ import{A as $,b as r,w as h}from"./iframe-DwtbWc_h.js";import"./cosmoz-badge-Bbe
                 <h1 class="story-section-title">Color</h1>
                 <div class="story-row">
                     <cosmoz-badge type="color">
-                        Default ${o({slot:"suffix"})}
+                        Default ${s({slot:"suffix"})}
                     </cosmoz-badge>
                     <cosmoz-badge type="color" color="brand">
-                        Brand ${o({slot:"suffix"})}
+                        Brand ${s({slot:"suffix"})}
                     </cosmoz-badge>
                     <cosmoz-badge type="color" color="error">
-                        Error ${o({slot:"suffix"})}
+                        Error ${s({slot:"suffix"})}
                     </cosmoz-badge>
                     <cosmoz-badge type="color" color="warning">
-                        Warning ${o({slot:"suffix"})}
+                        Warning ${s({slot:"suffix"})}
                     </cosmoz-badge>
                     <cosmoz-badge type="color" color="success">
-                        Success ${o({slot:"suffix"})}
+                        Success ${s({slot:"suffix"})}
                     </cosmoz-badge>
                     <cosmoz-badge type="color" color="processing">
-                        Processing ${o({slot:"suffix"})}
+                        Processing ${s({slot:"suffix"})}
                     </cosmoz-badge>
                 </div>
             </div>
@@ -250,27 +255,27 @@ import{A as $,b as r,w as h}from"./iframe-DwtbWc_h.js";import"./cosmoz-badge-Bbe
                 <h1 class="story-section-title">Modern</h1>
                 <div class="story-row">
                     <cosmoz-badge type="modern">
-                        Default ${o({slot:"suffix"})}
+                        Default ${s({slot:"suffix"})}
                     </cosmoz-badge>
                     <cosmoz-badge type="modern" color="brand">
-                        Brand ${o({slot:"suffix"})}
+                        Brand ${s({slot:"suffix"})}
                     </cosmoz-badge>
                     <cosmoz-badge type="modern" color="error">
-                        Error ${o({slot:"suffix"})}
+                        Error ${s({slot:"suffix"})}
                     </cosmoz-badge>
                     <cosmoz-badge type="modern" color="warning">
-                        Warning ${o({slot:"suffix"})}
+                        Warning ${s({slot:"suffix"})}
                     </cosmoz-badge>
                     <cosmoz-badge type="modern" color="success">
-                        Success ${o({slot:"suffix"})}
+                        Success ${s({slot:"suffix"})}
                     </cosmoz-badge>
                     <cosmoz-badge type="modern" color="processing">
-                        Processing ${o({slot:"suffix"})}
+                        Processing ${s({slot:"suffix"})}
                     </cosmoz-badge>
                 </div>
             </div>
         </div>
-    `,parameters:{docs:{description:{story:'Badge with a trailing (suffix) icon. Place an SVG with slot="suffix".'}}}},f={render:()=>r`
+    `,parameters:{docs:{description:{story:'Badge with a trailing (suffix) icon. Place an SVG with slot="suffix".'}}}},v={render:()=>r`
         <div class="story-stack">
             <div>
                 <h1 class="story-section-title">Sizes</h1>
@@ -298,7 +303,7 @@ import{A as $,b as r,w as h}from"./iframe-DwtbWc_h.js";import"./cosmoz-badge-Bbe
                 </div>
             </div>
         </div>
-    `,parameters:{docs:{description:{story:"Icon-only badge with no text. Circular shape with equal padding. Pass an icon in the default slot."}}}},v={render:()=>r`
+    `,parameters:{docs:{description:{story:"Icon-only badge with no text. Circular shape with equal padding. Pass an icon in the default slot."}}}},h={render:()=>r`
         <div class="story-stack">
             <div>
                 <h1 class="story-section-title">Pill</h1>
@@ -368,6 +373,20 @@ import{A as $,b as r,w as h}from"./iframe-DwtbWc_h.js";import"./cosmoz-badge-Bbe
 }`,...m.parameters?.docs?.source}}};b.parameters={...b.parameters,docs:{...b.parameters?.docs,source:{originalSource:`{
   render: () => html\`
         <div class="story-row">
+            \${['#7c3aed', '#db2777', '#0891b2', '#65a30d', '#ea580c'].map(color => html\`<cosmoz-badge color=\${color} dot>\${color}</cosmoz-badge>
+                        <cosmoz-badge color=\${color} type="color">\${color}</cosmoz-badge>\`)}
+        </div>
+    \`,
+  parameters: {
+    docs: {
+      description: {
+        story: 'Any CSS color tints the background, border, text and dot, e.g. for user-defined labels.'
+      }
+    }
+  }
+}`,...b.parameters?.docs?.source}}};z.parameters={...z.parameters,docs:{...z.parameters?.docs,source:{originalSource:`{
+  render: () => html\`
+        <div class="story-row">
             <cosmoz-badge>Gray</cosmoz-badge>
             <cosmoz-badge type="color" color="brand">Color</cosmoz-badge>
             <cosmoz-badge type="modern">Modern</cosmoz-badge>
@@ -380,7 +399,7 @@ import{A as $,b as r,w as h}from"./iframe-DwtbWc_h.js";import"./cosmoz-badge-Bbe
       }
     }
   }
-}`,...b.parameters?.docs?.source}}};z.parameters={...z.parameters,docs:{...z.parameters?.docs,source:{originalSource:`{
+}`,...z.parameters?.docs?.source}}};p.parameters={...p.parameters,docs:{...p.parameters?.docs,source:{originalSource:`{
   render: () => html\`
         <div class="story-row">
             <cosmoz-badge size="xs" color="brand">Extra small</cosmoz-badge>
@@ -396,7 +415,7 @@ import{A as $,b as r,w as h}from"./iframe-DwtbWc_h.js";import"./cosmoz-badge-Bbe
       }
     }
   }
-}`,...z.parameters?.docs?.source}}};p.parameters={...p.parameters,docs:{...p.parameters?.docs,source:{originalSource:`{
+}`,...p.parameters?.docs?.source}}};y.parameters={...y.parameters,docs:{...y.parameters?.docs,source:{originalSource:`{
   render: () => html\`
         <div class="story-stack">
             <div>
@@ -445,7 +464,7 @@ import{A as $,b as r,w as h}from"./iframe-DwtbWc_h.js";import"./cosmoz-badge-Bbe
       }
     }
   }
-}`,...p.parameters?.docs?.source}}};y.parameters={...y.parameters,docs:{...y.parameters?.docs,source:{originalSource:`{
+}`,...y.parameters?.docs?.source}}};u.parameters={...u.parameters,docs:{...u.parameters?.docs,source:{originalSource:`{
   render: () => html\`
         <div class="story-stack">
             <div>
@@ -562,7 +581,7 @@ import{A as $,b as r,w as h}from"./iframe-DwtbWc_h.js";import"./cosmoz-badge-Bbe
       }
     }
   }
-}`,...y.parameters?.docs?.source}}};u.parameters={...u.parameters,docs:{...u.parameters?.docs,source:{originalSource:`{
+}`,...u.parameters?.docs?.source}}};f.parameters={...f.parameters,docs:{...f.parameters?.docs,source:{originalSource:`{
   render: () => html\`
         <div class="story-stack">
             <div>
@@ -679,7 +698,7 @@ import{A as $,b as r,w as h}from"./iframe-DwtbWc_h.js";import"./cosmoz-badge-Bbe
       }
     }
   }
-}`,...u.parameters?.docs?.source}}};f.parameters={...f.parameters,docs:{...f.parameters?.docs,source:{originalSource:`{
+}`,...f.parameters?.docs?.source}}};v.parameters={...v.parameters,docs:{...v.parameters?.docs,source:{originalSource:`{
   render: () => html\`
         <div class="story-stack">
             <div>
@@ -716,7 +735,7 @@ import{A as $,b as r,w as h}from"./iframe-DwtbWc_h.js";import"./cosmoz-badge-Bbe
       }
     }
   }
-}`,...f.parameters?.docs?.source}}};v.parameters={...v.parameters,docs:{...v.parameters?.docs,source:{originalSource:`{
+}`,...v.parameters?.docs?.source}}};h.parameters={...h.parameters,docs:{...h.parameters?.docs,source:{originalSource:`{
   render: () => html\`
         <div class="story-stack">
             <div>
@@ -765,4 +784,4 @@ import{A as $,b as r,w as h}from"./iframe-DwtbWc_h.js";import"./cosmoz-badge-Bbe
       }
     }
   }
-}`,...v.parameters?.docs?.source}}};const W=["Default","Colors","Types","Sizes","WithDot","WithPrefixIcon","WithSuffixIcon","IconOnly","AllColorsByType"];export{v as AllColorsByType,m as Colors,g as Default,f as IconOnly,z as Sizes,b as Types,p as WithDot,y as WithPrefixIcon,u as WithSuffixIcon,W as __namedExportsOrder,P as default};
+}`,...h.parameters?.docs?.source}}};const C=["Default","Colors","CustomColors","Types","Sizes","WithDot","WithPrefixIcon","WithSuffixIcon","IconOnly","AllColorsByType"];export{h as AllColorsByType,m as Colors,b as CustomColors,g as Default,v as IconOnly,p as Sizes,z as Types,y as WithDot,u as WithPrefixIcon,f as WithSuffixIcon,C as __namedExportsOrder,W as default};
