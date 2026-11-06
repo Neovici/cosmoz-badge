@@ -1,6 +1,15 @@
 import { normalize } from '@neovici/cosmoz-tokens/normalize';
 import { component, html } from '@pionjs/pion';
+import { classMap } from 'lit-html/directives/class-map.js';
+import { styleMap } from 'lit-html/directives/style-map.js';
 import { styles } from './styles';
+
+const NAMED = ['gray', 'brand', 'error', 'warning', 'success', 'processing'];
+
+// Anything else that is a valid CSS color tints the badge; unknown names keep
+// the gray default instead of rendering an invalid color-mix().
+const isCustom = (color?: string): color is string =>
+	!!color && !NAMED.includes(color) && CSS.supports('color', color);
 
 /**
  * A customizable badge component using cosmoz design tokens.
@@ -8,7 +17,8 @@ import { styles } from './styles';
  * @element cosmoz-badge
  *
  * @attr {string} type - Badge type: pill (default), color, modern, icon
- * @attr {string} color - Badge color: gray (default), brand, error, warning, success
+ * @attr {string} color - Badge color: gray (default), brand, error, warning, success, processing,
+ *   or any CSS color (e.g. `#7c3aed`), which tints the background, border, text and dot
  * @attr {string} size - Badge size: xs (compact), sm, md (default), lg
  * @attr {boolean} dot - Show a colored dot indicator before text
  *
@@ -38,8 +48,13 @@ import { styles } from './styles';
  * </cosmoz-badge>
  * ```
  */
-const CosmozBadge = () => {
-	return html`<span class="badge" part="badge">
+const CosmozBadge = ({ color }: { color?: string }) => {
+	const custom = isCustom(color);
+	return html`<span
+		class=${classMap({ badge: true, custom })}
+		part="badge"
+		style=${styleMap({ '--color': custom ? color : undefined })}
+	>
 		<span class="dot" part="dot"></span>
 		<slot name="prefix"></slot>
 		<span class="content"><slot></slot></span>
@@ -50,6 +65,7 @@ const CosmozBadge = () => {
 customElements.define(
 	'cosmoz-badge',
 	component(CosmozBadge, {
+		observedAttributes: ['color'],
 		styleSheets: [normalize, styles],
 	}),
 );

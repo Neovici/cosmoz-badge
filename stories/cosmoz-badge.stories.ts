@@ -19,7 +19,15 @@ export default {
 		},
 		color: {
 			control: 'select',
-			options: ['gray', 'brand', 'error', 'warning', 'success'],
+			options: [
+				'gray',
+				'brand',
+				'error',
+				'warning',
+				'success',
+				'processing',
+				'#7c3aed',
+			],
 			description: 'Badge color scheme',
 			table: { defaultValue: { summary: 'gray' } },
 		},
@@ -82,6 +90,26 @@ export const Colors = {
 		docs: {
 			description: {
 				story: 'All available color variants for the badge.',
+			},
+		},
+	},
+};
+
+export const CustomColors = {
+	render: () => html`
+		<div class="story-row">
+			${['#7c3aed', '#db2777', '#0891b2', '#65a30d', '#ea580c'].map(
+				(color) =>
+					html`<cosmoz-badge color=${color} dot>${color}</cosmoz-badge>
+						<cosmoz-badge color=${color} type="color">${color}</cosmoz-badge>`,
+			)}
+		</div>
+	`,
+	parameters: {
+		docs: {
+			description: {
+				story:
+					'Any CSS color tints the background, border, text and dot, e.g. for user-defined labels.',
 			},
 		},
 	},
